@@ -86,6 +86,12 @@
     <Compile Include="Attendance.vb">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="Form2.Designer.vb">
+      <DependentUpon>Form2.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form2.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="HomeDashboard.Designer.vb">
       <DependentUpon>HomeDashboard.vb</DependentUpon>
     </Compile>
@@ -143,14 +149,6 @@
       <DependentUpon>FrmWelcome.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="C:\Users\Yingyee\Desktop\Qualitea\Form2.Designer.vb">
-      <DependentUpon>Form2.vb</DependentUpon>
-      <Link>Form2.Designer.vb</Link>
-    </Compile>
-    <Compile Include="C:\Users\Yingyee\Desktop\Qualitea\Form2.vb">
-      <SubType>Form</SubType>
-      <Link>Form2.vb</Link>
-    </Compile>
     <Compile Include="JobApplicants.Designer.vb">
       <DependentUpon>JobApplicants.vb</DependentUpon>
     </Compile>
@@ -192,6 +190,9 @@
     <EmbeddedResource Include="Attendance.resx">
       <DependentUpon>Attendance.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Form2.resx">
+      <DependentUpon>Form2.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="HomeDashboard.resx">
       <DependentUpon>HomeDashboard.vb</DependentUpon>
     </EmbeddedResource>
@@ -215,10 +216,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmWelcome.resx">
       <DependentUpon>FrmWelcome.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="C:\Users\Yingyee\Desktop\Qualitea\Form2.resx">
-      <DependentUpon>Form2.vb</DependentUpon>
-      <Link>Form2.resx</Link>
     </EmbeddedResource>
     <EmbeddedResource Include="JobApplicants.resx">
       <DependentUpon>JobApplicants.vb</DependentUpon>

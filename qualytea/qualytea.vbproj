@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>9.0.30729</ProductVersion>
+    <ProductVersion>9.0.21022</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{6DF65D33-5633-4427-814D-BDF3EF1DCA75}</ProjectGuid>
     <OutputType>WinExe</OutputType>
@@ -80,6 +80,12 @@
     <Compile Include="AddToInterviewList.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Attendance Employer.Designer.vb">
+      <DependentUpon>Attendance Employer.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Attendance Employer.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Attendance.Designer.vb">
       <DependentUpon>Attendance.vb</DependentUpon>
     </Compile>
@@ -96,6 +102,24 @@
       <DependentUpon>HomeDashboard.vb</DependentUpon>
     </Compile>
     <Compile Include="HomeDashboard.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Payroll Employee.Designer.vb">
+      <DependentUpon>Payroll Employee.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Payroll Employee.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Payroll Employer.Designer.vb">
+      <DependentUpon>Payroll Employer.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Payroll Employer.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Performance.Designer.vb">
+      <DependentUpon>Performance.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Performance.vb">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="PunchIn.Designer.vb">
@@ -186,42 +210,71 @@
   <ItemGroup>
     <EmbeddedResource Include="AddToInterviewList.resx">
       <DependentUpon>AddToInterviewList.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Attendance Employer.resx">
+      <DependentUpon>Attendance Employer.vb</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Attendance.resx">
       <DependentUpon>Attendance.vb</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Form2.resx">
       <DependentUpon>Form2.vb</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="HomeDashboard.resx">
       <DependentUpon>HomeDashboard.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Payroll Employee.resx">
+      <DependentUpon>Payroll Employee.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Payroll Employer.resx">
+      <DependentUpon>Payroll Employer.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Performance.resx">
+      <DependentUpon>Performance.vb</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="PunchIn.resx">
       <DependentUpon>PunchIn.vb</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="PunchOut.resx">
       <DependentUpon>PunchOut.vb</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="ChangePassword.resx">
       <DependentUpon>ChangePassword.vb</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="EditProfile.resx">
       <DependentUpon>EditProfile.vb</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="FirstTimeLogin.resx">
       <DependentUpon>FirstTimeLogin.vb</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="FirstTimeLogin2.resx">
       <DependentUpon>FirstTimeLogin2.vb</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmWelcome.resx">
       <DependentUpon>FrmWelcome.vb</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="JobApplicants.resx">
       <DependentUpon>JobApplicants.vb</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Landing.resx">
       <DependentUpon>Landing.vb</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
@@ -231,9 +284,11 @@
     </EmbeddedResource>
     <EmbeddedResource Include="OldAttendance.resx">
       <DependentUpon>OldAttendance.vb</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="PersonalDetailsPanel.resx">
       <DependentUpon>PersonalDetailsPanel.vb</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

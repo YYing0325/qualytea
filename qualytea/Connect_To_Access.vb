@@ -5,7 +5,7 @@ Public Class Connect_To_Access
 
     Dim myConnection As OleDbConnection = New OleDbConnection
     Dim provider = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source ="
-    Dim dataFile = "D:\Documents\HR.accdb"
+    Dim dataFile = My.MySettings.Default.database_path
     Dim connString = provider & dataFile
 
 
@@ -187,4 +187,47 @@ Public Class Connect_To_Access
         End Try
     End Sub
 
+    Public Sub getNewTrainingList(ByVal dataGrid As DataGridView, ByVal empId As String)
+        Try
+            myConnection.ConnectionString = connString
+            Dim query = "SELECT * FROM [employee_trainings] WHERE [employee_id]=? AND [status]=?"
+            Dim table As New DataTable
+            table.Columns.Add("Code", GetType(String))
+            table.Columns.Add("Course", GetType(String))
+            table.Columns.Add("Course Description", GetType(String))
+            table.Columns.Add("Date", GetType(String))
+            table.Columns.Add("Expired At", GetType(String))
+            table.Columns.Add("Location", GetType(String))
+
+            Using cmd As OleDbCommand = New OleDbCommand(query, myConnection)
+                myConnection.Open()
+                cmd.Parameters.AddWithValue("@p1", empId)
+                cmd.Parameters.AddWithValue("@p2", "new")
+                Using dr As OleDbDataReader = cmd.ExecuteReader
+                    While dr.Read
+                        If dr.HasRows = True Then
+                            Dim trainingId = dr("training_id")
+                            Dim query2 = "SELECT * FROM [trainings] WHERE [training_id]=?"
+                            Using cmd2 As OleDbCommand = New OleDbCommand(query2, myConnection)
+                                cmd2.Parameters.AddWithValue("@p1", trainingId)
+                                Using dr2 As OleDbDataReader = cmd2.ExecuteReader
+                                    While dr2.Read
+                                        If dr2.HasRows = True Then
+                                            table.Rows.Add(dr2("training_id"), dr2("training_name"), dr2("training_description"), dr2("training_datetime"), dr2("expired_at"), dr2("location"))
+                                        End If
+                                    End While
+                                End Using
+                            End Using
+
+                        End If
+                    End While
+                End Using
+
+                dataGrid.DataSource = table
+                myConnection.Close()
+            End Using
+        Catch ex As Exception
+            MsgBox("Connection To Database Failed:" & ex.Message.ToString)
+        End Try
+    End Sub
 End Class

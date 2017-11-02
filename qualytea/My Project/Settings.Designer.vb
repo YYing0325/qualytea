@@ -104,7 +104,7 @@ Namespace My
         
         <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("C:\Users\LeeChengSui\Documents\GitHub\qualytea\HR.accdb")>  _
         Public Property database_path() As String
             Get
                 Return CType(Me("database_path"),String)

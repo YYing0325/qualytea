@@ -9,7 +9,7 @@ Public Class cmdlogin
 
     Private Sub btnlogin_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnlogin.Click
         provider = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source ="
-        dataFile = "D:\Documents\HR.accdb"
+        dataFile = My.MySettings.Default.database_path
         connString = provider & dataFile
         myConnection.ConnectionString = connString
         myConnection.Open()

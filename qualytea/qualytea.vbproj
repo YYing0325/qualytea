@@ -80,16 +80,24 @@
     <Compile Include="AddToInterviewList.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Attendance Employer.Designer.vb">
-      <DependentUpon>Attendance Employer.vb</DependentUpon>
+    <Compile Include="Claims Application Form.Designer.vb">
+      <DependentUpon>Claims Application Form.vb</DependentUpon>
     </Compile>
-    <Compile Include="Attendance Employer.vb">
+    <Compile Include="Claims Application Form.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Attendance.Designer.vb">
-      <DependentUpon>Attendance.vb</DependentUpon>
+    <Compile Include="Form3.vb">
     </Compile>
-    <Compile Include="Attendance.vb">
+    <Compile Include="Leave Application Form.Designer.vb">
+      <DependentUpon>Leave Application Form.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Leave Application Form.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Leave H Management.Designer.vb">
+      <DependentUpon>Leave H Management.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Leave H Management.vb">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Form2.Designer.vb">
@@ -104,17 +112,17 @@
     <Compile Include="HomeDashboard.vb">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Payroll Employee.Designer.vb">
-      <DependentUpon>Payroll Employee.vb</DependentUpon>
+    <Compile Include="Leave Report.Designer.vb">
+      <DependentUpon>Leave Report.vb</DependentUpon>
     </Compile>
-    <Compile Include="Payroll Employee.vb">
+    <Compile Include="Leave Report.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Payroll Employer.Designer.vb">
-      <DependentUpon>Payroll Employer.vb</DependentUpon>
+    <Compile Include="Payroll H Management.Designer.vb">
+      <DependentUpon>Payroll H Management.vb</DependentUpon>
     </Compile>
-    <Compile Include="Payroll Employer.vb">
-      <SubType>Form</SubType>
+    <Compile Include="Payroll H Management.vb">
+      <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Performance.Designer.vb">
       <DependentUpon>Performance.vb</DependentUpon>
@@ -212,12 +220,16 @@
       <DependentUpon>AddToInterviewList.vb</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Attendance Employer.resx">
-      <DependentUpon>Attendance Employer.vb</DependentUpon>
+    <EmbeddedResource Include="Claims Application Form.resx">
+      <DependentUpon>Claims Application Form.vb</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Attendance.resx">
-      <DependentUpon>Attendance.vb</DependentUpon>
+    <EmbeddedResource Include="Leave Application Form.resx">
+      <DependentUpon>Leave Application Form.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Leave H Management.resx">
+      <DependentUpon>Leave H Management.vb</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Form2.resx">
@@ -228,12 +240,12 @@
       <DependentUpon>HomeDashboard.vb</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Payroll Employee.resx">
-      <DependentUpon>Payroll Employee.vb</DependentUpon>
+    <EmbeddedResource Include="Leave Report.resx">
+      <DependentUpon>Leave Report.vb</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Payroll Employer.resx">
-      <DependentUpon>Payroll Employer.vb</DependentUpon>
+    <EmbeddedResource Include="Payroll H Management.resx">
+      <DependentUpon>Payroll H Management.vb</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Performance.resx">
@@ -306,6 +318,24 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\22414363_10156004489474255_582533822_n.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="AcroPDFLib">
+      <Guid>{05BFD3F1-6319-4F30-B752-C7A22889BCC4}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="AxAcroPDFLib">
+      <Guid>{05BFD3F1-6319-4F30-B752-C7A22889BCC4}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

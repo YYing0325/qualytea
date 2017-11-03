@@ -72,4 +72,7 @@ Public Class JobApplicantsComponent
     End Sub
 
 
+    Private Sub data_grid_applicants_CellContentClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles data_grid_applicants.CellContentClick
+
+    End Sub
 End Class

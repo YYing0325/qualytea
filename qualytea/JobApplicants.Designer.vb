@@ -28,8 +28,8 @@ Partial Class JobApplicantsComponent
         Me.data_grid_applicants = New System.Windows.Forms.DataGridView
         Me.TabPage2 = New System.Windows.Forms.TabPage
         Me.data_grid_interview = New System.Windows.Forms.DataGridView
-        Me.TabPage3 = New System.Windows.Forms.TabPage
         Me.TabPage4 = New System.Windows.Forms.TabPage
+        Me.TabPage3 = New System.Windows.Forms.TabPage
         Me.panel_applicants.SuspendLayout()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
@@ -46,7 +46,7 @@ Partial Class JobApplicantsComponent
         Me.panel_applicants.Dock = System.Windows.Forms.DockStyle.Fill
         Me.panel_applicants.Location = New System.Drawing.Point(0, 0)
         Me.panel_applicants.Name = "panel_applicants"
-        Me.panel_applicants.Size = New System.Drawing.Size(703, 603)
+        Me.panel_applicants.Size = New System.Drawing.Size(703, 653)
         Me.panel_applicants.TabIndex = 3
         '
         'TabControl1
@@ -59,7 +59,7 @@ Partial Class JobApplicantsComponent
         Me.TabControl1.Location = New System.Drawing.Point(0, 0)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
-        Me.TabControl1.Size = New System.Drawing.Size(703, 603)
+        Me.TabControl1.Size = New System.Drawing.Size(703, 653)
         Me.TabControl1.TabIndex = 8
         '
         'TabPage1
@@ -68,7 +68,7 @@ Partial Class JobApplicantsComponent
         Me.TabPage1.Location = New System.Drawing.Point(4, 22)
         Me.TabPage1.Name = "TabPage1"
         Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage1.Size = New System.Drawing.Size(695, 577)
+        Me.TabPage1.Size = New System.Drawing.Size(695, 627)
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "New Applicants"
         Me.TabPage1.UseVisualStyleBackColor = True
@@ -83,7 +83,7 @@ Partial Class JobApplicantsComponent
         Me.data_grid_applicants.Location = New System.Drawing.Point(3, 3)
         Me.data_grid_applicants.Name = "data_grid_applicants"
         Me.data_grid_applicants.RowTemplate.Height = 23
-        Me.data_grid_applicants.Size = New System.Drawing.Size(689, 571)
+        Me.data_grid_applicants.Size = New System.Drawing.Size(689, 621)
         Me.data_grid_applicants.TabIndex = 6
         '
         'TabPage2
@@ -92,7 +92,7 @@ Partial Class JobApplicantsComponent
         Me.TabPage2.Location = New System.Drawing.Point(4, 22)
         Me.TabPage2.Name = "TabPage2"
         Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage2.Size = New System.Drawing.Size(695, 577)
+        Me.TabPage2.Size = New System.Drawing.Size(695, 627)
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "Interview List"
         Me.TabPage2.UseVisualStyleBackColor = True
@@ -107,35 +107,35 @@ Partial Class JobApplicantsComponent
         Me.data_grid_interview.Location = New System.Drawing.Point(3, 3)
         Me.data_grid_interview.Name = "data_grid_interview"
         Me.data_grid_interview.RowTemplate.Height = 23
-        Me.data_grid_interview.Size = New System.Drawing.Size(689, 571)
+        Me.data_grid_interview.Size = New System.Drawing.Size(689, 621)
         Me.data_grid_interview.TabIndex = 7
-        '
-        'TabPage3
-        '
-        Me.TabPage3.Location = New System.Drawing.Point(4, 22)
-        Me.TabPage3.Name = "TabPage3"
-        Me.TabPage3.Size = New System.Drawing.Size(695, 577)
-        Me.TabPage3.TabIndex = 2
-        Me.TabPage3.Text = "Current Employees "
-        Me.TabPage3.UseVisualStyleBackColor = True
         '
         'TabPage4
         '
         Me.TabPage4.Location = New System.Drawing.Point(4, 22)
         Me.TabPage4.Name = "TabPage4"
-        Me.TabPage4.Size = New System.Drawing.Size(695, 577)
+        Me.TabPage4.Size = New System.Drawing.Size(695, 627)
         Me.TabPage4.TabIndex = 3
         Me.TabPage4.Text = "Rejected Applicant"
         Me.TabPage4.UseVisualStyleBackColor = True
         '
+        'TabPage3
+        '
+        Me.TabPage3.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage3.Name = "TabPage3"
+        Me.TabPage3.Size = New System.Drawing.Size(695, 627)
+        Me.TabPage3.TabIndex = 2
+        Me.TabPage3.Text = "Current Employees "
+        Me.TabPage3.UseVisualStyleBackColor = True
+        '
         'JobApplicantsComponent
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoSize = True
         Me.Controls.Add(Me.panel_applicants)
         Me.Name = "JobApplicantsComponent"
-        Me.Size = New System.Drawing.Size(703, 603)
+        Me.Size = New System.Drawing.Size(703, 653)
         Me.panel_applicants.ResumeLayout(False)
         Me.TabControl1.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)

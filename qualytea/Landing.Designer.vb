@@ -27,21 +27,22 @@ Partial Class landing_page
         Me.btn_home = New System.Windows.Forms.Button
         Me.emp_id = New System.Windows.Forms.Label
         Me.lbl_emp_id = New System.Windows.Forms.Label
-        Me.btn_finance = New System.Windows.Forms.Button
+        Me.btn_payroll_management = New System.Windows.Forms.Button
         Me.PictureBox1 = New System.Windows.Forms.PictureBox
         Me.btn_job_applicants = New System.Windows.Forms.Button
         Me.btn_logout = New System.Windows.Forms.Button
         Me.btn_work_management = New System.Windows.Forms.Button
-        Me.btn_time_management = New System.Windows.Forms.Button
+        Me.btn_leave_management = New System.Windows.Forms.Button
         Me.btn_personal = New System.Windows.Forms.Button
-        Me.Time_Management1 = New WindowsApplication1.Attendance
-        Me.Performance1 = New WindowsApplication1.Performance
+        Me.Leave_H_Management1 = New WindowsApplication1.Leave_H_Management
+        Me.Time_Management1 = New WindowsApplication1.Payroll_H_Management
         Me.HomeDashboard1 = New WindowsApplication1.HomeDashboard
-        Me.Attendance1 = New WindowsApplication1.Attendance
+        Me.Attendance1 = New WindowsApplication1.Leave_H_Management
         Me.ChangePassword1 = New WindowsApplication1.ChangePassword
         Me.EditProfile1 = New WindowsApplication1.EditProfile
         Me.JobApplicantsComponent1 = New WindowsApplication1.JobApplicantsComponent
         Me.PersonalDetailsComponent1 = New WindowsApplication1.PersonalDetailsComponent
+        Me.Payroll_H_Management1 = New WindowsApplication1.Payroll_H_Management
         Me.SplitContainer1.Panel1.SuspendLayout()
         Me.SplitContainer1.Panel2.SuspendLayout()
         Me.SplitContainer1.SuspendLayout()
@@ -60,19 +61,20 @@ Partial Class landing_page
         Me.SplitContainer1.Panel1.Controls.Add(Me.btn_home)
         Me.SplitContainer1.Panel1.Controls.Add(Me.emp_id)
         Me.SplitContainer1.Panel1.Controls.Add(Me.lbl_emp_id)
-        Me.SplitContainer1.Panel1.Controls.Add(Me.btn_finance)
+        Me.SplitContainer1.Panel1.Controls.Add(Me.btn_payroll_management)
         Me.SplitContainer1.Panel1.Controls.Add(Me.PictureBox1)
         Me.SplitContainer1.Panel1.Controls.Add(Me.btn_job_applicants)
         Me.SplitContainer1.Panel1.Controls.Add(Me.btn_logout)
         Me.SplitContainer1.Panel1.Controls.Add(Me.btn_work_management)
-        Me.SplitContainer1.Panel1.Controls.Add(Me.btn_time_management)
+        Me.SplitContainer1.Panel1.Controls.Add(Me.btn_leave_management)
         Me.SplitContainer1.Panel1.Controls.Add(Me.btn_personal)
         '
         'SplitContainer1.Panel2
         '
         Me.SplitContainer1.Panel2.BackColor = System.Drawing.SystemColors.ControlLightLight
+        Me.SplitContainer1.Panel2.Controls.Add(Me.Payroll_H_Management1)
+        Me.SplitContainer1.Panel2.Controls.Add(Me.Leave_H_Management1)
         Me.SplitContainer1.Panel2.Controls.Add(Me.Time_Management1)
-        Me.SplitContainer1.Panel2.Controls.Add(Me.Performance1)
         Me.SplitContainer1.Panel2.Controls.Add(Me.HomeDashboard1)
         Me.SplitContainer1.Panel2.Controls.Add(Me.Attendance1)
         Me.SplitContainer1.Panel2.Controls.Add(Me.ChangePassword1)
@@ -118,20 +120,20 @@ Partial Class landing_page
         Me.lbl_emp_id.TabIndex = 7
         Me.lbl_emp_id.Text = "Employee ID :"
         '
-        'btn_finance
+        'btn_payroll_management
         '
-        Me.btn_finance.BackColor = System.Drawing.Color.FromArgb(CType(CType(58, Byte), Integer), CType(CType(83, Byte), Integer), CType(CType(155, Byte), Integer))
-        Me.btn_finance.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.btn_finance.FlatAppearance.BorderSize = 0
-        Me.btn_finance.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btn_finance.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btn_finance.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.btn_finance.Location = New System.Drawing.Point(0, 500)
-        Me.btn_finance.Name = "btn_finance"
-        Me.btn_finance.Size = New System.Drawing.Size(409, 54)
-        Me.btn_finance.TabIndex = 3
-        Me.btn_finance.Text = "Payroll Management"
-        Me.btn_finance.UseVisualStyleBackColor = False
+        Me.btn_payroll_management.BackColor = System.Drawing.Color.FromArgb(CType(CType(58, Byte), Integer), CType(CType(83, Byte), Integer), CType(CType(155, Byte), Integer))
+        Me.btn_payroll_management.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.btn_payroll_management.FlatAppearance.BorderSize = 0
+        Me.btn_payroll_management.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btn_payroll_management.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_payroll_management.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.btn_payroll_management.Location = New System.Drawing.Point(0, 500)
+        Me.btn_payroll_management.Name = "btn_payroll_management"
+        Me.btn_payroll_management.Size = New System.Drawing.Size(409, 54)
+        Me.btn_payroll_management.TabIndex = 3
+        Me.btn_payroll_management.Text = "Payroll Management"
+        Me.btn_payroll_management.UseVisualStyleBackColor = False
         '
         'PictureBox1
         '
@@ -189,20 +191,20 @@ Partial Class landing_page
         Me.btn_work_management.Text = "Work Management"
         Me.btn_work_management.UseVisualStyleBackColor = False
         '
-        'btn_time_management
+        'btn_leave_management
         '
-        Me.btn_time_management.BackColor = System.Drawing.Color.FromArgb(CType(CType(58, Byte), Integer), CType(CType(83, Byte), Integer), CType(CType(155, Byte), Integer))
-        Me.btn_time_management.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.btn_time_management.FlatAppearance.BorderSize = 0
-        Me.btn_time_management.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btn_time_management.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btn_time_management.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.btn_time_management.Location = New System.Drawing.Point(0, 446)
-        Me.btn_time_management.Name = "btn_time_management"
-        Me.btn_time_management.Size = New System.Drawing.Size(409, 54)
-        Me.btn_time_management.TabIndex = 1
-        Me.btn_time_management.Text = "Time Management"
-        Me.btn_time_management.UseVisualStyleBackColor = False
+        Me.btn_leave_management.BackColor = System.Drawing.Color.FromArgb(CType(CType(58, Byte), Integer), CType(CType(83, Byte), Integer), CType(CType(155, Byte), Integer))
+        Me.btn_leave_management.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.btn_leave_management.FlatAppearance.BorderSize = 0
+        Me.btn_leave_management.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btn_leave_management.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_leave_management.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.btn_leave_management.Location = New System.Drawing.Point(0, 446)
+        Me.btn_leave_management.Name = "btn_leave_management"
+        Me.btn_leave_management.Size = New System.Drawing.Size(409, 54)
+        Me.btn_leave_management.TabIndex = 1
+        Me.btn_leave_management.Text = "Leave Management"
+        Me.btn_leave_management.UseVisualStyleBackColor = False
         '
         'btn_personal
         '
@@ -219,6 +221,14 @@ Partial Class landing_page
         Me.btn_personal.Text = "Personal Information"
         Me.btn_personal.UseVisualStyleBackColor = False
         '
+        'Leave_H_Management1
+        '
+        Me.Leave_H_Management1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Leave_H_Management1.Location = New System.Drawing.Point(0, 0)
+        Me.Leave_H_Management1.Name = "Leave_H_Management1"
+        Me.Leave_H_Management1.Size = New System.Drawing.Size(791, 662)
+        Me.Leave_H_Management1.TabIndex = 8
+        '
         'Time_Management1
         '
         Me.Time_Management1.Dock = System.Windows.Forms.DockStyle.Fill
@@ -226,14 +236,6 @@ Partial Class landing_page
         Me.Time_Management1.Name = "Time_Management1"
         Me.Time_Management1.Size = New System.Drawing.Size(791, 662)
         Me.Time_Management1.TabIndex = 7
-        '
-        'Performance1
-        '
-        Me.Performance1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Performance1.Location = New System.Drawing.Point(0, 0)
-        Me.Performance1.Name = "Performance1"
-        Me.Performance1.Size = New System.Drawing.Size(791, 662)
-        Me.Performance1.TabIndex = 6
         '
         'HomeDashboard1
         '
@@ -285,6 +287,14 @@ Partial Class landing_page
         Me.PersonalDetailsComponent1.Size = New System.Drawing.Size(791, 662)
         Me.PersonalDetailsComponent1.TabIndex = 0
         '
+        'Payroll_H_Management1
+        '
+        Me.Payroll_H_Management1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Payroll_H_Management1.Location = New System.Drawing.Point(0, 0)
+        Me.Payroll_H_Management1.Name = "Payroll_H_Management1"
+        Me.Payroll_H_Management1.Size = New System.Drawing.Size(791, 662)
+        Me.Payroll_H_Management1.TabIndex = 9
+        '
         'landing_page
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -305,9 +315,9 @@ Partial Class landing_page
     End Sub
 
     Friend WithEvents SplitContainer1 As System.Windows.Forms.SplitContainer
-    Friend WithEvents btn_time_management As System.Windows.Forms.Button
+    Friend WithEvents btn_leave_management As System.Windows.Forms.Button
     Friend WithEvents btn_work_management As System.Windows.Forms.Button
-    Friend WithEvents btn_finance As System.Windows.Forms.Button
+    Friend WithEvents btn_payroll_management As System.Windows.Forms.Button
     Friend WithEvents btn_personal As System.Windows.Forms.Button
     Friend WithEvents btn_logout As System.Windows.Forms.Button
     Friend WithEvents btn_job_applicants As System.Windows.Forms.Button
@@ -318,10 +328,11 @@ Partial Class landing_page
     Friend WithEvents JobApplicantsComponent1 As WindowsApplication1.JobApplicantsComponent
     Friend WithEvents EditProfile1 As WindowsApplication1.EditProfile
     Friend WithEvents ChangePassword1 As WindowsApplication1.ChangePassword
-    Friend WithEvents Attendance1 As WindowsApplication1.Attendance
+    Friend WithEvents Attendance1 As WindowsApplication1.Leave_H_Management
     Friend WithEvents HomeDashboard1 As WindowsApplication1.HomeDashboard
     Friend WithEvents btn_home As System.Windows.Forms.Button
-    Friend WithEvents Performance1 As WindowsApplication1.Performance
-    Friend WithEvents Time_Management1 As WindowsApplication1.Attendance
+    Friend WithEvents Time_Management1 As WindowsApplication1.Payroll_H_Management
+    Friend WithEvents Leave_H_Management1 As WindowsApplication1.Leave_H_Management
+    Friend WithEvents Payroll_H_Management1 As WindowsApplication1.Payroll_H_Management
 
 End Class

@@ -6,22 +6,22 @@
         Me.btn_home.Width = SplitContainer1.Panel1.Width
         Me.btn_personal.Width = SplitContainer1.Panel1.Width
         Me.btn_work_management.Width = SplitContainer1.Panel1.Width
-        Me.btn_time_management.Width = SplitContainer1.Panel1.Width
-        Me.btn_finance.Width = SplitContainer1.Panel1.Width
+        Me.btn_leave_management.Width = SplitContainer1.Panel1.Width
+        Me.btn_payroll_management.Width = SplitContainer1.Panel1.Width
         Me.btn_job_applicants.Width = SplitContainer1.Panel1.Width
         Me.btn_logout.Width = SplitContainer1.Panel1.Width
         ' Text
         Me.btn_personal.Text = "Personal Information"
         Me.btn_work_management.Text = "Work Management"
-        Me.btn_time_management.Text = "Time Management"
-        Me.btn_finance.Text = "Finance Management"
+        Me.btn_leave_management.Text = "Leave Management"
+        Me.btn_payroll_management.Text = "Payroll Management"
         Me.btn_job_applicants.Text = "Job Applicants"
         Me.btn_logout.Text = "Logout"
         ' Position
         Me.btn_job_applicants.Location = New Point(0, Me.btn_logout.Location.Y - 50)
-        Me.btn_finance.Location = New Point(0, Me.btn_job_applicants.Location.Y - 50)
-        Me.btn_time_management.Location = New Point(0, Me.btn_finance.Location.Y - 50)
-        Me.btn_work_management.Location = New Point(0, Me.btn_time_management.Location.Y - 50)
+        Me.btn_payroll_management.Location = New Point(0, Me.btn_job_applicants.Location.Y - 50)
+        Me.btn_leave_management.Location = New Point(0, Me.btn_payroll_management.Location.Y - 50)
+        Me.btn_work_management.Location = New Point(0, Me.btn_leave_management.Location.Y - 50)
         Me.btn_personal.Location = New Point(0, Me.btn_work_management.Location.Y - 50)
         Me.btn_home.Location = New Point(0, Me.btn_personal.Location.Y - 50)
 
@@ -30,8 +30,9 @@
         Me.EditProfile1.Hide()
         Me.ChangePassword1.Hide()
         Me.Attendance1.Hide()
-        Me.Performance1.Hide()
         Me.Time_Management1.Hide()
+        Me.Leave_H_Management1.Hide()
+        Me.Payroll_H_Management1.Hide()
 
 
     End Sub
@@ -53,6 +54,9 @@
 
         Me.JobApplicantsComponent1.Hide()
         Me.HomeDashboard1.Hide()
+        Me.Time_Management1.Hide()
+        Me.Leave_H_Management1.Hide()
+        Me.Payroll_H_Management1.Hide()
 
     End Sub
 
@@ -69,23 +73,29 @@
         Me.EditProfile1.Hide()
         Me.HomeDashboard1.Hide()
         Me.Time_Management1.Hide()
+        Me.Leave_H_Management1.Hide()
+        Me.Payroll_H_Management1.Hide()
 
     End Sub
 
-    Private Sub Button2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_time_management.Click
+    Private Sub Button2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_leave_management.Click
         Me.PersonalDetailsComponent1.Hide()
         Me.JobApplicantsComponent1.Hide()
         Me.EditProfile1.Hide()
         Me.ChangePassword1.Hide()
         Me.Attendance1.Hide()
-        Me.Performance1.Hide()
-        Me.Time_Management1.Show()
+        Me.Time_Management1.Hide()
+        Me.Payroll_H_Management1.Hide()
+        Dim connectToAccess = New Connect_To_Access
+        'connectToAccess.getNewLeaveList(Me.Leave_H_Management1.datagrid_my_leave, Me.emp_id.Text.ToString)
+        connectToAccess.getEmployeeLeaves(Me.Leave_H_Management1.datagrid_leave_history, Me.emp_id.Text.ToString)
+        connectToAccess.getEmployeeLeavesRequest(Me.Leave_H_Management1.datagrid_leave_request, Me.emp_id.Text.ToString)
+        Me.Leave_H_Management1.Show()
+
     End Sub
 
     Private Sub Button3_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_work_management.Click
-        Dim connectToAccess = New Connect_To_Access
-        connectToAccess.getNewTrainingList(Me.Performance1.data_grid_new_training, Me.emp_id.Text.ToString)
-        Me.Performance1.Show()
+        
     End Sub
 
     Private Sub Label3_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
@@ -160,5 +170,27 @@
         Me.Attendance1.Hide()
         Me.HomeDashboard1.Show()
         Me.Time_Management1.Hide()
+        Me.Leave_H_Management1.Hide()
+        Me.Payroll_H_Management1.Hide()
+    End Sub
+
+    Private Sub btn_payroll_management_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_payroll_management.Click
+        Me.PersonalDetailsComponent1.Hide()
+        Me.JobApplicantsComponent1.Hide()
+        Me.EditProfile1.Hide()
+        Me.ChangePassword1.Hide()
+        Me.Attendance1.Hide()
+        Me.HomeDashboard1.Show()
+        Me.Time_Management1.Hide()
+        Me.Leave_H_Management1.Hide()
+        Me.Payroll_H_Management1.Show()
+        Dim connectToAccess = New Connect_To_Access()
+        connectToAccess.getClaimsList(Me.Payroll_H_Management1.datagrid_payroll_mgmt, Me.emp_id.Text.ToString)
+        connectToAccess.getClaimsStatus(Me.Payroll_H_Management1.datagrid_status, Me.emp_id.Text.ToString)
+
+    End Sub
+
+    Private Sub Payroll_H_Management1_Load(ByVal sender As System.Object, ByVal e As System.EventArgs)
+
     End Sub
 End Class

@@ -3,6 +3,7 @@
     Private Sub SplitContainer1_Panel1_Paint(ByVal sender As System.Object, ByVal e As System.Windows.Forms.PaintEventArgs) Handles SplitContainer1.Panel1.Paint
         ' Full Width
         Me.WindowState = FormWindowState.Maximized
+        Me.btnhome.Width = SplitContainer1.Panel1.Width
         Me.btn_personal.Width = SplitContainer1.Panel1.Width
         Me.btn_work_management.Width = SplitContainer1.Panel1.Width
         Me.btn_time_management.Width = SplitContainer1.Panel1.Width
@@ -22,13 +23,14 @@
         Me.btn_time_management.Location = New Point(0, Me.btn_finance.Location.Y - 50)
         Me.btn_work_management.Location = New Point(0, Me.btn_time_management.Location.Y - 50)
         Me.btn_personal.Location = New Point(0, Me.btn_work_management.Location.Y - 50)
+        Me.btnhome.Location = New Point(0, Me.btn_personal.Location.Y - 50)
 
         Me.PersonalDetailsComponent1.Hide()
         Me.JobApplicantsComponent1.Hide()
         Me.EditProfile1.Hide()
         Me.ChangePassword1.Hide()
         Me.Attendance1.Hide()
-
+        Me.My_Training.Hide()
 
     End Sub
 
@@ -48,6 +50,7 @@
         Me.ChangePassword1.changeEmpId()
 
         Me.JobApplicantsComponent1.Hide()
+        Me.HomeDashboard1.Hide()
 
     End Sub
 
@@ -62,14 +65,20 @@
         Me.JobApplicantsComponent1.Size = New Size(SplitContainer1.Panel2.Width, SplitContainer1.Panel2.Height)
         Me.PersonalDetailsComponent1.Hide()
         Me.EditProfile1.Hide()
+        Me.HomeDashboard1.Hide()
     End Sub
 
     Private Sub Button2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_time_management.Click
-        
+
     End Sub
 
     Private Sub Button3_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_work_management.Click
-
+        Me.My_Training.Show()
+        Dim connectToAccess = New Connect_To_Access()
+        connectToAccess.getNewTrainingList(Me.My_Training.data_grid_TrNewTraining, Me.emp_id.Text.ToString)
+        connectToAccess.getTrainingManagementList(Me.My_Training.DataGridView2)
+        'connectToAccess.getInProgressTrainingList(Me.My_Training.data_grid_TrProgress, Me.emp_id.ToString)
+        'connectToAccess.getNewTrainingList(Me.My_Training.data_grid_TrComplete, Me.emp_id.ToString)
     End Sub
 
     Private Sub Label3_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
@@ -135,4 +144,19 @@
         Dim connectToAccess = New Connect_To_Access()
         connectToAccess.getAttendanceList(HomeDashboard1.datagrid_attendance, Me.emp_id.Text.ToString)
     End Sub
+
+    Private Sub btnhome_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnhome.Click
+        Me.PersonalDetailsComponent1.Hide()
+        Me.JobApplicantsComponent1.Hide()
+        Me.EditProfile1.Hide()
+        Me.ChangePassword1.Hide()
+        Me.Attendance1.Hide()
+        Me.My_Training.Hide()
+        Me.HomeDashboard1.Show()
+    End Sub
+
+    Private Sub Performance1_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles My_Training.Load
+    End Sub
+
+
 End Class

@@ -476,7 +476,6 @@ Public Class Connect_To_Access
             MsgBox("Connection To Database Failed: " & ex.Message.ToString)
             Return -1
         End Try
-
         Try
             Dim sqlStr2 = "SELECT MAX(employee_id) FROM employees"
             Using sqlquery2 As New System.Data.OleDb.OleDbCommand(sqlStr2, myConnection)
@@ -561,7 +560,107 @@ Public Class Connect_To_Access
         Catch ex As Exception
             MsgBox("Connection To Database Failed:" & ex.Message.ToString)
         End Try
+    End Sub
+
+
+
+    Public Function getEvaluation(ByVal empId As String, ByVal performanceYear As String) As Dictionary(Of String, String)
+        Dim dict = New Dictionary(Of String, String)
+        myConnection.ConnectionString = connString
+        myConnection.Open()
+        Try
+            Dim empCmd As OleDbCommand = New OleDbCommand("SELECT * FROM [employees] WHERE [employee_id]=" & empId, myConnection)
+            Dim dr As OleDbDataReader = empCmd.ExecuteReader
+            While dr.Read
+                If dr.HasRows = True Then
+                    dict.Add("first_name", dr("first_name"))
+                    dict.Add("last_name", dr("last_name"))
+                    dict.Add("department_id", dr("department_id"))
+                    Dim deptId = Convert.ToInt32(dr("department_id"))
+
+                    Dim empCmd2 As OleDbCommand = New OleDbCommand("SELECT * FROM [departments] WHERE [department_id]=" & deptId, myConnection)
+                    Dim dr2 As OleDbDataReader = empCmd2.ExecuteReader
+                    While dr2.Read
+                        If dr2.HasRows = True Then
+                            dict.Add("department", dr2("department_name"))
+                        End If
+                    End While
+
+
+                    Dim empCmd3 As OleDbCommand = New OleDbCommand("SELECT * FROM [performance_evaluation] WHERE [performance_year]=" & performanceYear, myConnection)
+                    Dim dr3 As OleDbDataReader = empCmd3.ExecuteReader
+                    While dr3.Read
+                        If dr3.HasRows = True Then
+                            dict.Add("performance_year", dr3("performance_year").ToString)
+                            dict.Add("c1_quality_productivity", dr3("c1_quality_productivity").ToString)
+                            dict.Add("c2_flexibility", dr3("c2_flexibility").ToString)
+                            dict.Add("c3_initiative", dr3("c3_initiative").ToString)
+                            dict.Add("c4_dependability", dr3("c4_dependability").ToString)
+                            dict.Add("c5_collaboration", dr3("c5_collaboration").ToString)
+                            dict.Add("c6_communication", dr3("c6_communication").ToString)
+                            dict.Add("c7_problem_solving", dr3("c7_problem_solving").ToString)
+                            dict.Add("c8_technology_skill", dr3("c8_technology_skill").ToString)
+                            dict.Add("c9_perseverance", dr3("c9_perseverance").ToString)
+                            dict.Add("c10_agility", dr3("c10_agility").ToString)
+                        End If
+                    End While
+                End If
+            End While
+            myConnection.Close()
+
+        Catch ex As Exception
+            MsgBox("Connection To Database Failed:" & ex.Message.ToString)
+        End Try
+        Return dict
+    End Function
+
+    Public Sub addToEvaluation(ByVal data As Dictionary(Of String, String))
+        'Should be use to insert data of performance_evaluation.vb
+        Try
+            Dim accStr = "INSERT INTO performance_evaluation([department_id],[employee_id],[performance_year],[c1_quality_productivity],[c2_flexibility],[c3_initiative],[c4_dependability],[c5_collaboration],[c6_communication],[c7_problem_solving],[c8_technology_skill],[c9_perseverance],[c10_agility]) VALUES(@department_id,@employee_id,@performance_year,@c1_quality_productivity,@c2_flexibility,@c3_initiative,@c4_dependability,@c5_collaboration,@c6_communication,@c7_problem_solving,@c8_technology_skill,@c9_perseverance,@c10_agility)"
+
+            myConnection.ConnectionString = connString
+            Using accquery As New System.Data.OleDb.OleDbCommand(accStr, myConnection)
+                myConnection.Open()
+                accquery.Parameters.AddWithValue("@department_id", data.Item("department_id").ToString)
+                accquery.Parameters.AddWithValue("@employee_id", data.Item("emplotee_id").ToString)
+                accquery.Parameters.AddWithValue("@performance_year", data.Item("performance_year").ToString)
+                accquery.Parameters.AddWithValue("@c1_quality_productivity", data.Item("c1_quality_productivity").ToString)
+                accquery.Parameters.AddWithValue("@c2_flexibility", data.Item("c2_flexibility").ToString)
+                accquery.Parameters.AddWithValue("@c3_initiative", data.Item("c3_initiative").ToString)
+                accquery.Parameters.AddWithValue("@c4_dependability", data.Item("c4_dependability").ToString)
+                accquery.Parameters.AddWithValue("@c5_collaboration", data.Item("c5_collaboration").ToString)
+                accquery.Parameters.AddWithValue("@c6_communication", data.Item("c6_communication").ToString)
+                accquery.Parameters.AddWithValue("@c7_problem_solving", Convert.ToInt16(data.Item("c7_problem_solving").ToString))
+                accquery.Parameters.AddWithValue("@c8_technology_skill", data.Item("c8_technology_skill").ToString)
+                accquery.Parameters.AddWithValue("@c9_perseverance", data.Item("c9_perseverance").ToString)
+                accquery.Parameters.AddWithValue("@c10_agility", data.Item("c10_agility").ToString)
+                accquery.ExecuteNonQuery()
+                myConnection.Close()
+            End Using
+            MsgBox("Evaluation succesfully added into database.")
+        Catch ex As Exception
+            MsgBox("Connection To Database Failed: " & ex.Message.ToString)
+        End Try
+
+    End Sub
+
+    Public Sub addToVoucherRedeemed(ByVal data As Dictionary(Of String, String))
+        'Should be use to insert data of Reward tab inside performance_evaluation
+        Try
+            Dim accStr = "INSERT INTO voucher_redeem([employee_id],[voucher_code_id]) VALUES(@employee_id,@voucher_code_id)"
+            myConnection.ConnectionString = connString
+            Using accquery As New System.Data.OleDb.OleDbCommand(accStr, myConnection)
+                myConnection.Open()
+                accquery.Parameters.AddWithValue("@employee_id", data.Item("employee_id").ToString)
+                accquery.Parameters.AddWithValue("@voucher_code_id", data.Item("voucher_code_id").ToString)
+                accquery.ExecuteNonQuery()
+                myConnection.Close()
+            End Using
+            'MsgBox("Evaluation succesfully added into database.")
+        Catch ex As Exception
+            MsgBox("Connection To Database Failed: " & ex.Message.ToString)
+        End Try
 
     End Sub
 End Class
-

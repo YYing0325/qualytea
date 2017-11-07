@@ -31,6 +31,8 @@
         Me.ChangePassword1.Hide()
         Me.Attendance1.Hide()
         Me.My_Training.Hide()
+        Me.Performance1.Hide()
+        Me.Performance_overview1.Hide()
 
     End Sub
 
@@ -51,7 +53,8 @@
 
         Me.JobApplicantsComponent1.Hide()
         Me.HomeDashboard1.Hide()
-
+        Me.Performance1.Hide()
+        Me.Performance_overview1.Hide()
     End Sub
 
     Private Sub JobApplicant_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_job_applicants.Click
@@ -79,7 +82,8 @@
         connectToAccess.getTrainingManagementList(Me.My_Training.DataGridView2)
         'connectToAccess.getInProgressTrainingList(Me.My_Training.data_grid_TrProgress, Me.emp_id.ToString)
         'connectToAccess.getNewTrainingList(Me.My_Training.data_grid_TrComplete, Me.emp_id.ToString)
-
+        Me.Performance1.Hide()
+        Me.Performance_overview1.Hide()
     End Sub
 
     Private Sub Label3_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
@@ -155,9 +159,12 @@
         Me.HomeDashboard1.Show()
         Me.My_Training.Hide()
         Me.HomeDashboard1.Show()
+        Me.Performance1.Hide()
+        Me.Performance_overview1.Hide()
     End Sub
 
-    Private Sub Performance1_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles My_Training.Load
-    End Sub
-
+    'Private Sub btn_finance_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_finance.Click
+    ' Me.Performance1.Hide()
+    'Me.Performance_overview1.Hide()
+    'End Sub
 End Class

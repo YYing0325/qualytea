@@ -181,6 +181,24 @@
       <DependentUpon>My_Training.vb</DependentUpon>
     </Compile>
     <Compile Include="My_Training.vb">
+<SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Performance_test.Designer.vb">
+      <DependentUpon>Performance_test.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Performance_test.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="performance_evaluation.Designer.vb">
+      <DependentUpon>performance_evaluation.vb</DependentUpon>
+    </Compile>
+    <Compile Include="performance_evaluation.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="performance_overview.Designer.vb">
+      <DependentUpon>performance_overview.vb</DependentUpon>
+    </Compile>
+    <Compile Include="performance_overview.vb">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="PunchIn.Designer.vb">
@@ -273,6 +291,12 @@
     <Compile Include="AcceptApplicant.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="voucher_redeem_v2.Designer.vb">
+      <DependentUpon>voucher_redeem_v2.vb</DependentUpon>
+    </Compile>
+    <Compile Include="voucher_redeem_v2.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="My_Training Detail.resx">
@@ -304,6 +328,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="My_Training.resx">
       <DependentUpon>My_Training.vb</DependentUpon>
+<SubType>Designer</SubType>
+</EmbeddedResource>
+    <EmbeddedResource Include="Performance_test.resx">
+      <DependentUpon>Performance_test.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="performance_evaluation.resx">
+      <DependentUpon>performance_evaluation.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="performance_overview.resx">
+      <DependentUpon>performance_overview.vb</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="PunchIn.resx">
@@ -358,6 +394,11 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AcceptApplicant.resx">
       <DependentUpon>AcceptApplicant.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="voucher_redeem_v2.resx">
+      <DependentUpon>voucher_redeem_v2.vb</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

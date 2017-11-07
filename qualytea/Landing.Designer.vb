@@ -28,6 +28,7 @@ Partial Class landing_page
         Me.emp_id = New System.Windows.Forms.Label
         Me.lbl_emp_id = New System.Windows.Forms.Label
         Me.btn_payroll = New System.Windows.Forms.Button
+        'Me.btn_finance = New System.Windows.Forms.Button
         Me.PictureBox1 = New System.Windows.Forms.PictureBox
         Me.btn_job_applicants = New System.Windows.Forms.Button
         Me.btn_logout = New System.Windows.Forms.Button
@@ -42,6 +43,14 @@ Partial Class landing_page
         Me.Attendance1 = New WindowsApplication1.Attendance
         Me.HomeDashboard1 = New WindowsApplication1.HomeDashboard
         Me.My_Training = New WindowsApplication1.My_Training
+        Me.Performance_overview1 = New WindowsApplication1.performance_overview
+        Me.Performance1 = New WindowsApplication1.Performance_test
+        Me.HomeDashboard1 = New WindowsApplication1.HomeDashboard
+        Me.Attendance1 = New WindowsApplication1.Attendance
+        Me.ChangePassword1 = New WindowsApplication1.ChangePassword
+        Me.EditProfile1 = New WindowsApplication1.EditProfile
+        Me.JobApplicantsComponent1 = New WindowsApplication1.JobApplicantsComponent
+        Me.PersonalDetailsComponent1 = New WindowsApplication1.PersonalDetailsComponent
         Me.SplitContainer1.Panel1.SuspendLayout()
         Me.SplitContainer1.Panel2.SuspendLayout()
         Me.SplitContainer1.SuspendLayout()
@@ -73,6 +82,8 @@ Partial Class landing_page
         Me.SplitContainer1.Panel2.BackColor = System.Drawing.SystemColors.ControlLightLight
         Me.SplitContainer1.Panel2.Controls.Add(Me.My_Training)
         Me.SplitContainer1.Panel2.Controls.Add(Me.PersonalDetailsComponent2)
+        Me.SplitContainer1.Panel2.Controls.Add(Me.Performance_overview1)
+        Me.SplitContainer1.Panel2.Controls.Add(Me.Performance1)
         Me.SplitContainer1.Panel2.Controls.Add(Me.HomeDashboard1)
         Me.SplitContainer1.Panel2.Controls.Add(Me.PictureBox1)
         Me.SplitContainer1.Panel2.Controls.Add(Me.Attendance1)
@@ -98,12 +109,17 @@ Partial Class landing_page
         Me.btn_home.TabIndex = 9
         Me.btn_home.Text = "Home"
         Me.btn_home.UseVisualStyleBackColor = False
-
+        Me.btn_home.Location = New System.Drawing.Point(0, 284)
+        Me.btn_home.Name = "btn_home"
+        Me.btn_home.Size = New System.Drawing.Size(411, 54)
+        Me.btn_home.TabIndex = 9
+        Me.btn_home.Text = "Home"
+        Me.btn_home.UseVisualStyleBackColor = False
         '
         'emp_id
         '
         Me.emp_id.AutoSize = True
-        Me.emp_id.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!)
+        Me.emp_id.Font = New System.Drawing.Font("Lato", 8.0!)
         Me.emp_id.Location = New System.Drawing.Point(123, 7)
         Me.emp_id.Name = "emp_id"
         Me.emp_id.Size = New System.Drawing.Size(14, 13)
@@ -114,6 +130,7 @@ Partial Class landing_page
         '
         Me.lbl_emp_id.AutoSize = True
         Me.lbl_emp_id.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!)
+        Me.lbl_emp_id.Font = New System.Drawing.Font("Lato", 8.0!)
         Me.lbl_emp_id.Location = New System.Drawing.Point(12, 7)
         Me.lbl_emp_id.Name = "lbl_emp_id"
         Me.lbl_emp_id.Size = New System.Drawing.Size(73, 13)
@@ -141,6 +158,15 @@ Partial Class landing_page
         Me.PictureBox1.Location = New System.Drawing.Point(0, 25)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(406, 240)
+        Me.PictureBox1.TabIndex = 6
+        Me.PictureBox1.TabStop = False
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.InitialImage = CType(resources.GetObject("PictureBox1.InitialImage"), System.Drawing.Image)
+        Me.PictureBox1.Location = New System.Drawing.Point(0, 27)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(406, 268)
         Me.PictureBox1.TabIndex = 6
         Me.PictureBox1.TabStop = False
         '
@@ -185,10 +211,11 @@ Partial Class landing_page
         Me.btn_work_management.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_work_management.ForeColor = System.Drawing.SystemColors.ButtonHighlight
         Me.btn_work_management.Location = New System.Drawing.Point(0, 391)
+        Me.btn_work_management.Location = New System.Drawing.Point(0, 392)
         Me.btn_work_management.Name = "btn_work_management"
         Me.btn_work_management.Size = New System.Drawing.Size(416, 54)
         Me.btn_work_management.TabIndex = 2
-        Me.btn_work_management.Text = "Work Management"
+        Me.btn_work_management.Text = "Performance"
         Me.btn_work_management.UseVisualStyleBackColor = False
         '
         'btn_time_management
@@ -200,6 +227,7 @@ Partial Class landing_page
         Me.btn_time_management.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_time_management.ForeColor = System.Drawing.SystemColors.ButtonHighlight
         Me.btn_time_management.Location = New System.Drawing.Point(0, 445)
+        Me.btn_time_management.Location = New System.Drawing.Point(0, 446)
         Me.btn_time_management.Name = "btn_time_management"
         Me.btn_time_management.Size = New System.Drawing.Size(409, 54)
         Me.btn_time_management.TabIndex = 1
@@ -215,6 +243,7 @@ Partial Class landing_page
         Me.btn_personal.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_personal.ForeColor = System.Drawing.SystemColors.ButtonHighlight
         Me.btn_personal.Location = New System.Drawing.Point(0, 337)
+        Me.btn_personal.Location = New System.Drawing.Point(0, 338)
         Me.btn_personal.Name = "btn_personal"
         Me.btn_personal.Size = New System.Drawing.Size(411, 54)
         Me.btn_personal.TabIndex = 0
@@ -229,6 +258,21 @@ Partial Class landing_page
         Me.HomeDashboard1.Size = New System.Drawing.Size(791, 611)
         Me.HomeDashboard1.TabIndex = 5
         'btn_finance
+        'Performance_overview1
+        '
+        Me.Performance_overview1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Performance_overview1.Location = New System.Drawing.Point(0, 0)
+        Me.Performance_overview1.Name = "Performance_overview1"
+        Me.Performance_overview1.Size = New System.Drawing.Size(791, 662)
+        Me.Performance_overview1.TabIndex = 7
+        '
+        'Performance1
+        '
+        Me.Performance1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Performance1.Location = New System.Drawing.Point(0, 0)
+        Me.Performance1.Name = "Performance1"
+        Me.Performance1.Size = New System.Drawing.Size(791, 662)
+        Me.Performance1.TabIndex = 6
         '
         'Me.btn_finance.BackColor = System.Drawing.Color.FromArgb(CType(CType(58, Byte), Integer), CType(CType(83, Byte), Integer), CType(CType(155, Byte), Integer))
         'Me.btn_finance.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
@@ -252,6 +296,12 @@ Partial Class landing_page
         Me.PersonalDetailsComponent2.TabIndex = 7
         '
         'PersonalDetailsComponent1
+        Me.Attendance1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Attendance1.Location = New System.Drawing.Point(0, 0)
+        Me.Attendance1.Name = "Attendance1"
+        Me.Attendance1.Size = New System.Drawing.Size(791, 662)
+        Me.Attendance1.TabIndex = 4
+        Me.Attendance1.Visible = False
         '
         Me.PersonalDetailsComponent1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.PersonalDetailsComponent1.Dock = System.Windows.Forms.DockStyle.Fill
@@ -268,6 +318,10 @@ Partial Class landing_page
         Me.JobApplicantsComponent1.Name = "JobApplicantsComponent1"
         Me.JobApplicantsComponent1.Size = New System.Drawing.Size(791, 662)
         Me.JobApplicantsComponent1.TabIndex = 1
+        Me.ChangePassword1.Location = New System.Drawing.Point(0, 0)
+        Me.ChangePassword1.Name = "ChangePassword1"
+        Me.ChangePassword1.Size = New System.Drawing.Size(940, 723)
+        Me.ChangePassword1.TabIndex = 3
         '
         'EditProfile1
         '
@@ -283,6 +337,12 @@ Partial Class landing_page
         Me.ChangePassword1.Name = "ChangePassword1"
         Me.ChangePassword1.Size = New System.Drawing.Size(940, 723)
         Me.ChangePassword1.TabIndex = 3
+        Me.JobApplicantsComponent1.AutoSize = True
+        Me.JobApplicantsComponent1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.JobApplicantsComponent1.Location = New System.Drawing.Point(0, 0)
+        Me.JobApplicantsComponent1.Name = "JobApplicantsComponent1"
+        Me.JobApplicantsComponent1.Size = New System.Drawing.Size(791, 662)
+        Me.JobApplicantsComponent1.TabIndex = 1
         '
         'Attendance1
         '
@@ -308,6 +368,13 @@ Partial Class landing_page
         Me.My_Training.Name = "My_Training"
         Me.My_Training.Size = New System.Drawing.Size(791, 662)
         Me.My_Training.TabIndex = 6
+        '
+        Me.PersonalDetailsComponent1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
+        Me.PersonalDetailsComponent1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.PersonalDetailsComponent1.Location = New System.Drawing.Point(0, 0)
+        Me.PersonalDetailsComponent1.Name = "PersonalDetailsComponent1"
+        Me.PersonalDetailsComponent1.Size = New System.Drawing.Size(791, 662)
+        Me.PersonalDetailsComponent1.TabIndex = 0
         '
         'landing_page
         '
@@ -346,4 +413,6 @@ Partial Class landing_page
     Friend WithEvents EditProfile1 As WindowsApplication1.EditProfile
     Friend WithEvents JobApplicantsComponent1 As WindowsApplication1.JobApplicantsComponent
     Friend WithEvents PersonalDetailsComponent1 As WindowsApplication1.PersonalDetailsComponent
+    Friend WithEvents Performance1 As WindowsApplication1.Performance_test
+    Friend WithEvents Performance_overview1 As WindowsApplication1.performance_overview
 End Class

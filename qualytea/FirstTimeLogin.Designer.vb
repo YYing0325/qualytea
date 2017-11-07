@@ -22,121 +22,124 @@ Partial Class FirstTimeSignUp
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.lblEmployeeId = New System.Windows.Forms.Label
-        Me.tbEmployeeId = New System.Windows.Forms.TextBox
-        Me.lblUsername = New System.Windows.Forms.Label
-        Me.tbUsernameFirstTimeUser = New System.Windows.Forms.TextBox
-        Me.lblPasswordFirstTime = New System.Windows.Forms.Label
-        Me.tbPasswordFirstTimeUser = New System.Windows.Forms.TextBox
-        Me.lblConfirmPasswordFirstTime = New System.Windows.Forms.Label
-        Me.tbConfirmPasswordFirstTimeUser = New System.Windows.Forms.TextBox
-        Me.btnNextFirstTimeUser = New System.Windows.Forms.Button
+        Me.lblemployeeID = New System.Windows.Forms.Label
+        Me.tbemployeeID = New System.Windows.Forms.TextBox
+        Me.lblusername = New System.Windows.Forms.Label
+        Me.tbusername = New System.Windows.Forms.TextBox
+        Me.lblpassword = New System.Windows.Forms.Label
+        Me.lblconfirmedpassword = New System.Windows.Forms.Label
+        Me.btnnext = New System.Windows.Forms.Button
+        Me.mtbpassword = New System.Windows.Forms.MaskedTextBox
+        Me.mtbconfirmedpassword = New System.Windows.Forms.MaskedTextBox
         Me.SuspendLayout()
         '
-        'lblEmployeeId
+        'lblemployeeID
         '
-        Me.lblEmployeeId.AutoSize = True
-        Me.lblEmployeeId.Location = New System.Drawing.Point(26, 58)
-        Me.lblEmployeeId.Name = "lblEmployeeId"
-        Me.lblEmployeeId.Size = New System.Drawing.Size(77, 12)
-        Me.lblEmployeeId.TabIndex = 0
-        Me.lblEmployeeId.Text = "Employee ID:"
+        Me.lblemployeeID.AutoSize = True
+        Me.lblemployeeID.Location = New System.Drawing.Point(26, 58)
+        Me.lblemployeeID.Name = "lblemployeeID"
+        Me.lblemployeeID.Size = New System.Drawing.Size(77, 12)
+        Me.lblemployeeID.TabIndex = 0
+        Me.lblemployeeID.Text = "Employee ID:"
         '
-        'tbEmployeeId
+        'tbemployeeID
         '
-        Me.tbEmployeeId.Location = New System.Drawing.Point(199, 55)
-        Me.tbEmployeeId.Name = "tbEmployeeId"
-        Me.tbEmployeeId.Size = New System.Drawing.Size(125, 21)
-        Me.tbEmployeeId.TabIndex = 1
+        Me.tbemployeeID.Location = New System.Drawing.Point(199, 55)
+        Me.tbemployeeID.Name = "tbemployeeID"
+        Me.tbemployeeID.Size = New System.Drawing.Size(125, 21)
+        Me.tbemployeeID.TabIndex = 1
         '
-        'lblUsername
+        'lblusername
         '
-        Me.lblUsername.AutoSize = True
-        Me.lblUsername.Location = New System.Drawing.Point(28, 85)
-        Me.lblUsername.Name = "lblUsername"
-        Me.lblUsername.Size = New System.Drawing.Size(59, 12)
-        Me.lblUsername.TabIndex = 2
-        Me.lblUsername.Text = "Username:"
+        Me.lblusername.AutoSize = True
+        Me.lblusername.Location = New System.Drawing.Point(28, 85)
+        Me.lblusername.Name = "lblusername"
+        Me.lblusername.Size = New System.Drawing.Size(59, 12)
+        Me.lblusername.TabIndex = 2
+        Me.lblusername.Text = "Username:"
         '
-        'tbUsernameFirstTimeUser
+        'tbusername
         '
-        Me.tbUsernameFirstTimeUser.Location = New System.Drawing.Point(199, 82)
-        Me.tbUsernameFirstTimeUser.Name = "tbUsernameFirstTimeUser"
-        Me.tbUsernameFirstTimeUser.Size = New System.Drawing.Size(125, 21)
-        Me.tbUsernameFirstTimeUser.TabIndex = 3
+        Me.tbusername.Location = New System.Drawing.Point(199, 82)
+        Me.tbusername.Name = "tbusername"
+        Me.tbusername.Size = New System.Drawing.Size(125, 21)
+        Me.tbusername.TabIndex = 3
         '
-        'lblPasswordFirstTime
+        'lblpassword
         '
-        Me.lblPasswordFirstTime.AutoSize = True
-        Me.lblPasswordFirstTime.Location = New System.Drawing.Point(28, 112)
-        Me.lblPasswordFirstTime.Name = "lblPasswordFirstTime"
-        Me.lblPasswordFirstTime.Size = New System.Drawing.Size(59, 12)
-        Me.lblPasswordFirstTime.TabIndex = 4
-        Me.lblPasswordFirstTime.Text = "Password:"
+        Me.lblpassword.AutoSize = True
+        Me.lblpassword.Location = New System.Drawing.Point(28, 112)
+        Me.lblpassword.Name = "lblpassword"
+        Me.lblpassword.Size = New System.Drawing.Size(59, 12)
+        Me.lblpassword.TabIndex = 4
+        Me.lblpassword.Text = "Password:"
         '
-        'tbPasswordFirstTimeUser
+        'lblconfirmedpassword
         '
-        Me.tbPasswordFirstTimeUser.Location = New System.Drawing.Point(199, 109)
-        Me.tbPasswordFirstTimeUser.Name = "tbPasswordFirstTimeUser"
-        Me.tbPasswordFirstTimeUser.Size = New System.Drawing.Size(125, 21)
-        Me.tbPasswordFirstTimeUser.TabIndex = 5
+        Me.lblconfirmedpassword.AutoSize = True
+        Me.lblconfirmedpassword.Location = New System.Drawing.Point(26, 139)
+        Me.lblconfirmedpassword.Name = "lblconfirmedpassword"
+        Me.lblconfirmedpassword.Size = New System.Drawing.Size(107, 12)
+        Me.lblconfirmedpassword.TabIndex = 6
+        Me.lblconfirmedpassword.Text = "Confirm Password:"
         '
-        'lblConfirmPasswordFirstTime
+        'btnnext
         '
-        Me.lblConfirmPasswordFirstTime.AutoSize = True
-        Me.lblConfirmPasswordFirstTime.Location = New System.Drawing.Point(26, 139)
-        Me.lblConfirmPasswordFirstTime.Name = "lblConfirmPasswordFirstTime"
-        Me.lblConfirmPasswordFirstTime.Size = New System.Drawing.Size(107, 12)
-        Me.lblConfirmPasswordFirstTime.TabIndex = 6
-        Me.lblConfirmPasswordFirstTime.Text = "Confirm Password:"
+        Me.btnnext.BackColor = System.Drawing.Color.FromArgb(CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.btnnext.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnnext.Font = New System.Drawing.Font("Lato", 8.999999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnnext.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.btnnext.Location = New System.Drawing.Point(308, 177)
+        Me.btnnext.Name = "btnnext"
+        Me.btnnext.Size = New System.Drawing.Size(83, 33)
+        Me.btnnext.TabIndex = 8
+        Me.btnnext.Text = "Next"
+        Me.btnnext.UseVisualStyleBackColor = False
         '
-        'tbConfirmPasswordFirstTimeUser
+        'mtbpassword
         '
-        Me.tbConfirmPasswordFirstTimeUser.Location = New System.Drawing.Point(199, 136)
-        Me.tbConfirmPasswordFirstTimeUser.Name = "tbConfirmPasswordFirstTimeUser"
-        Me.tbConfirmPasswordFirstTimeUser.Size = New System.Drawing.Size(125, 21)
-        Me.tbConfirmPasswordFirstTimeUser.TabIndex = 7
+        Me.mtbpassword.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.mtbpassword.Location = New System.Drawing.Point(199, 109)
+        Me.mtbpassword.Name = "mtbpassword"
+        Me.mtbpassword.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
+        Me.mtbpassword.Size = New System.Drawing.Size(125, 21)
+        Me.mtbpassword.TabIndex = 9
         '
-        'btnNextFirstTimeUser
+        'mtbconfirmedpassword
         '
-        Me.btnNextFirstTimeUser.BackColor = System.Drawing.Color.FromArgb(CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.btnNextFirstTimeUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnNextFirstTimeUser.Font = New System.Drawing.Font("Lato", 8.999999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnNextFirstTimeUser.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.btnNextFirstTimeUser.Location = New System.Drawing.Point(308, 177)
-        Me.btnNextFirstTimeUser.Name = "btnNextFirstTimeUser"
-        Me.btnNextFirstTimeUser.Size = New System.Drawing.Size(83, 33)
-        Me.btnNextFirstTimeUser.TabIndex = 8
-        Me.btnNextFirstTimeUser.Text = "Next"
-        Me.btnNextFirstTimeUser.UseVisualStyleBackColor = False
+        Me.mtbconfirmedpassword.Location = New System.Drawing.Point(199, 136)
+        Me.mtbconfirmedpassword.Name = "mtbconfirmedpassword"
+        Me.mtbconfirmedpassword.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
+        Me.mtbconfirmedpassword.Size = New System.Drawing.Size(125, 21)
+        Me.mtbconfirmedpassword.TabIndex = 10
         '
         'FirstTimeSignUp
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(412, 230)
-        Me.Controls.Add(Me.btnNextFirstTimeUser)
-        Me.Controls.Add(Me.tbConfirmPasswordFirstTimeUser)
-        Me.Controls.Add(Me.lblConfirmPasswordFirstTime)
-        Me.Controls.Add(Me.tbPasswordFirstTimeUser)
-        Me.Controls.Add(Me.lblPasswordFirstTime)
-        Me.Controls.Add(Me.tbUsernameFirstTimeUser)
-        Me.Controls.Add(Me.lblUsername)
-        Me.Controls.Add(Me.tbEmployeeId)
-        Me.Controls.Add(Me.lblEmployeeId)
+        Me.Controls.Add(Me.mtbconfirmedpassword)
+        Me.Controls.Add(Me.mtbpassword)
+        Me.Controls.Add(Me.btnnext)
+        Me.Controls.Add(Me.lblconfirmedpassword)
+        Me.Controls.Add(Me.lblpassword)
+        Me.Controls.Add(Me.tbusername)
+        Me.Controls.Add(Me.lblusername)
+        Me.Controls.Add(Me.tbemployeeID)
+        Me.Controls.Add(Me.lblemployeeID)
         Me.Name = "FirstTimeSignUp"
         Me.Text = "FirstTimeLogin"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
-    Friend WithEvents lblEmployeeId As System.Windows.Forms.Label
-    Friend WithEvents tbEmployeeId As System.Windows.Forms.TextBox
-    Friend WithEvents lblUsername As System.Windows.Forms.Label
-    Friend WithEvents tbUsernameFirstTimeUser As System.Windows.Forms.TextBox
-    Friend WithEvents lblPasswordFirstTime As System.Windows.Forms.Label
-    Friend WithEvents tbPasswordFirstTimeUser As System.Windows.Forms.TextBox
-    Friend WithEvents lblConfirmPasswordFirstTime As System.Windows.Forms.Label
-    Friend WithEvents tbConfirmPasswordFirstTimeUser As System.Windows.Forms.TextBox
-    Friend WithEvents btnNextFirstTimeUser As System.Windows.Forms.Button
+    Friend WithEvents lblemployeeID As System.Windows.Forms.Label
+    Friend WithEvents tbemployeeID As System.Windows.Forms.TextBox
+    Friend WithEvents lblusername As System.Windows.Forms.Label
+    Friend WithEvents tbusername As System.Windows.Forms.TextBox
+    Friend WithEvents lblpassword As System.Windows.Forms.Label
+    Friend WithEvents lblconfirmedpassword As System.Windows.Forms.Label
+    Friend WithEvents btnnext As System.Windows.Forms.Button
+    Friend WithEvents mtbpassword As System.Windows.Forms.MaskedTextBox
+    Friend WithEvents mtbconfirmedpassword As System.Windows.Forms.MaskedTextBox
 End Class

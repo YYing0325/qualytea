@@ -28,14 +28,24 @@ Partial Class JobApplicantsComponent
         Me.data_grid_applicants = New System.Windows.Forms.DataGridView
         Me.TabPage2 = New System.Windows.Forms.TabPage
         Me.data_grid_interview = New System.Windows.Forms.DataGridView
-        Me.TabPage3 = New System.Windows.Forms.TabPage
         Me.TabPage4 = New System.Windows.Forms.TabPage
+        Me.TabPage3 = New System.Windows.Forms.TabPage
+        Me.TabPage5 = New System.Windows.Forms.TabPage
+        Me.data_grid_rejected_applicant = New System.Windows.Forms.DataGridView
+        Me.data_grid_accepted_applicant = New System.Windows.Forms.DataGridView
+        Me.data_grid_current_employee = New System.Windows.Forms.DataGridView
         Me.panel_applicants.SuspendLayout()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         CType(Me.data_grid_applicants, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPage2.SuspendLayout()
         CType(Me.data_grid_interview, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.TabPage4.SuspendLayout()
+        Me.TabPage3.SuspendLayout()
+        Me.TabPage5.SuspendLayout()
+        CType(Me.data_grid_rejected_applicant, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.data_grid_accepted_applicant, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.data_grid_current_employee, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'panel_applicants
@@ -54,6 +64,7 @@ Partial Class JobApplicantsComponent
         Me.TabControl1.Controls.Add(Me.TabPage1)
         Me.TabControl1.Controls.Add(Me.TabPage2)
         Me.TabControl1.Controls.Add(Me.TabPage4)
+        Me.TabControl1.Controls.Add(Me.TabPage5)
         Me.TabControl1.Controls.Add(Me.TabPage3)
         Me.TabControl1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TabControl1.Location = New System.Drawing.Point(0, 0)
@@ -110,8 +121,19 @@ Partial Class JobApplicantsComponent
         Me.data_grid_interview.Size = New System.Drawing.Size(689, 571)
         Me.data_grid_interview.TabIndex = 7
         '
+        'TabPage4
+        '
+        Me.TabPage4.Controls.Add(Me.data_grid_rejected_applicant)
+        Me.TabPage4.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage4.Name = "TabPage4"
+        Me.TabPage4.Size = New System.Drawing.Size(695, 577)
+        Me.TabPage4.TabIndex = 3
+        Me.TabPage4.Text = "Rejected Applicant"
+        Me.TabPage4.UseVisualStyleBackColor = True
+        '
         'TabPage3
         '
+        Me.TabPage3.Controls.Add(Me.data_grid_current_employee)
         Me.TabPage3.Location = New System.Drawing.Point(4, 22)
         Me.TabPage3.Name = "TabPage3"
         Me.TabPage3.Size = New System.Drawing.Size(695, 577)
@@ -119,14 +141,55 @@ Partial Class JobApplicantsComponent
         Me.TabPage3.Text = "Current Employees "
         Me.TabPage3.UseVisualStyleBackColor = True
         '
-        'TabPage4
+        'TabPage5
         '
-        Me.TabPage4.Location = New System.Drawing.Point(4, 22)
-        Me.TabPage4.Name = "TabPage4"
-        Me.TabPage4.Size = New System.Drawing.Size(695, 577)
-        Me.TabPage4.TabIndex = 3
-        Me.TabPage4.Text = "Rejected Applicant"
-        Me.TabPage4.UseVisualStyleBackColor = True
+        Me.TabPage5.Controls.Add(Me.data_grid_accepted_applicant)
+        Me.TabPage5.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage5.Name = "TabPage5"
+        Me.TabPage5.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage5.Size = New System.Drawing.Size(695, 577)
+        Me.TabPage5.TabIndex = 4
+        Me.TabPage5.Text = "Accepted Applicant"
+        Me.TabPage5.UseVisualStyleBackColor = True
+        '
+        'data_grid_rejected_applicant
+        '
+        Me.data_grid_rejected_applicant.AllowUserToAddRows = False
+        Me.data_grid_rejected_applicant.AllowUserToDeleteRows = False
+        Me.data_grid_rejected_applicant.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.data_grid_rejected_applicant.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.data_grid_rejected_applicant.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.data_grid_rejected_applicant.Location = New System.Drawing.Point(0, 0)
+        Me.data_grid_rejected_applicant.Name = "data_grid_rejected_applicant"
+        Me.data_grid_rejected_applicant.RowTemplate.Height = 23
+        Me.data_grid_rejected_applicant.Size = New System.Drawing.Size(695, 577)
+        Me.data_grid_rejected_applicant.TabIndex = 8
+        '
+        'data_grid_accepted_applicant
+        '
+        Me.data_grid_accepted_applicant.AllowUserToAddRows = False
+        Me.data_grid_accepted_applicant.AllowUserToDeleteRows = False
+        Me.data_grid_accepted_applicant.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.data_grid_accepted_applicant.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.data_grid_accepted_applicant.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.data_grid_accepted_applicant.Location = New System.Drawing.Point(3, 3)
+        Me.data_grid_accepted_applicant.Name = "data_grid_accepted_applicant"
+        Me.data_grid_accepted_applicant.RowTemplate.Height = 23
+        Me.data_grid_accepted_applicant.Size = New System.Drawing.Size(689, 571)
+        Me.data_grid_accepted_applicant.TabIndex = 8
+        '
+        'data_grid_current_employee
+        '
+        Me.data_grid_current_employee.AllowUserToAddRows = False
+        Me.data_grid_current_employee.AllowUserToDeleteRows = False
+        Me.data_grid_current_employee.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.data_grid_current_employee.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.data_grid_current_employee.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.data_grid_current_employee.Location = New System.Drawing.Point(0, 0)
+        Me.data_grid_current_employee.Name = "data_grid_current_employee"
+        Me.data_grid_current_employee.RowTemplate.Height = 23
+        Me.data_grid_current_employee.Size = New System.Drawing.Size(695, 577)
+        Me.data_grid_current_employee.TabIndex = 8
         '
         'JobApplicantsComponent
         '
@@ -142,6 +205,12 @@ Partial Class JobApplicantsComponent
         CType(Me.data_grid_applicants, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage2.ResumeLayout(False)
         CType(Me.data_grid_interview, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.TabPage4.ResumeLayout(False)
+        Me.TabPage3.ResumeLayout(False)
+        Me.TabPage5.ResumeLayout(False)
+        CType(Me.data_grid_rejected_applicant, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.data_grid_accepted_applicant, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.data_grid_current_employee, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -151,8 +220,12 @@ Partial Class JobApplicantsComponent
     Friend WithEvents TabControl1 As System.Windows.Forms.TabControl
     Friend WithEvents TabPage1 As System.Windows.Forms.TabPage
     Friend WithEvents TabPage2 As System.Windows.Forms.TabPage
-    Friend WithEvents TabPage3 As System.Windows.Forms.TabPage
     Friend WithEvents data_grid_interview As System.Windows.Forms.DataGridView
     Friend WithEvents TabPage4 As System.Windows.Forms.TabPage
+    Friend WithEvents TabPage3 As System.Windows.Forms.TabPage
+    Friend WithEvents data_grid_rejected_applicant As System.Windows.Forms.DataGridView
+    Friend WithEvents TabPage5 As System.Windows.Forms.TabPage
+    Friend WithEvents data_grid_accepted_applicant As System.Windows.Forms.DataGridView
+    Friend WithEvents data_grid_current_employee As System.Windows.Forms.DataGridView
 
 End Class

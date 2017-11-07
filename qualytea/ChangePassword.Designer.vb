@@ -25,32 +25,32 @@ Partial Class ChangePassword
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(ChangePassword))
         Me.panel_personal = New System.Windows.Forms.Panel
         Me.Button1 = New System.Windows.Forms.Button
-        Me.input_email = New System.Windows.Forms.TextBox
-        Me.input_first_name = New System.Windows.Forms.TextBox
-        Me.input_last_name = New System.Windows.Forms.TextBox
         Me.lbl_newPassword = New System.Windows.Forms.Label
         Me.lbl_currentPassword = New System.Windows.Forms.Label
         Me.lbl_confirmPassword = New System.Windows.Forms.Label
         Me.Label1 = New System.Windows.Forms.Label
-        Me.img_profile = New System.Windows.Forms.PictureBox
+        Me.img_passwordPic = New System.Windows.Forms.PictureBox
         Me.btn_edit_profile = New System.Windows.Forms.Button
         Me.lbl_emp_id = New System.Windows.Forms.Label
         Me.emp_id = New System.Windows.Forms.Label
+        Me.input_old_password = New System.Windows.Forms.MaskedTextBox
+        Me.input_new_password = New System.Windows.Forms.MaskedTextBox
+        Me.input_confirm_password = New System.Windows.Forms.MaskedTextBox
         Me.panel_personal.SuspendLayout()
-        CType(Me.img_profile, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.img_passwordPic, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'panel_personal
         '
+        Me.panel_personal.Controls.Add(Me.input_confirm_password)
+        Me.panel_personal.Controls.Add(Me.input_new_password)
+        Me.panel_personal.Controls.Add(Me.input_old_password)
         Me.panel_personal.Controls.Add(Me.Button1)
-        Me.panel_personal.Controls.Add(Me.input_email)
-        Me.panel_personal.Controls.Add(Me.input_first_name)
-        Me.panel_personal.Controls.Add(Me.input_last_name)
         Me.panel_personal.Controls.Add(Me.lbl_newPassword)
         Me.panel_personal.Controls.Add(Me.lbl_currentPassword)
         Me.panel_personal.Controls.Add(Me.lbl_confirmPassword)
         Me.panel_personal.Controls.Add(Me.Label1)
-        Me.panel_personal.Controls.Add(Me.img_profile)
+        Me.panel_personal.Controls.Add(Me.img_passwordPic)
         Me.panel_personal.Controls.Add(Me.btn_edit_profile)
         Me.panel_personal.Controls.Add(Me.lbl_emp_id)
         Me.panel_personal.Controls.Add(Me.emp_id)
@@ -72,30 +72,6 @@ Partial Class ChangePassword
         Me.Button1.TabIndex = 59
         Me.Button1.Text = "Back"
         Me.Button1.UseVisualStyleBackColor = False
-        '
-        'input_email
-        '
-        Me.input_email.Font = New System.Drawing.Font("Lato", 9.749999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.input_email.Location = New System.Drawing.Point(317, 221)
-        Me.input_email.Name = "input_email"
-        Me.input_email.Size = New System.Drawing.Size(196, 23)
-        Me.input_email.TabIndex = 43
-        '
-        'input_first_name
-        '
-        Me.input_first_name.Font = New System.Drawing.Font("Lato", 9.749999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.input_first_name.Location = New System.Drawing.Point(317, 125)
-        Me.input_first_name.Name = "input_first_name"
-        Me.input_first_name.Size = New System.Drawing.Size(196, 23)
-        Me.input_first_name.TabIndex = 41
-        '
-        'input_last_name
-        '
-        Me.input_last_name.Font = New System.Drawing.Font("Lato", 9.749999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.input_last_name.Location = New System.Drawing.Point(317, 317)
-        Me.input_last_name.Name = "input_last_name"
-        Me.input_last_name.Size = New System.Drawing.Size(196, 23)
-        Me.input_last_name.TabIndex = 40
         '
         'lbl_newPassword
         '
@@ -137,18 +113,18 @@ Partial Class ChangePassword
         Me.Label1.TabIndex = 24
         Me.Label1.Text = "Change Password"
         '
-        'img_profile
+        'img_passwordPic
         '
-        Me.img_profile.BackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.img_profile.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.img_profile.Image = CType(resources.GetObject("img_profile.Image"), System.Drawing.Image)
-        Me.img_profile.InitialImage = CType(resources.GetObject("img_profile.InitialImage"), System.Drawing.Image)
-        Me.img_profile.Location = New System.Drawing.Point(31, 107)
-        Me.img_profile.Name = "img_profile"
-        Me.img_profile.Size = New System.Drawing.Size(232, 233)
-        Me.img_profile.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
-        Me.img_profile.TabIndex = 23
-        Me.img_profile.TabStop = False
+        Me.img_passwordPic.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.img_passwordPic.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.img_passwordPic.Image = CType(resources.GetObject("img_passwordPic.Image"), System.Drawing.Image)
+        Me.img_passwordPic.InitialImage = CType(resources.GetObject("img_passwordPic.InitialImage"), System.Drawing.Image)
+        Me.img_passwordPic.Location = New System.Drawing.Point(31, 107)
+        Me.img_passwordPic.Name = "img_passwordPic"
+        Me.img_passwordPic.Size = New System.Drawing.Size(232, 233)
+        Me.img_passwordPic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
+        Me.img_passwordPic.TabIndex = 23
+        Me.img_passwordPic.TabStop = False
         '
         'btn_edit_profile
         '
@@ -183,6 +159,30 @@ Partial Class ChangePassword
         Me.emp_id.TabIndex = 15
         Me.emp_id.Text = "0"
         '
+        'input_old_password
+        '
+        Me.input_old_password.Location = New System.Drawing.Point(317, 125)
+        Me.input_old_password.Name = "input_old_password"
+        Me.input_old_password.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
+        Me.input_old_password.Size = New System.Drawing.Size(196, 21)
+        Me.input_old_password.TabIndex = 60
+        '
+        'input_new_password
+        '
+        Me.input_new_password.Location = New System.Drawing.Point(317, 221)
+        Me.input_new_password.Name = "input_new_password"
+        Me.input_new_password.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
+        Me.input_new_password.Size = New System.Drawing.Size(196, 21)
+        Me.input_new_password.TabIndex = 61
+        '
+        'input_confirm_password
+        '
+        Me.input_confirm_password.Location = New System.Drawing.Point(317, 317)
+        Me.input_confirm_password.Name = "input_confirm_password"
+        Me.input_confirm_password.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
+        Me.input_confirm_password.Size = New System.Drawing.Size(196, 21)
+        Me.input_confirm_password.TabIndex = 62
+        '
         'ChangePassword
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
@@ -192,22 +192,22 @@ Partial Class ChangePassword
         Me.Size = New System.Drawing.Size(940, 667)
         Me.panel_personal.ResumeLayout(False)
         Me.panel_personal.PerformLayout()
-        CType(Me.img_profile, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.img_passwordPic, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
     Friend WithEvents panel_personal As System.Windows.Forms.Panel
-    Friend WithEvents input_email As System.Windows.Forms.TextBox
-    Friend WithEvents input_first_name As System.Windows.Forms.TextBox
-    Friend WithEvents input_last_name As System.Windows.Forms.TextBox
     Friend WithEvents lbl_newPassword As System.Windows.Forms.Label
     Friend WithEvents lbl_currentPassword As System.Windows.Forms.Label
     Friend WithEvents lbl_confirmPassword As System.Windows.Forms.Label
     Friend WithEvents Label1 As System.Windows.Forms.Label
-    Friend WithEvents img_profile As System.Windows.Forms.PictureBox
+    Friend WithEvents img_passwordPic As System.Windows.Forms.PictureBox
     Friend WithEvents btn_edit_profile As System.Windows.Forms.Button
     Friend WithEvents lbl_emp_id As System.Windows.Forms.Label
     Friend WithEvents emp_id As System.Windows.Forms.Label
     Friend WithEvents Button1 As System.Windows.Forms.Button
+    Friend WithEvents input_confirm_password As System.Windows.Forms.MaskedTextBox
+    Friend WithEvents input_new_password As System.Windows.Forms.MaskedTextBox
+    Friend WithEvents input_old_password As System.Windows.Forms.MaskedTextBox
 
 End Class

@@ -24,21 +24,22 @@ Partial Class landing_page
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(landing_page))
         Me.SplitContainer1 = New System.Windows.Forms.SplitContainer
+        Me.btn_home = New System.Windows.Forms.Button
         Me.emp_id = New System.Windows.Forms.Label
         Me.lbl_emp_id = New System.Windows.Forms.Label
-        Me.btn_finance = New System.Windows.Forms.Button
+        Me.btn_payroll = New System.Windows.Forms.Button
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox
         Me.btn_job_applicants = New System.Windows.Forms.Button
         Me.btn_logout = New System.Windows.Forms.Button
         Me.btn_work_management = New System.Windows.Forms.Button
         Me.btn_time_management = New System.Windows.Forms.Button
         Me.btn_personal = New System.Windows.Forms.Button
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox
+        Me.HomeDashboard1 = New WindowsApplication1.HomeDashboard
         Me.Attendance1 = New WindowsApplication1.Attendance
         Me.ChangePassword1 = New WindowsApplication1.ChangePassword
         Me.EditProfile1 = New WindowsApplication1.EditProfile
         Me.JobApplicantsComponent1 = New WindowsApplication1.JobApplicantsComponent
         Me.PersonalDetailsComponent1 = New WindowsApplication1.PersonalDetailsComponent
-        Me.HomeDashboard1 = New WindowsApplication1.HomeDashboard
         Me.SplitContainer1.Panel1.SuspendLayout()
         Me.SplitContainer1.Panel2.SuspendLayout()
         Me.SplitContainer1.SuspendLayout()
@@ -54,9 +55,10 @@ Partial Class landing_page
         'SplitContainer1.Panel1
         '
         Me.SplitContainer1.Panel1.BackColor = System.Drawing.Color.White
+        Me.SplitContainer1.Panel1.Controls.Add(Me.btn_home)
         Me.SplitContainer1.Panel1.Controls.Add(Me.emp_id)
         Me.SplitContainer1.Panel1.Controls.Add(Me.lbl_emp_id)
-        Me.SplitContainer1.Panel1.Controls.Add(Me.btn_finance)
+        Me.SplitContainer1.Panel1.Controls.Add(Me.btn_payroll)
         Me.SplitContainer1.Panel1.Controls.Add(Me.PictureBox1)
         Me.SplitContainer1.Panel1.Controls.Add(Me.btn_job_applicants)
         Me.SplitContainer1.Panel1.Controls.Add(Me.btn_logout)
@@ -76,6 +78,21 @@ Partial Class landing_page
         Me.SplitContainer1.Size = New System.Drawing.Size(1204, 611)
         Me.SplitContainer1.SplitterDistance = 409
         Me.SplitContainer1.TabIndex = 0
+        '
+        'btn_home
+        '
+        Me.btn_home.BackColor = System.Drawing.Color.FromArgb(CType(CType(58, Byte), Integer), CType(CType(83, Byte), Integer), CType(CType(155, Byte), Integer))
+        Me.btn_home.FlatAppearance.BorderColor = System.Drawing.Color.White
+        Me.btn_home.FlatAppearance.BorderSize = 0
+        Me.btn_home.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btn_home.Font = New System.Drawing.Font("Lato", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_home.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.btn_home.Location = New System.Drawing.Point(0, 261)
+        Me.btn_home.Name = "btn_home"
+        Me.btn_home.Size = New System.Drawing.Size(411, 50)
+        Me.btn_home.TabIndex = 9
+        Me.btn_home.Text = "Home"
+        Me.btn_home.UseVisualStyleBackColor = False
         '
         'emp_id
         '
@@ -97,20 +114,29 @@ Partial Class landing_page
         Me.lbl_emp_id.TabIndex = 7
         Me.lbl_emp_id.Text = "Employee ID :"
         '
-        'btn_finance
+        'btn_payroll
         '
-        Me.btn_finance.BackColor = System.Drawing.Color.FromArgb(CType(CType(58, Byte), Integer), CType(CType(83, Byte), Integer), CType(CType(155, Byte), Integer))
-        Me.btn_finance.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.btn_finance.FlatAppearance.BorderSize = 0
-        Me.btn_finance.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btn_finance.Font = New System.Drawing.Font("Lato", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btn_finance.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.btn_finance.Location = New System.Drawing.Point(0, 461)
-        Me.btn_finance.Name = "btn_finance"
-        Me.btn_finance.Size = New System.Drawing.Size(409, 50)
-        Me.btn_finance.TabIndex = 3
-        Me.btn_finance.Text = "Finance"
-        Me.btn_finance.UseVisualStyleBackColor = False
+        Me.btn_payroll.BackColor = System.Drawing.Color.FromArgb(CType(CType(58, Byte), Integer), CType(CType(83, Byte), Integer), CType(CType(155, Byte), Integer))
+        Me.btn_payroll.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.btn_payroll.FlatAppearance.BorderSize = 0
+        Me.btn_payroll.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btn_payroll.Font = New System.Drawing.Font("Lato", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_payroll.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.btn_payroll.Location = New System.Drawing.Point(0, 461)
+        Me.btn_payroll.Name = "btn_payroll"
+        Me.btn_payroll.Size = New System.Drawing.Size(409, 50)
+        Me.btn_payroll.TabIndex = 3
+        Me.btn_payroll.Text = "Payroll Management"
+        Me.btn_payroll.UseVisualStyleBackColor = False
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.InitialImage = CType(resources.GetObject("PictureBox1.InitialImage"), System.Drawing.Image)
+        Me.PictureBox1.Location = New System.Drawing.Point(0, 25)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(406, 240)
+        Me.PictureBox1.TabIndex = 6
+        Me.PictureBox1.TabStop = False
         '
         'btn_job_applicants
         '
@@ -171,7 +197,7 @@ Partial Class landing_page
         Me.btn_time_management.Name = "btn_time_management"
         Me.btn_time_management.Size = New System.Drawing.Size(409, 50)
         Me.btn_time_management.TabIndex = 1
-        Me.btn_time_management.Text = "Time Management"
+        Me.btn_time_management.Text = "Leave Management"
         Me.btn_time_management.UseVisualStyleBackColor = False
         '
         'btn_personal
@@ -189,14 +215,13 @@ Partial Class landing_page
         Me.btn_personal.Text = "Personal Information"
         Me.btn_personal.UseVisualStyleBackColor = False
         '
-        'PictureBox1
+        'HomeDashboard1
         '
-        Me.PictureBox1.InitialImage = CType(resources.GetObject("PictureBox1.InitialImage"), System.Drawing.Image)
-        Me.PictureBox1.Location = New System.Drawing.Point(0, 25)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(406, 283)
-        Me.PictureBox1.TabIndex = 6
-        Me.PictureBox1.TabStop = False
+        Me.HomeDashboard1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.HomeDashboard1.Location = New System.Drawing.Point(0, 0)
+        Me.HomeDashboard1.Name = "HomeDashboard1"
+        Me.HomeDashboard1.Size = New System.Drawing.Size(791, 611)
+        Me.HomeDashboard1.TabIndex = 5
         '
         'Attendance1
         '
@@ -240,14 +265,6 @@ Partial Class landing_page
         Me.PersonalDetailsComponent1.Size = New System.Drawing.Size(791, 611)
         Me.PersonalDetailsComponent1.TabIndex = 0
         '
-        'HomeDashboard1
-        '
-        Me.HomeDashboard1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.HomeDashboard1.Location = New System.Drawing.Point(0, 0)
-        Me.HomeDashboard1.Name = "HomeDashboard1"
-        Me.HomeDashboard1.Size = New System.Drawing.Size(791, 611)
-        Me.HomeDashboard1.TabIndex = 5
-        '
         'landing_page
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
@@ -269,7 +286,7 @@ Partial Class landing_page
     Friend WithEvents SplitContainer1 As System.Windows.Forms.SplitContainer
     Friend WithEvents btn_time_management As System.Windows.Forms.Button
     Friend WithEvents btn_work_management As System.Windows.Forms.Button
-    Friend WithEvents btn_finance As System.Windows.Forms.Button
+    Friend WithEvents btn_payroll As System.Windows.Forms.Button
     Friend WithEvents btn_personal As System.Windows.Forms.Button
     Friend WithEvents btn_logout As System.Windows.Forms.Button
     Friend WithEvents btn_job_applicants As System.Windows.Forms.Button
@@ -282,4 +299,5 @@ Partial Class landing_page
     Friend WithEvents ChangePassword1 As WindowsApplication1.ChangePassword
     Friend WithEvents Attendance1 As WindowsApplication1.Attendance
     Friend WithEvents HomeDashboard1 As WindowsApplication1.HomeDashboard
+    Friend WithEvents btn_home As System.Windows.Forms.Button
 End Class

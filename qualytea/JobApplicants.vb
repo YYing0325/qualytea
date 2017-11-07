@@ -1,12 +1,12 @@
 ﻿Imports System.Net.WebClient
 Public Class JobApplicantsComponent
-    Private Sub fillTable()
-        Dim dataGrid = Me.data_grid_applicants
-        Dim connectToSQL = New Connect_To_SQL
-        connectToSQL.getApplicantsData(dataGrid)
-        Dim connectToAccess = New Connect_To_Access
-        connectToAccess.getInterviewList(Me.data_grid_interview)
-    End Sub
+    'Private Sub fillTable()
+    'Dim dataGrid = Me.data_grid_applicants
+    'Dim connectToSQL = New Connect_To_SQL
+    ' connectToSQL.getApplicantsData(dataGrid)
+    ' Dim connectToAccess = New Connect_To_Access
+    'connectToAccess.getInterviewList(Me.data_grid_interview)
+    ' End Sub
 
     Sub handleCellClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles data_grid_applicants.CellClick
 
@@ -42,8 +42,6 @@ Public Class JobApplicantsComponent
 
             AddToInterviewList.Show()
 
-
-
         End If
     End Sub
 
@@ -58,18 +56,44 @@ Public Class JobApplicantsComponent
 
         If data_grid_interview.Columns(e.ColumnIndex).Name = "btn_accept" Then
             Dim intervieweeId = data_grid_interview.Rows(e.RowIndex).Cells("Interviewee Id").Value
-            Dim connectToAccess = New Connect_To_Access()
-            connectToAccess.acceptApplicant(intervieweeId)
+
+            Dim firstName = data_grid_interview.Rows(e.RowIndex).Cells("First Name").Value
+            Dim lastName = data_grid_interview.Rows(e.RowIndex).Cells("Last Name").Value
+            Dim gender = data_grid_interview.Rows(e.RowIndex).Cells("Gender").Value
+            Dim nationalId = data_grid_interview.Rows(e.RowIndex).Cells("National ID").Value
+            Dim email = data_grid_interview.Rows(e.RowIndex).Cells("Email").Value
+            Dim telNo = data_grid_interview.Rows(e.RowIndex).Cells("Tel No").Value
+
+            AcceptApplicant.setFirstName(firstName)
+            AcceptApplicant.setLastName(lastName)
+            AcceptApplicant.setGender(gender.ToString)
+            AcceptApplicant.setNationalId(nationalId.ToString)
+            AcceptApplicant.setEmail(email.ToString)
+            AcceptApplicant.setTelNumber(telNo.ToString)
+            AcceptApplicant.setIntervieweeId(intervieweeId)
+            AcceptApplicant.Show()
         End If
 
         If data_grid_interview.Columns(e.ColumnIndex).Name = "btn_reject" Then
             Dim intervieweeId = data_grid_interview.Rows(e.RowIndex).Cells("Interviewee Id").Value
             Dim connectToAccess = New Connect_To_Access()
             connectToAccess.rejectApplicant(intervieweeId)
-
-
         End If
     End Sub
 
 
+    Private Sub TabControl1_Selected(ByVal sender As Object, ByVal e As TabControlEventArgs) _
+     Handles TabControl1.Selected
+
+        If e.TabPageIndex = 0 Then
+            Dim connectToSql = New Connect_To_SQL()
+            connectToSql.getApplicantsData(Me.data_grid_applicants)
+        ElseIf e.TabPageIndex = 1 Then
+            Dim connectToAccess = New Connect_To_Access()
+            connectToAccess.getInterviewList(Me.data_grid_interview)
+        ElseIf e.TabPageIndex = 2 Then
+
+        End If
+
+    End Sub
 End Class

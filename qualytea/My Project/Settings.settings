@@ -14,5 +14,8 @@
     <Setting Name="attendance_status" Type="System.String" Scope="User">
       <Value Profile="(Default)">checked_out</Value>
     </Setting>
+    <Setting Name="database_path" Type="System.String" Scope="User">
+      <Value Profile="(Default)">D:\Documents\HR.accdb</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

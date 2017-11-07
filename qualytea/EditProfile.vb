@@ -11,7 +11,7 @@ Public Class EditProfile
         Dim connString As String
         Dim myConnection As OleDbConnection = New OleDbConnection
         provider = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source ="
-        dataFile = "D:\Documents\HR.accdb"
+        dataFile = My.MySettings.Default.database_path
         connString = provider & dataFile
         myConnection.ConnectionString = connString
         myConnection.Open()
@@ -68,7 +68,7 @@ Public Class EditProfile
         Dim connString As String
         Dim myConnection As OleDbConnection = New OleDbConnection
         provider = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source ="
-        dataFile = "D:\Documents\HR.accdb"
+        dataFile = My.MySettings.Default.database_path
         connString = provider & dataFile
         myConnection.ConnectionString = connString
         myConnection.Open()

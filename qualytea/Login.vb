@@ -25,25 +25,27 @@ Public Class cmdlogin
         If userFound = True Then
             Dim empCmd As OleDbCommand = New OleDbCommand("SELECT * FROM [employees] WHERE [employee_id]=" & employeeId & "", myConnection)
             Dim emp As OleDbDataReader = empCmd.ExecuteReader
-            While emp.Read
-                FrmWelcome.lbl_welcome_name.Text = "Hi " & emp("first_name") & ","
-                Dim personalDetailsComponent As New PersonalDetailsComponent
-                landing_page.emp_id.Text = emp("employee_id").ToString
+            'While emp.Read
+            emp.Read()
+            FrmWelcome.lbl_welcome_name.Text = "Hi " & emp("first_name") & ","
+            Dim personalDetailsComponent As New PersonalDetailsComponent
+            landing_page.emp_id.Text = emp("employee_id").ToString
 
-                Dim departmentId As Integer = CInt(emp("department_id").ToString)
-                Dim jobId As Integer = CInt(emp("job_id").ToString)
-                Dim depCmd As OleDbCommand = New OleDbCommand("SELECT * FROM [departments] WHERE [department_id]=" & departmentId & "", myConnection)
-                Dim dep As OleDbDataReader = depCmd.ExecuteReader
-                My.MySettings.Default.attendance_status = emp("attendance_status").ToString
+            Dim departmentId As Integer = CInt(emp("department_id").ToString)
+            Dim jobId As Integer = CInt(emp("job_id").ToString)
+            Dim depCmd As OleDbCommand = New OleDbCommand("SELECT * FROM [departments] WHERE [department_id]=" & departmentId & "", myConnection)
+            Dim dep As OleDbDataReader = depCmd.ExecuteReader
+            My.MySettings.Default.attendance_status = emp("attendance_status").ToString
 
-                Dim jobCmd As OleDbCommand = New OleDbCommand("SELECT * FROM [jobs] WHERE [job_id]=" & jobId & "", myConnection)
-                Dim job As OleDbDataReader = jobCmd.ExecuteReader
-                While job.Read
-                    'personalDetailsComponent.emp_job.Text = job("job_title").ToString
-                End While
-
+            Dim jobCmd As OleDbCommand = New OleDbCommand("SELECT * FROM [jobs] WHERE [job_id]=" & jobId & "", myConnection)
+            Dim job As OleDbDataReader = jobCmd.ExecuteReader
+            While job.Read
+                'personalDetailsComponent.emp_job.Text = job("job_title").ToString
             End While
-            FrmWelcome.Show()
+
+            'End While
+            'FrmWelcome.Show()
+            landing_page.Show()
             Me.Hide()
         Else
             MsgBox("Sorry, username or password invalid!", MsgBoxStyle.OkOnly, "Invalid")

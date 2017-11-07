@@ -30,6 +30,7 @@
         Me.EditProfile1.Hide()
         Me.ChangePassword1.Hide()
         Me.Attendance1.Hide()
+        Me.My_Training.Hide()
 
     End Sub
 
@@ -66,12 +67,19 @@
     End Sub
 
     Private Sub Button2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_time_management.Click
-        
+
     End Sub
 
     Private Sub Button3_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_work_management.Click
         'Dim connectToAccess = New Connect_To_Access()
         'connectToAccess.getNewTrainingList(Me.Performance1.data_grid_new_training, Me.emp_id.Text.ToString)
+        Me.My_Training.Show()
+        Dim connectToAccess = New Connect_To_Access()
+        connectToAccess.getNewTrainingList(Me.My_Training.data_grid_TrNewTraining, Me.emp_id.Text.ToString)
+        connectToAccess.getTrainingManagementList(Me.My_Training.DataGridView2)
+        'connectToAccess.getInProgressTrainingList(Me.My_Training.data_grid_TrProgress, Me.emp_id.ToString)
+        'connectToAccess.getNewTrainingList(Me.My_Training.data_grid_TrComplete, Me.emp_id.ToString)
+
     End Sub
 
     Private Sub Label3_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
@@ -145,13 +153,11 @@
         Me.ChangePassword1.Hide()
         Me.Attendance1.Hide()
         Me.HomeDashboard1.Show()
+        Me.My_Training.Hide()
+        Me.HomeDashboard1.Show()
     End Sub
 
-    Private Sub Performance1_Load(ByVal sender As System.Object, ByVal e As System.EventArgs)
-
+    Private Sub Performance1_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles My_Training.Load
     End Sub
 
-    Private Sub landing_page_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
-
-    End Sub
 End Class

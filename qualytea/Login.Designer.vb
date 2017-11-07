@@ -39,7 +39,7 @@ Partial Class cmdlogin
         Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
         Me.PictureBox1.Location = New System.Drawing.Point(134, 25)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(114, 83)
+        Me.PictureBox1.Size = New System.Drawing.Size(114, 90)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.PictureBox1.TabIndex = 1
         Me.PictureBox1.TabStop = False
@@ -50,7 +50,7 @@ Partial Class cmdlogin
         Me.lbusername.Font = New System.Drawing.Font("Lato", 8.999999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbusername.Location = New System.Drawing.Point(27, 132)
         Me.lbusername.Name = "lbusername"
-        Me.lbusername.Size = New System.Drawing.Size(63, 15)
+        Me.lbusername.Size = New System.Drawing.Size(68, 15)
         Me.lbusername.TabIndex = 2
         Me.lbusername.Text = "Username:"
         '
@@ -60,7 +60,7 @@ Partial Class cmdlogin
         Me.lbpassword.Font = New System.Drawing.Font("Lato", 8.999999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbpassword.Location = New System.Drawing.Point(27, 169)
         Me.lbpassword.Name = "lbpassword"
-        Me.lbpassword.Size = New System.Drawing.Size(60, 15)
+        Me.lbpassword.Size = New System.Drawing.Size(64, 15)
         Me.lbpassword.TabIndex = 3
         Me.lbpassword.Text = "Password:"
         '
@@ -84,7 +84,7 @@ Partial Class cmdlogin
         Me.cbrmbr.AutoSize = True
         Me.cbrmbr.Location = New System.Drawing.Point(39, 217)
         Me.cbrmbr.Name = "cbrmbr"
-        Me.cbrmbr.Size = New System.Drawing.Size(96, 16)
+        Me.cbrmbr.Size = New System.Drawing.Size(97, 17)
         Me.cbrmbr.TabIndex = 6
         Me.cbrmbr.Text = "Remember me!"
         Me.cbrmbr.UseVisualStyleBackColor = True
@@ -93,11 +93,11 @@ Partial Class cmdlogin
         '
         Me.btnlogin.BackColor = System.Drawing.Color.FromArgb(CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.btnlogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnlogin.Font = New System.Drawing.Font("Lato", 8.999999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnlogin.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.999999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnlogin.ForeColor = System.Drawing.SystemColors.ControlLightLight
         Me.btnlogin.Location = New System.Drawing.Point(248, 259)
         Me.btnlogin.Name = "btnlogin"
-        Me.btnlogin.Size = New System.Drawing.Size(83, 33)
+        Me.btnlogin.Size = New System.Drawing.Size(83, 36)
         Me.btnlogin.TabIndex = 7
         Me.btnlogin.Text = "Login"
         Me.btnlogin.UseVisualStyleBackColor = False
@@ -117,7 +117,7 @@ Partial Class cmdlogin
         '
         'cmdlogin
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.MenuBar
         Me.ClientSize = New System.Drawing.Size(366, 319)

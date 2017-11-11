@@ -296,10 +296,10 @@ Public Class Connect_To_Access
     Public Sub getEmployeeLeaves(ByVal dataGrid As DataGridView, ByVal empId As String)
         Try
             myConnection.ConnectionString = connString
-            Dim query = "SELECT * FROM [employee_leaves] WHERE [employee_id]=? AND [leave_id]=?"
+            Dim query = "SELECT * FROM [employee_leaves] WHERE [employee_id]=?"
             Dim table As New DataTable
-            table.Columns.Add("First Name ", GetType(String))
-            table.Columns.Add("Last Name ", GetType(String))
+            'table.Columns.Add("First Name ", GetType(String))
+            'table.Columns.Add("Last Name ", GetType(String))
             table.Columns.Add("Type of Leave", GetType(String))
             table.Columns.Add("Applied At", GetType(String))
             table.Columns.Add("From (Date)", GetType(String))
@@ -310,29 +310,18 @@ Public Class Connect_To_Access
             Using cmd As OleDbCommand = New OleDbCommand(query, myConnection)
                 myConnection.Open()
                 cmd.Parameters.AddWithValue("@p1", empId)
-                cmd.Parameters.AddWithValue("@p2", "new")
                 Using dr As OleDbDataReader = cmd.ExecuteReader
                     While dr.Read
                         If dr.HasRows = True Then
-                            Dim leaveId = dr("leave_id")
-                            Dim query2 = "SELECT * FROM [employee_leaves] WHERE [leave_id]=?"
-                            Using cmd2 As OleDbCommand = New OleDbCommand(query2, myConnection)
-                                cmd2.Parameters.AddWithValue("@p1", leaveId)
-                                Using dr2 As OleDbDataReader = cmd2.ExecuteReader
-                                    While dr2.Read
-                                        If dr2.HasRows = True Then
-                                            table.Rows.Add(dr("first_name"), dr("last_name"), dr("leave_type"), dr("applied_at"), dr("leave_date(from)"), dr("leave_date(until)"), dr("approved_at"), dr("approved_by"))
+                            table.Rows.Add(dr("leave_type"), dr("applied_at"), dr("leave_date(from)"), dr("leave_date(until)"), dr("approved_at"), dr("approved_by"))
 
-                                        End If
-                                    End While
-                                End Using
-                            End Using
                         End If
                     End While
-                    dataGrid.DataSource = table
-                    myConnection.Close()
                 End Using
             End Using
+            dataGrid.DataSource = table
+            myConnection.Close()
+
         Catch ex As Exception
             MsgBox("Connection To Database Failed:" & ex.Message.ToString)
         End Try
@@ -464,5 +453,25 @@ Public Class Connect_To_Access
             MsgBox("Connection To Database Failed:" & ex.Message.ToString)
         End Try
     End Sub
+    Public Sub addToMyLeave(ByVal data As Dictionary(Of String, String))
+        'Should be use to insert data of Employee Leaves tab inside employee_leaves
+        Try
+            Dim accStr = "INSERT INTO employee_leaves([employee_id],[leave_type],[leave_date(from)],[leave_date(until)],[status]) VALUES(@employee_id,@leave_type,@leave_date(from),@leave_date(until),@status)"
+            myConnection.ConnectionString = connString
+            Using accquery As New System.Data.OleDb.OleDbCommand(accStr, myConnection)
+                myConnection.Open()
+                accquery.Parameters.AddWithValue("@employee_id", data.Item("employee_id").ToString)
+                accquery.Parameters.AddWithValue("@leave_type", data.Item("leave_type").ToString)
+                accquery.Parameters.AddWithValue("@leave_date(from)", data.Item("leave_date(from)").ToString)
+                accquery.Parameters.AddWithValue("@leave_date(until)", data.Item("leave_date(until)").ToString)
+                accquery.Parameters.AddWithValue("@status", data.Item("status").ToString)
+                accquery.ExecuteNonQuery()
+                myConnection.Close()
+            End Using
+            'MsgBox("Leave succesfully added into database.")
+        Catch ex As Exception
+            MsgBox("Connection To Database Failed: " & ex.Message.ToString)
+        End Try
 
+    End Sub
 End Class

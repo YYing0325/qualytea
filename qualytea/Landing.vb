@@ -54,7 +54,6 @@
 
         Me.JobApplicantsComponent1.Hide()
         Me.HomeDashboard1.Hide()
-        Me.Time_Management1.Hide()
         Me.Leave_H_Management1.Hide()
         Me.Payroll_H_Management1.Hide()
 
@@ -72,7 +71,6 @@
         Me.PersonalDetailsComponent1.Hide()
         Me.EditProfile1.Hide()
         Me.HomeDashboard1.Hide()
-        Me.Time_Management1.Hide()
         Me.Leave_H_Management1.Hide()
         Me.Payroll_H_Management1.Hide()
 
@@ -84,7 +82,6 @@
         Me.EditProfile1.Hide()
         Me.ChangePassword1.Hide()
         Me.Attendance1.Hide()
-        Me.Time_Management1.Hide()
         Me.Payroll_H_Management1.Hide()
         Dim connectToAccess = New Connect_To_Access
         'connectToAccess.getNewLeaveList(Me.Leave_H_Management1.datagrid_my_leave, Me.emp_id.Text.ToString)
@@ -169,7 +166,6 @@
         Me.ChangePassword1.Hide()
         Me.Attendance1.Hide()
         Me.HomeDashboard1.Show()
-        Me.Time_Management1.Hide()
         Me.Leave_H_Management1.Hide()
         Me.Payroll_H_Management1.Hide()
     End Sub
@@ -181,7 +177,6 @@
         Me.ChangePassword1.Hide()
         Me.Attendance1.Hide()
         Me.HomeDashboard1.Show()
-        Me.Time_Management1.Hide()
         Me.Leave_H_Management1.Hide()
         Me.Payroll_H_Management1.Show()
         Dim connectToAccess = New Connect_To_Access()

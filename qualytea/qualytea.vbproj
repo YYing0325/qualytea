@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>9.0.30729</ProductVersion>
+    <ProductVersion>9.0.21022</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{6DF65D33-5633-4427-814D-BDF3EF1DCA75}</ProjectGuid>
     <OutputType>WinExe</OutputType>
@@ -331,15 +331,19 @@
   <ItemGroup>
     <EmbeddedResource Include="Claims Application Form.resx">
       <DependentUpon>Claims Application Form.vb</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Leave Application Form.resx">
       <DependentUpon>Leave Application Form.vb</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Leave H Management.resx">
       <DependentUpon>Leave H Management.vb</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Leave Report.resx">
       <DependentUpon>Leave Report.vb</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="My_Training Detail.resx">
       <DependentUpon>My_Training Detail.vb</DependentUpon>
@@ -363,6 +367,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.vb</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="HomeDashboard.resx">
       <DependentUpon>HomeDashboard.vb</DependentUpon>
@@ -374,6 +379,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Payroll H Management.resx">
       <DependentUpon>Payroll H Management.vb</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Performance_test.resx">
       <DependentUpon>Performance_test.vb</DependentUpon>

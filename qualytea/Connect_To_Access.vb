@@ -157,81 +157,6 @@ Public Class Connect_To_Access
 
     End Sub
 
-    Public Sub getAttendanceList(ByVal dataGrid As DataGridView, ByVal empId As String)
-        Try
-            myConnection.ConnectionString = connString
-            Dim query = "SELECT * FROM [employee_attendance] WHERE [employee_id]=?"
-            Dim table As New DataTable
-            table.Columns.Add("Time In", GetType(String))
-            table.Columns.Add("Time Out", GetType(String))
-            table.Columns.Add("Working Hour", GetType(String))
-            table.Columns.Add("Note", GetType(String))
-            Using cmd As OleDbCommand = New OleDbCommand(query, myConnection)
-                myConnection.Open()
-                cmd.Parameters.AddWithValue("@p1", empId)
-                Using dr As OleDbDataReader = cmd.ExecuteReader
-                    While dr.Read
-                        If dr.HasRows = True Then
-                            table.Rows.Add(dr("check_in_at"), dr("check_out_at"), dr("working_minutes"), dr("note"))
-                        End If
-                    End While
-                End Using
-                
-                dataGrid.DataSource = table
-                myConnection.Close()
-            End Using
-        Catch ex As Exception
-            MsgBox("Connection To Database Failed:" & ex.Message.ToString)
-        End Try
-    End Sub
-    Public Sub getNewTrainingList(ByVal dataGrid As DataGridView, ByVal empId As String)
-        Try
-            myConnection.ConnectionString = connString
-            Dim query = "SELECT * FROM [employee_trainings] WHERE [employee_id]=? AND [status]=?" 'this will show only new employee
-            'Dim query = "SELECT * FROM [employee_trainings]" 'this will show all training course
-            Dim table As New DataTable
-            table.Columns.Add("Code", GetType(String))
-            table.Columns.Add("Course", GetType(String))
-            table.Columns.Add("Course Description", GetType(String))
-            table.Columns.Add("Date", GetType(String))
-            table.Columns.Add("Time", GetType(String))
-            table.Columns.Add("Venue", GetType(String))
-            table.Columns.Add("Required Dept", GetType(String))
-
-
-            Using cmd As OleDbCommand = New OleDbCommand(query, myConnection)
-                myConnection.Open()
-                cmd.Parameters.AddWithValue("@p1", empId) 'remark this so that will show all from training table.
-                cmd.Parameters.AddWithValue("@p2", "new") 'remark this so that will show all from training table.
-                Using dr As OleDbDataReader = cmd.ExecuteReader
-                    While dr.Read
-                        If dr.HasRows = True Then
-                            'table.Rows.Add(dr("check_in_at"), dr("check_out_at"), dr("working_minutes"), dr("note"))
-                            Dim trainingId = dr("training_id")
-                            Dim query2 = "SELECT * FROM [trainings] WHERE [training_id]=?"
-                            'Dim query2 = "SELECT * FROM [trainings]"
-                            Using cmd2 As OleDbCommand = New OleDbCommand(query2, myConnection)
-                                cmd2.Parameters.AddWithValue("@p1", trainingId)
-                                Using dr2 As OleDbDataReader = cmd2.ExecuteReader
-                                    While dr2.Read
-                                        If dr2.HasRows = True Then
-                                            table.Rows.Add(dr2("training_code"), dr2("training_name"), dr2("training_description"), dr2("Training_datetime"), dr2("expired_at"), dr2("venue"))
-                                        End If
-                                    End While
-                                End Using
-                            End Using
-                        End If
-                    End While
-                End Using
-
-                dataGrid.DataSource = table
-                myConnection.Close()
-            End Using
-        Catch ex As Exception
-            MsgBox("Connection To Database Failed:" & ex.Message.ToString)
-        End Try
-    End Sub
-
     Public Sub getInProgressTrainingList(ByVal dataGrid As DataGridView, ByVal empId As String)
         Try
             myConnection.ConnectionString = connString
@@ -562,8 +487,6 @@ Public Class Connect_To_Access
         End Try
     End Sub
 
-
-
     Public Function getEvaluation(ByVal empId As String, ByVal performanceYear As String) As Dictionary(Of String, String)
         Dim dict = New Dictionary(Of String, String)
         myConnection.ConnectionString = connString
@@ -661,6 +584,396 @@ Public Class Connect_To_Access
         Catch ex As Exception
             MsgBox("Connection To Database Failed: " & ex.Message.ToString)
         End Try
+    End Sub
+
+    Public Sub getAttendanceList(ByVal dataGrid As DataGridView, ByVal empId As String)
+        Try
+            myConnection.ConnectionString = connString
+            Dim query = "SELECT * FROM [employee_attendance] WHERE [employee_id]=?"
+            Dim table As New DataTable
+            table.Columns.Add("Date", GetType(Date))
+            table.Columns.Add("Time In", GetType(String))
+            table.Columns.Add("Time Out", GetType(String))
+            table.Columns.Add("Working Minutes", GetType(String))
+            table.Columns.Add("Note", GetType(String))
+            Using cmd As OleDbCommand = New OleDbCommand(query, myConnection)
+                myConnection.Open()
+                cmd.Parameters.AddWithValue("@p1", empId)
+                Using dr As OleDbDataReader = cmd.ExecuteReader
+                    While dr.Read
+                        If dr.HasRows = True Then
+                            table.Rows.Add(dr("attendance_date"), dr("check_in_at"), dr("check_out_at"), dr("working_minutes"), dr("note"))
+                        End If
+                    End While
+                End Using
+
+                dataGrid.DataSource = table
+
+                
+                myConnection.Close()
+            End Using
+        Catch ex As Exception
+            MsgBox("Connection To Database Failed:" & ex.Message.ToString)
+        End Try
+    End Sub
+
+    Public Sub getNewLeaveList(ByVal dataGrid As DataGridView, ByVal empId As String)
+        Try
+            myConnection.ConnectionString = connString
+            Dim query = "SELECT * FROM [leave] WHERE [employee_id]=?"
+            Dim table As New DataTable
+            table.Columns.Add("Type of Leave", GetType(String))
+            table.Columns.Add("Entitled Leave", GetType(String))
+            table.Columns.Add("Taken Leave", GetType(String))
+            table.Columns.Add("Balance", GetType(String))
+
+            Using cmd As OleDbCommand = New OleDbCommand(query, myConnection)
+                myConnection.Open()
+                cmd.Parameters.AddWithValue("@p1", empId)
+                'cmd.Parameters.AddWithValue("@p2", "new")
+                Using dr As OleDbDataReader = cmd.ExecuteReader
+                    While dr.Read
+                        If dr.HasRows = True Then
+                            table.Rows.Add(dr("type_of_leave"), dr("entitled_leave"), dr("taken_leave"), dr("balance"))
+
+                        End If
+                    End While
+                End Using
+
+                dataGrid.DataSource = table
+                myConnection.Close()
+            End Using
+        Catch ex As Exception
+            MsgBox("Connection To Database Failed:" & ex.Message.ToString)
+        End Try
+    End Sub
+
+    Public Sub getNewTrainingList(ByVal dataGrid As DataGridView, ByVal empId As String)
+        Try
+            myConnection.ConnectionString = connString
+            Dim query = "SELECT * FROM [employee_trainings] WHERE [employee_id]=? AND [status]=?"
+            Dim table As New DataTable
+            table.Columns.Add("Code", GetType(String))
+            table.Columns.Add("Course", GetType(String))
+            table.Columns.Add("Course Description", GetType(String))
+            table.Columns.Add("Date", GetType(String))
+            table.Columns.Add("Expired At", GetType(String))
+            table.Columns.Add("Location", GetType(String))
+
+            Using cmd As OleDbCommand = New OleDbCommand(query, myConnection)
+                myConnection.Open()
+                cmd.Parameters.AddWithValue("@p1", empId)
+                cmd.Parameters.AddWithValue("@p2", "new")
+                Using dr As OleDbDataReader = cmd.ExecuteReader
+                    While dr.Read
+                        If dr.HasRows = True Then
+                            Dim trainingId = dr("training_id")
+                            Dim query2 = "SELECT * FROM [trainings] WHERE [training_id]=?"
+                            Using cmd2 As OleDbCommand = New OleDbCommand(query2, myConnection)
+                                cmd2.Parameters.AddWithValue("@p1", trainingId)
+                                Using dr2 As OleDbDataReader = cmd2.ExecuteReader
+                                    While dr2.Read
+                                        If dr2.HasRows = True Then
+                                            table.Rows.Add(dr2("training_id"), dr2("training_name"), dr2("training_description"), dr2("training_datetime"), dr2("expired_at"), dr2("location"))
+                                        End If
+                                    End While
+                                End Using
+                            End Using
+
+                        End If
+                    End While
+                End Using
+
+                dataGrid.DataSource = table
+                myConnection.Close()
+            End Using
+        Catch ex As Exception
+            MsgBox("Connection To Database Failed:" & ex.Message.ToString)
+        End Try
+    End Sub
+
+    Public Sub getApplicationList(ByVal dataGrid As DataGridView, ByVal requestId As String)
+        Try
+            myConnection.ConnectionString = connString
+            Dim query = "SELECT * FROM [leave_history] WHERE [leave_request_id]=?"
+            Dim table As New DataTable
+            table.Columns.Add("Type of Leave", GetType(String))
+            table.Columns.Add("From (Date)", GetType(String))
+            table.Columns.Add("Until (Date)", GetType(String))
+            table.Columns.Add("Status", GetType(String))
+            table.Columns.Add("Remark", GetType(String))
+
+            Using cmd As OleDbCommand = New OleDbCommand(query, myConnection)
+                myConnection.Open()
+                cmd.Parameters.AddWithValue("@p1", requestId)
+                Using dr As OleDbDataReader = cmd.ExecuteReader
+                    While dr.Read
+                        If dr.HasRows = True Then
+                            Dim reqId = dr("leave request_id")
+                            table.Rows.Add(dr("type_of_leave"), dr("from_(date)"), dr("until_(date)"), dr("status"), dr("remark"))
+                        End If
+                    End While
+                End Using
+
+                dataGrid.DataSource = table
+                myConnection.Close()
+            End Using
+        Catch ex As Exception
+            MsgBox("Connection To Database Failed:" & ex.Message.ToString)
+        End Try
+    End Sub
+
+    Public Sub getEmployeeLeaves(ByVal dataGrid As DataGridView, ByVal empId As String)
+        Try
+            myConnection.ConnectionString = connString
+            Dim query = "SELECT * FROM [employee_leaves] WHERE [employee_id]=?"
+            Dim table As New DataTable
+            'table.Columns.Add("First Name ", GetType(String))
+            'table.Columns.Add("Last Name ", GetType(String))
+            table.Columns.Add("Type of Leave", GetType(String))
+            table.Columns.Add("Applied At", GetType(String))
+            table.Columns.Add("From (Date)", GetType(String))
+            table.Columns.Add("Until (Date)", GetType(String))
+            table.Columns.Add("Apporved At", GetType(String))
+            table.Columns.Add("Approved By", GetType(String))
+
+            Using cmd As OleDbCommand = New OleDbCommand(query, myConnection)
+                myConnection.Open()
+                cmd.Parameters.AddWithValue("@p1", empId)
+                Using dr As OleDbDataReader = cmd.ExecuteReader
+                    While dr.Read
+                        If dr.HasRows = True Then
+                            table.Rows.Add(dr("leave_type"), dr("applied_at"), dr("leave_date(from)"), dr("leave_date(until)"), dr("approved_at"), dr("approved_by"))
+
+                        End If
+                    End While
+                End Using
+            End Using
+            dataGrid.DataSource = table
+            myConnection.Close()
+
+        Catch ex As Exception
+            MsgBox("Connection To Database Failed:" & ex.Message.ToString)
+        End Try
+    End Sub
+
+    Public Sub addToMyLeave(ByVal data As Dictionary(Of String, String))
+        'Should be use to insert data of Employee Leaves tab inside employee_leaves
+        Try
+            Dim accStr = "INSERT INTO employee_leaves([employee_id],[leave_type],[leave_date(from)],[leave_date(until)],[status]) VALUES(@employee_id,@leave_type,@leave_date(from),@leave_date(until),@status)"
+            myConnection.ConnectionString = connString
+            Using accquery As New System.Data.OleDb.OleDbCommand(accStr, myConnection)
+                myConnection.Open()
+                accquery.Parameters.AddWithValue("@employee_id", data.Item("employee_id").ToString)
+                accquery.Parameters.AddWithValue("@leave_type", data.Item("leave_type").ToString)
+                accquery.Parameters.AddWithValue("@leave_date(from)", data.Item("leave_date(from)").ToString)
+                accquery.Parameters.AddWithValue("@leave_date(until)", data.Item("leave_date(until)").ToString)
+                accquery.Parameters.AddWithValue("@status", data.Item("status").ToString)
+                accquery.ExecuteNonQuery()
+                myConnection.Close()
+            End Using
+            'MsgBox("Leave succesfully added into database.")
+        Catch ex As Exception
+            MsgBox("Connection To Database Failed: " & ex.Message.ToString)
+        End Try
 
     End Sub
+
+    Public Sub getEmployeeLeavesRequest(ByVal dataGrid As DataGridView, ByVal empId As String)
+        Try
+            myConnection.ConnectionString = connString
+            Dim query = "SELECT * FROM [employee_leaves] WHERE [employee_id]=?"
+            Dim table As New DataTable
+            'table.Columns.Add("First Name ", GetType(String))
+            'table.Columns.Add("Last Name ", GetType(String))
+            table.Columns.Add("Type of Leave", GetType(String))
+            table.Columns.Add("Applied At", GetType(String))
+            table.Columns.Add("From (Date)", GetType(String))
+            table.Columns.Add("Until (Date)", GetType(String))
+            table.Columns.Add("Apporved At", GetType(String))
+            table.Columns.Add("Approved By", GetType(String))
+
+
+            Using cmd As OleDbCommand = New OleDbCommand(query, myConnection)
+                myConnection.Open()
+                cmd.Parameters.AddWithValue("@p1", empId)
+                'cmd.Parameters.AddWithValue("@p2", "new")
+                Using dr As OleDbDataReader = cmd.ExecuteReader
+                    While dr.Read
+                        If dr.HasRows = True Then
+                            Dim leaveId = dr("leave_id")
+                            'Dim query2 = "SELECT * FROM [employee_leaves] WHERE [leave_id]=?"
+                            'Using cmd2 As OleDbCommand = New OleDbCommand(query2, myConnection)
+                            'cmd2.Parameters.AddWithValue("@p1", leaveId)
+                            'Using dr2 As OleDbDataReader = cmd2.ExecuteReader
+                            'While dr2.Read
+                            'If dr2.HasRows = True Then
+                            table.Rows.Add(dr("leave_type"), dr("applied_at"), dr("leave_date(from)"), dr("leave_date(until)"), dr("approved_at"), dr("approved_by"))
+
+                        End If
+                    End While
+                    dataGrid.DataSource = table
+                    If dataGrid.ColumnCount.Equals(8) Then
+                        Dim btn As New DataGridViewButtonColumn()
+                        dataGrid.Columns.Add(btn)
+                        btn.HeaderText = "Status"
+                        btn.Text = "Accept"
+                        btn.Name = "btn_accept"
+                        btn.ToolTipText = "Click to approve the leaves"
+                        btn.UseColumnTextForButtonValue = True
+
+                        Dim btn1 As New DataGridViewButtonColumn()
+                        dataGrid.Columns.Add(btn1)
+                        btn1.HeaderText = "Status"
+                        btn1.Text = "Reject"
+                        btn1.Name = "btn_reject"
+                        btn.ToolTipText = "Click to reject the leaves"
+                        btn1.UseColumnTextForButtonValue = True
+                    End If
+                End Using
+            End Using
+            'End If
+            'End While
+            dataGrid.DataSource = table
+            myConnection.Close()
+            'End Using
+            'End Using
+        Catch ex As Exception
+            MsgBox("Connection To Database Failed:" & ex.Message.ToString)
+        End Try
+    End Sub
+
+    Public Sub getClaimsList(ByVal dataGrid As DataGridView, ByVal empId As String)
+        Try
+            myConnection.ConnectionString = connString
+            Dim query = "SELECT * FROM [claims] WHERE [employee_id]=?"
+            Dim table As New DataTable
+            table.Columns.Add("Type of Claims", GetType(String))
+            table.Columns.Add("Total Amount", GetType(String))
+            table.Columns.Add("Project/Event", GetType(String))
+            table.Columns.Add("Purposes", GetType(String))
+            table.Columns.Add("Attachment", GetType(String))
+
+            Using cmd As OleDbCommand = New OleDbCommand(query, myConnection)
+                myConnection.Open()
+                cmd.Parameters.AddWithValue("@p1", empId)
+                Using dr As OleDbDataReader = cmd.ExecuteReader
+                    While dr.Read
+                        If dr.HasRows = True Then
+                            table.Rows.Add(dr("type_of_claims"), dr("total_amount"), dr("project/event"), dr("purposes"), dr("attachment"))
+
+                        End If
+                    End While
+                End Using
+
+                dataGrid.DataSource = table
+                myConnection.Close()
+            End Using
+        Catch ex As Exception
+            MsgBox("Connection To Database Failed:" & ex.Message.ToString)
+        End Try
+    End Sub
+
+    Public Sub getClaimsStatus(ByVal dataGrid As DataGridView, ByVal empId As String)
+        Try
+            myConnection.ConnectionString = connString
+            Dim query = "SELECT * FROM [claims] WHERE [employee_id]=?"
+            Dim table As New DataTable
+            table.Columns.Add("Type of Claims", GetType(String))
+            table.Columns.Add("Total Amount", GetType(String))
+            table.Columns.Add("Project/Event", GetType(String))
+            table.Columns.Add("Purposes", GetType(String))
+            table.Columns.Add("Status", GetType(String))
+            table.Columns.Add("Remarks", GetType(String))
+
+            Using cmd As OleDbCommand = New OleDbCommand(query, myConnection)
+                myConnection.Open()
+                cmd.Parameters.AddWithValue("@p1", empId)
+                Using dr As OleDbDataReader = cmd.ExecuteReader
+                    While dr.Read
+                        If dr.HasRows = True Then
+                            table.Rows.Add(dr("type_of_claims"), dr("total_amount"), dr("project/event"), dr("purposes"), dr("status"), dr("remarks"))
+
+                        End If
+                    End While
+                End Using
+
+                dataGrid.DataSource = table
+                myConnection.Close()
+            End Using
+        Catch ex As Exception
+            MsgBox("Connection To Database Failed:" & ex.Message.ToString)
+        End Try
+    End Sub
+
+    Public Sub punchIn(ByVal empId As String, ByVal punchInTime As DateTime, ByVal note As String)
+        Try
+            Dim accStr = "INSERT INTO [employee_attendance]([employee_id],[check_in_at],[attendance_date],[note]) VALUES(@employee_id,@check_in_at,@attendance_date,@note)"
+            myConnection.ConnectionString = connString
+            Using accquery As New System.Data.OleDb.OleDbCommand(accStr, myConnection)
+                myConnection.Open()
+                accquery.Parameters.AddWithValue("@employee_id", Convert.ToInt16(empId))
+                accquery.Parameters.AddWithValue("@check_in_at", punchInTime.TimeOfDay)
+                accquery.Parameters.AddWithValue("@attendance_date", punchInTime.Date)
+                accquery.Parameters.AddWithValue("@note", note)
+                accquery.ExecuteNonQuery()
+                myConnection.Close()
+            End Using
+        Catch ex As Exception
+            MsgBox("Connection To Database Failed: " & ex.Message.ToString)
+        End Try
+        Dim var = "checked_in"
+        Try
+            Dim query = "UPDATE [employees] SET [attendance_status]='" & var & "' WHERE [employee_id]=" & empId
+            Using cmd = New OleDbCommand(query, myConnection)
+                myConnection.Open()
+                cmd.ExecuteNonQuery()
+                myConnection.Close()
+            End Using
+
+            My.Settings.punch_in_time = punchInTime
+            My.Settings.punch_in_note = note
+            My.Settings.attendance_status = var
+        Catch ex As Exception
+            MsgBox("Connection To Employee Database Failed: " & ex.Message.ToString)
+        End Try
+        Me.getAttendanceList(landing_page.HomeDashboard1.datagrid_attendance, empId)
+
+    End Sub
+
+    Public Sub punchOut(ByVal empId As String, ByVal punchOutTime As DateTime)
+        Dim punchInTime = Format(My.Settings.punch_in_time, "h:mm:ss tt")
+        Dim punchInDate = Format(My.Settings.punch_in_time.Date, "MM/dd/yyyy")
+        ' still need note as param
+        Dim note = My.Settings.punch_in_note.ToString
+        Dim totalWorkingMinutes = (punchOutTime - My.Settings.punch_in_time).TotalMinutes
+        Try
+            Dim query2 = "UPDATE [employee_attendance] SET [check_out_at] = #" & punchOutTime.ToShortTimeString & "#, [working_minutes] = " & totalWorkingMinutes & ", [note]='" & note & "'" & _
+       " WHERE [employee_id] = " & empId & " AND [check_in_at] = #" & punchInTime & "# AND [attendance_date] = #" & punchInDate & "#"
+            myConnection.ConnectionString = connString
+
+            Using cmd = New OleDbCommand(query2, myConnection)
+                myConnection.Open()
+                cmd.ExecuteNonQuery()
+                myConnection.Close()
+            End Using
+        Catch ex As Exception
+            MsgBox("Connection To Database Failed: " & ex.Message.ToString)
+        End Try
+
+        Dim var = "checked_out"
+        Try
+            Dim query = "UPDATE [employees] SET [attendance_status]='" & var & "' WHERE [employee_id]=" & empId
+            Using cmd = New OleDbCommand(query, myConnection)
+                myConnection.Open()
+                cmd.ExecuteNonQuery()
+                myConnection.Close()
+            End Using
+            My.Settings.attendance_status = var
+        Catch ex As Exception
+            MsgBox("Connection To Employee Database Failed: " & ex.Message.ToString)
+        End Try
+        Me.getAttendanceList(landing_page.HomeDashboard1.datagrid_attendance, empId)
+    End Sub
+
 End Class

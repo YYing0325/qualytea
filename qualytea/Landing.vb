@@ -98,9 +98,9 @@
 
     Private Sub Button3_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_training_management.Click
         Me.TrainingManagement1.Show()
-        'Dim connectToAccess = New Connect_To_Access()
-        'connectToAccess.getNewTrainingList(Me.My_Training.data_grid_TrNewTraining, Me.emp_id.Text.ToString)
-        'connectToAccess.getTrainingManagementList(Me.My_Training.DataGridView2)
+        Dim connectToAccess = New Connect_To_Access()
+        'connectToAccess.getNewTrainingList(Me.TrainingManagement1.data_grid_TrNewTraining, Me.emp_id.Text.ToString)
+        connectToAccess.getTrainingManagementList(Me.TrainingManagement1.DataGridView2)
 
         Me.HomeDashboard1.Hide()
         Me.PersonalDetailsComponent1.Hide()

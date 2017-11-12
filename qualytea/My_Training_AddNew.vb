@@ -8,6 +8,7 @@ Public Class My_Training_AddNew
     Private dataFile = My.MySettings.Default.database_path
     Private connString As Object = provider & dataFile
     Private Mode As Char = "S"
+    Private CurrentID As String = ""
 
     Private Sub SplitContainer1_Panel2_Paint(ByVal sender As System.Object, ByVal e As System.Windows.Forms.PaintEventArgs)
 
@@ -23,7 +24,7 @@ Public Class My_Training_AddNew
         myConnection.ConnectionString = connString
         myConnection.Open()
         Dim query1 As String
-        query1 = "INSERT INTO trainings (training_code,training_name,training_type_id,training_description,training_datetime,training_time,Expired_at,Venue,created_at,created_by,remark)VALUES(?,?,?,?,?,?,?,?,?,?,?)"
+        query1 = "INSERT INTO trainings (training_code,training_name,training_type_id,training_description,training_datetime,training_time,Expired_at,Venue,created_at,created_by,required_dept,required_role,required_Status)VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?)"
         Dim cmd As OleDbCommand = New OleDbCommand(query1, myConnection)
         cmd.Parameters.Add(New OleDbParameter("training_code", CType(txt_trCode101.Text, String)))
         cmd.Parameters.Add(New OleDbParameter("training_name", CType(txt_trCourse101.Text, String)))
@@ -35,7 +36,9 @@ Public Class My_Training_AddNew
         cmd.Parameters.Add(New OleDbParameter("Venue", CType(cbx_trVenue101.SelectedValue.ToString, String)))
         cmd.Parameters.Add(New OleDbParameter("created_at", CType(New DateTime, String)))
         cmd.Parameters.Add(New OleDbParameter("created_by", CType("5", String)))
-        cmd.Parameters.Add(New OleDbParameter("Remark", CType(txtTrainingType, String)))
+        cmd.Parameters.Add(New OleDbParameter("required_dept", CType(txtTrainingType, String)))
+        cmd.Parameters.Add(New OleDbParameter("required_role", CType(cbx_trRoles101.SelectedValue.ToString, String)))
+        cmd.Parameters.Add(New OleDbParameter("required_Status", CType(cbx_trStatus101.SelectedItem.ToString, String)))
         Try
             cmd.ExecuteNonQuery()
             MsgBox("Successful Submit !!!", MsgBoxStyle.OkOnly, "Record Submitted")
@@ -43,7 +46,7 @@ Public Class My_Training_AddNew
             MsgBox(ex.Message, MsgBoxStyle.OkOnly, "OK")
         End Try
         myConnection.Close()
-        'My.Forms.landing_page.MyTraining1.RefeshDataGrid()
+        My.Forms.landing_page.TrainingManagement1.RefeshDataGrid()
         Me.Close()
     End Sub
 
@@ -53,11 +56,16 @@ Public Class My_Training_AddNew
 
 
     Private Sub My_Training_AddNew_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
-
+        'TODO: This line of code loads data into the 'HRDataSet.jobs' table. You can move, or remove it, as needed.
+        Me.JobsTableAdapter.Fill(Me.HRDataSet.jobs)
+        
     End Sub
     Private Sub LoadLocationFromDatabase()
         'TODO: This line of code loads data into the 'HRDataSet.locations' table. You can move, or remove it, as needed.
+        Me.HRDataSet.Clear()
+
         Me.LocationsTableAdapter.Fill(Me.HRDataSet.locations)
+        Me.JobsTableAdapter.Fill(Me.HRDataSet.jobs)
     End Sub
 
     Private Sub cbx_trVenue101_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cbx_trVenue101.SelectedIndexChanged
@@ -73,6 +81,7 @@ Public Class My_Training_AddNew
     End Sub
 
     Public Sub OnEditLoad(ByVal id As String, ByVal mode As Char)
+        Me.CurrentID = id
         Me.bt_submit101.Enabled = False
         Me.bt_submit101.Visible = False
         Me.bt_Save101.Enabled = True
@@ -80,7 +89,7 @@ Public Class My_Training_AddNew
         Me.LoadLocationFromDatabase()
         'Dim cbxTrainigtype As CheckBox = tr_gpbx101.
         'Dim txtTrainingType As String = GetTrainingTypeList()
-        
+
         Try
             myConnection.ConnectionString = connString
             myConnection.Open()
@@ -97,7 +106,9 @@ Public Class My_Training_AddNew
                         dtp_trDate101.Value = dr2("training_datetime").ToString
                         txt_trTime101.Text = dr2("training_time").ToString
                         cbx_trVenue101.SelectedValue = dr2("venue").ToString
-                        Dim txtTrainingType As String = dr2("remark").ToString
+                        cbx_trRoles101.SelectedValue = dr2("required_role").ToString
+                        cbx_trStatus101.SelectedValue = dr2("required_status").ToString
+                        Dim txtTrainingType As String = dr2("required_dept").ToString
                         Dim patern As String = "\,"
                         Dim TrainingTypeList() As String = Regex.Split(txtTrainingType, ",")
                         For Each trainingtype As String In TrainingTypeList
@@ -109,25 +120,13 @@ Public Class My_Training_AddNew
                                 Case trainingtype.Equals("3")
                                     cb_trHRDept.Checked = True
                                 Case trainingtype.Equals("4")
-                                    cb_trTaxEmployees.Checked = True
+                                    cb_trTaxDepartment.Checked = True
                                 Case trainingtype.Equals("5")
                                     cb_trSafetyDept.Checked = True
                                 Case trainingtype.Equals("6")
                                     cb_trSalesDept.Checked = True
                                 Case trainingtype.Equals("7")
                                     cb_trPurchasingDept.Checked = True
-                                Case trainingtype.Equals("8")
-                                    cb_trAllemployee.Checked = True
-                                Case trainingtype.Equals("9")
-                                    cb_trAllManagers.Checked = True
-                                Case trainingtype.Equals("10")
-                                    cb_trSocial.Checked = True
-                                Case trainingtype.Equals("11")
-                                    cb_trTearista.Checked = True
-                                Case trainingtype.Equals("12")
-                                    cb_trWaiterWaitress.Checked = True
-                                Case trainingtype.Equals("14")
-                                    cb_trNewEmployee.Checked = True
                             End Select
 
                         Next
@@ -151,20 +150,21 @@ Public Class My_Training_AddNew
         myConnection.ConnectionString = connString
         myConnection.Open()
         Dim query1 As String
-        query1 = "UPDATE [trainings] SET [training_code]=?,[training_name]=?,[training_type_id]=?,[training_description]=?,[training_datetime]=?,[training_time]=?,[Expired_at]=?,[Venue]=?,[created_at]=?,[created_by]=?,[remark]=? WHERE [training_id]=?"
+        query1 = "UPDATE [trainings] SET [training_code]=""" + txt_trCode101.Text
+        query1 += """ ,[training_name]=""" + txt_trCourse101.Text
+        query1 += """ ,[training_type_id]=""2"" ,[training_description]=""" + txt_courseDesc101.Text
+        query1 += """ ,[training_datetime]=""" + dtp_trDate101.Value.ToString
+        query1 += """ ,[training_time]=""" + txt_trTime101.Text
+        query1 += """ ,[Expired_at]=""" + New DateTime
+        query1 += """ ,[Venue]=""" + cbx_trVenue101.SelectedValue.ToString
+        query1 += """ ,[created_at]=""" + New DateTime
+        query1 += """ ,[created_by]=""" + "5"
+        query1 += """ ,[required_role]=""" + cbx_trRoles101.SelectedValue.ToString
+        query1 += """ ,[required_status]=""" + cbx_trStatus101.SelectedItem.ToString
+        query1 += """ ,[required_dept]=""" + txtTrainingType.ToString
+        query1 += """  WHERE [training_id]=" + Me.CurrentID + ""
+
         Dim cmd As OleDbCommand = New OleDbCommand(query1, myConnection)
-        cmd.Parameters.Add(New OleDbParameter("training_code", CType(txt_trCode101.Text, String)))
-        cmd.Parameters.Add(New OleDbParameter("training_name", CType(txt_trCourse101.Text, String)))
-        cmd.Parameters.Add(New OleDbParameter("training_type_id", CType("2", String)))
-        cmd.Parameters.Add(New OleDbParameter("training_description", CType(txt_courseDesc101.Text, String)))
-        cmd.Parameters.Add(New OleDbParameter("training_datetime", CType(dtp_trDate101.Value.ToString, String)))
-        cmd.Parameters.Add(New OleDbParameter("training_time", CType(txt_trTime101.Text, String)))
-        cmd.Parameters.Add(New OleDbParameter("Expired_at", CType(New DateTime, String)))
-        cmd.Parameters.Add(New OleDbParameter("Venue", CType(cbx_trVenue101.SelectedValue.ToString, String)))
-        cmd.Parameters.Add(New OleDbParameter("created_at", CType(New DateTime, String)))
-        cmd.Parameters.Add(New OleDbParameter("created_by", CType("5", String)))
-        cmd.Parameters.Add(New OleDbParameter("Remark", CType(txtTrainingType, String)))
-        cmd.Parameters.Add(New OleDbParameter("training_id", CType(txtTrainingType, String)))
         Try
             cmd.ExecuteNonQuery()
             MsgBox("Successful Submit !!!", MsgBoxStyle.OkOnly, "Record Submitted")
@@ -172,7 +172,7 @@ Public Class My_Training_AddNew
             MsgBox(ex.Message, MsgBoxStyle.OkOnly, "OK")
         End Try
         myConnection.Close()
-        'My.Forms.landing_page.My_Training.RefeshDataGrid()
+        My.Forms.landing_page.TrainingManagement1.RefeshDataGrid()
         Me.Close()
     End Sub
 
@@ -192,29 +192,17 @@ Public Class My_Training_AddNew
             If gbCheck.Checked Then
                 'gbCheckList += "   " & gbCheck.Text
                 Select Case gbCheck.Text
-                    Case "New Employee"
-                        txtTrainingType += "14,"
                     Case "Finance Department"
-                        txtTrainingType += "2,"
-                    Case "Human Resourse and Administration Department"
-                        txtTrainingType += "3,"
-                    Case "Tax Employees"
-                        txtTrainingType += "4,"
-                    Case "Food Safety and Environmental Department"
-                        txtTrainingType += "5,"
-                    Case "Sales and Marketing Department"
-                        txtTrainingType += "6,"
-                    Case "Purchasing Department"
-                        txtTrainingType += "7,"
-                    Case "All Employee"
                         txtTrainingType += "8,"
-                    Case "All Managers"
+                    Case "Human Resourse and Administration Department"
+                        txtTrainingType += "2,"
+                    Case "Tax Department"
                         txtTrainingType += "9,"
-                    Case "Social Media Officer"
+                    Case "Food Safety and Environmental Department"
                         txtTrainingType += "10,"
-                    Case "Tearista"
+                    Case "Sales and Marketing Department"
                         txtTrainingType += "11,"
-                    Case "Waiter and Waitress"
+                    Case "Purchasing Department"
                         txtTrainingType += "12,"
                 End Select
             End If
@@ -228,6 +216,102 @@ Public Class My_Training_AddNew
     End Function
 
     Private Sub My_Training_Panel101_Paint(ByVal sender As System.Object, ByVal e As System.Windows.Forms.PaintEventArgs) Handles My_Training_Panel101.Paint
+
+    End Sub
+
+    Private Sub lb_tr_code101_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles lb_tr_code101.Click
+
+    End Sub
+
+    Private Sub txt_trCode101_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txt_trCode101.TextChanged
+
+    End Sub
+
+    Public Sub doDeleteRecord(ByVal id As String, ByVal CourseName As String)
+        Me.CurrentID = id
+
+        myConnection.ConnectionString = connString
+        myConnection.Open()
+        Dim query1 As String
+        query1 = "delete FROM [trainings] where [training_id]=" + CurrentID
+        Dim cmd As OleDbCommand = New OleDbCommand(query1, myConnection)
+        Dim MsgBoxResult = MsgBox("Are you want to permanently delete this record? : " + CourseName, MsgBoxStyle.YesNo, "Delete Record!!")
+
+        If MsgBoxResult = Microsoft.VisualBasic.MsgBoxResult.Yes Then
+            Try
+                cmd.ExecuteNonQuery()
+                MsgBox("Successful Deleted !!!", MsgBoxStyle.OkOnly, "Record Deleted")
+            Catch ex As Exception
+                MsgBox(ex.Message, MsgBoxStyle.OkOnly, "OK")
+            End Try
+        End If
+        myConnection.Close()
+        My.Forms.landing_page.TrainingManagement1.RefeshDataGrid()
+
+    End Sub
+
+    Public Sub doGenerateData(ByVal id As String, ByVal status As String)
+        Me.CurrentID = id
+        myConnection.ConnectionString = connString
+        myConnection.Open()
+        Dim query1 As String
+        Dim query2 As String
+        query1 = "Select [required_role],[required_status], [required_dept] From trainings where training_id=?"
+        Dim cmd As OleDbCommand = New OleDbCommand(query1, myConnection)
+        cmd.Parameters.AddWithValue("@p1", CurrentID)
+        Try
+            Using dr2 As OleDbDataReader = cmd.ExecuteReader
+                While dr2.Read
+                    If dr2.HasRows Then
+                        query2 = "select employee_id From employees where first_time=? and job_id=? and department_id=?"
+                        Dim cmd2 As OleDbCommand = New OleDbCommand(query2, myConnection)
+
+                        If String.Equals(dr2("required_status").ToString, "New Employee") Then
+                            cmd2.Parameters.AddWithValue("@p1", "Y")
+                        Else
+                            cmd2.Parameters.AddWithValue("@p1", "N")
+                        End If
+                        cmd2.Parameters.AddWithValue("@p2", dr2("required_role").ToString)
+
+                        Dim txtRequiredDept As String = dr2("required_dept").ToString
+                        Dim patern As String = "\,"
+                        Dim DepartmentList() As String = Regex.Split(txtRequiredDept, ",")
+
+                        For Each dept_id As String In DepartmentList
+                            cmd2.Parameters.AddWithValue("@p3", dept_id.ToString)
+                            Console.WriteLine(dept_id)
+                            Using dr3 As OleDbDataReader = cmd2.ExecuteReader
+                                While dr3.Read
+                                    If dr3.HasRows Then
+                                        Dim query3 = "insert into employee_trainings (training_id,employee_id,created_at)values(?,?,?)"
+                                        Dim cmd3 As OleDbCommand = New OleDbCommand(query3, myConnection)
+                                        cmd3.Parameters.AddWithValue("@p1", CurrentID)
+                                        cmd3.Parameters.AddWithValue("@p2", dr3("employee_id"))
+                                        cmd3.ExecuteNonQuery()
+                                    End If
+                                End While
+                            End Using
+
+                        Next
+
+                        'cmd2.Parameters.AddWithValue("@p3", dr2("required_dept").ToString)
+
+                    End If
+                End While
+            End Using
+            'cmd.ExecuteNonQuery()
+        Catch ex As Exception
+            MsgBox(ex.Message, MsgBoxStyle.OkOnly, "OK")
+        End Try
+        myConnection.Close()
+
+    End Sub
+
+    Private Sub cbx_trRoles101_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cbx_trRoles101.SelectedIndexChanged
+
+    End Sub
+
+    Private Sub cbx_trStatus101_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cbx_trStatus101.SelectedIndexChanged
 
     End Sub
 End Class

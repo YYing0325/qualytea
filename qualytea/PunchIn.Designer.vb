@@ -25,10 +25,10 @@ Partial Class PunchIn
         Me.lblPunchTimeIn = New System.Windows.Forms.Label
         Me.lblTime = New System.Windows.Forms.Label
         Me.lblNote = New System.Windows.Forms.Label
-        Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker
         Me.tbNote = New System.Windows.Forms.TextBox
         Me.btnCancel = New System.Windows.Forms.Button
         Me.btnSave = New System.Windows.Forms.Button
+        Me.currentTime = New System.Windows.Forms.Label
         Me.SuspendLayout()
         '
         'lblPunchTimeIn
@@ -59,13 +59,6 @@ Partial Class PunchIn
         Me.lblNote.TabIndex = 2
         Me.lblNote.Text = "Note"
         '
-        'DateTimePicker1
-        '
-        Me.DateTimePicker1.Location = New System.Drawing.Point(77, 66)
-        Me.DateTimePicker1.Name = "DateTimePicker1"
-        Me.DateTimePicker1.Size = New System.Drawing.Size(227, 21)
-        Me.DateTimePicker1.TabIndex = 9
-        '
         'tbNote
         '
         Me.tbNote.Location = New System.Drawing.Point(77, 117)
@@ -93,19 +86,28 @@ Partial Class PunchIn
         Me.btnSave.Text = "Save"
         Me.btnSave.UseVisualStyleBackColor = True
         '
-        'AttendanceDashboard2
+        'currentTime
+        '
+        Me.currentTime.AutoSize = True
+        Me.currentTime.Location = New System.Drawing.Point(75, 72)
+        Me.currentTime.Name = "currentTime"
+        Me.currentTime.Size = New System.Drawing.Size(77, 12)
+        Me.currentTime.TabIndex = 19
+        Me.currentTime.Text = "Current Time"
+        '
+        'PunchIn
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(318, 304)
+        Me.Controls.Add(Me.currentTime)
         Me.Controls.Add(Me.btnSave)
         Me.Controls.Add(Me.btnCancel)
         Me.Controls.Add(Me.tbNote)
-        Me.Controls.Add(Me.DateTimePicker1)
         Me.Controls.Add(Me.lblNote)
         Me.Controls.Add(Me.lblTime)
         Me.Controls.Add(Me.lblPunchTimeIn)
-        Me.Name = "punch_in_modal"
+        Me.Name = "PunchIn"
         Me.Text = "Punch In"
         Me.ResumeLayout(False)
         Me.PerformLayout()
@@ -114,8 +116,8 @@ Partial Class PunchIn
     Friend WithEvents lblPunchTimeIn As System.Windows.Forms.Label
     Friend WithEvents lblTime As System.Windows.Forms.Label
     Friend WithEvents lblNote As System.Windows.Forms.Label
-    Friend WithEvents DateTimePicker1 As System.Windows.Forms.DateTimePicker
     Friend WithEvents tbNote As System.Windows.Forms.TextBox
     Friend WithEvents btnCancel As System.Windows.Forms.Button
     Friend WithEvents btnSave As System.Windows.Forms.Button
+    Friend WithEvents currentTime As System.Windows.Forms.Label
 End Class

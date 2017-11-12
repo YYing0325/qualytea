@@ -5,37 +5,43 @@
         Me.WindowState = FormWindowState.Maximized
         Me.btn_home.Width = SplitContainer1.Panel1.Width
         Me.btn_personal.Width = SplitContainer1.Panel1.Width
-        Me.btn_work_management.Width = SplitContainer1.Panel1.Width
-        Me.btn_performance.Width = SplitContainer1.Panel1.Width
+        Me.btn_training_management.Width = SplitContainer1.Panel1.Width
+        Me.btn_my_performance.Width = SplitContainer1.Panel1.Width
         Me.btn_leave_management.Width = SplitContainer1.Panel1.Width
         Me.btn_payroll_management.Width = SplitContainer1.Panel1.Width
         Me.btn_job_applicants.Width = SplitContainer1.Panel1.Width
         Me.btn_logout.Width = SplitContainer1.Panel1.Width
-        Me.logo.Width = SplitContainer1.Panel1.Width
+        Me.btn_my_leave.Width = SplitContainer1.Panel1.Width
+        Me.btn_performance_management.Width = SplitContainer1.Panel1.Width
+        Me.btn_my_training.Width = SplitContainer1.Panel1.Width
+        'Me.logo.Width = SplitContainer1.Panel1.Width
 
         ' Position
         Me.btn_job_applicants.Location = New Point(0, Me.btn_logout.Location.Y - 50)
-        Me.btn_payroll_management.Location = New Point(0, Me.btn_job_applicants.Location.Y - 50)
-        Me.btn_leave_management.Location = New Point(0, Me.btn_payroll_management.Location.Y - 50)
-        Me.btn_work_management.Location = New Point(0, Me.btn_leave_management.Location.Y - 50)
-        Me.btn_performance.Location = New Point(0, Me.btn_work_management.Location.Y - 50)
-        Me.btn_personal.Location = New Point(0, Me.btn_performance.Location.Y - 50)
+        Me.btn_performance_management.Location = New Point(0, Me.btn_job_applicants.Location.Y - 50)
+        Me.btn_payroll_management.Location = New Point(0, Me.btn_performance_management.Location.Y - 50)
+        Me.btn_leave_management.Location = New Point(0, Me.btn_performance_management.Location.Y - 50)
+        Me.btn_training_management.Location = New Point(0, Me.btn_leave_management.Location.Y - 50)
+        Me.btn_my_performance.Location = New Point(0, Me.btn_training_management.Location.Y - 50)
+        Me.btn_my_leave.Location = New Point(0, Me.btn_my_performance.Location.Y - 50)
+        Me.btn_my_training.Location = New Point(0, Me.btn_my_leave.Location.Y - 50)
+        Me.btn_personal.Location = New Point(0, Me.btn_my_training.Location.Y - 50)
         Me.btn_home.Location = New Point(0, Me.btn_personal.Location.Y - 50)
-        Me.logo.Location = New Point(0, Me.emp_id.Bottom)
-        Me.logo.Height = Me.btn_home.Top - Me.emp_id.Bottom
+        'Me.logo.Location = New Point(0, Me.emp_id.Bottom)
+        'Me.logo.Height = Me.btn_home.Top - Me.emp_id.Bottom
 
-        Me.HomeDashboard1.Show()
+        Me.HomeDashboard1.Hide()
         Me.PersonalDetailsComponent1.Hide()
         Me.JobApplicantsComponent1.Hide()
         Me.EditProfile1.Hide()
         Me.ChangePassword1.Hide()
         Me.Attendance1.Hide()
-        Me.My_Training.Hide()
-        Me.Performance1.Hide()
-        Me.Performance_overview1.Hide()
-        Me.Leave_H_Management1.Hide()
-        Me.Payroll_H_Management1.Hide()
-        Me.Performance_evaluation1.Hide()
+        Me.MyTraining1.Hide()
+        Me.MyPerformance1.Hide()
+        Me.MyLeave1.Hide()
+        Me.LeaveManagement1.Hide()
+        Me.PerformanceManagement1.Hide()
+        Me.TrainingManagement1.Hide()
 
     End Sub
 
@@ -59,12 +65,12 @@
         Me.EditProfile1.Hide()
         Me.ChangePassword1.Hide()
         Me.Attendance1.Hide()
-        Me.My_Training.Hide()
-        Me.Performance1.Hide()
-        Me.Performance_overview1.Hide()
-        Me.Leave_H_Management1.Hide()
-        Me.Payroll_H_Management1.Hide()
-        Me.Performance_evaluation1.Hide()
+        Me.MyTraining1.Hide()
+        Me.MyPerformance1.Hide()
+        Me.MyLeave1.Hide()
+        Me.LeaveManagement1.Hide()
+        Me.PerformanceManagement1.Hide()
+        Me.TrainingManagement1.Hide()
     End Sub
 
     Private Sub JobApplicant_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_job_applicants.Click
@@ -80,33 +86,33 @@
         Me.EditProfile1.Hide()
         Me.ChangePassword1.Hide()
         Me.Attendance1.Hide()
-        Me.My_Training.Hide()
-        Me.Performance1.Hide()
-        Me.Performance_overview1.Hide()
-        Me.Leave_H_Management1.Hide()
-        Me.Payroll_H_Management1.Hide()
-        Me.Performance_evaluation1.Hide()
+        Me.MyTraining1.Hide()
+        Me.MyPerformance1.Hide()
+        Me.MyLeave1.Hide()
+        Me.LeaveManagement1.Hide()
+        Me.PerformanceManagement1.Hide()
+        Me.TrainingManagement1.Hide()
 
 
     End Sub
 
-    Private Sub Button3_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_work_management.Click
-        Me.My_Training.Show()
-        Dim connectToAccess = New Connect_To_Access()
-        connectToAccess.getNewTrainingList(Me.My_Training.data_grid_TrNewTraining, Me.emp_id.Text.ToString)
-        connectToAccess.getTrainingManagementList(Me.My_Training.DataGridView2)
+    Private Sub Button3_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_training_management.Click
+        Me.TrainingManagement1.Show()
+        'Dim connectToAccess = New Connect_To_Access()
+        'connectToAccess.getNewTrainingList(Me.My_Training.data_grid_TrNewTraining, Me.emp_id.Text.ToString)
+        'connectToAccess.getTrainingManagementList(Me.My_Training.DataGridView2)
 
         Me.HomeDashboard1.Hide()
-        Me.JobApplicantsComponent1.Hide()
         Me.PersonalDetailsComponent1.Hide()
+        Me.JobApplicantsComponent1.Hide()
         Me.EditProfile1.Hide()
         Me.ChangePassword1.Hide()
         Me.Attendance1.Hide()
-        Me.Performance1.Hide()
-        Me.Performance_overview1.Hide()
-        Me.Leave_H_Management1.Hide()
-        Me.Payroll_H_Management1.Hide()
-        Me.Performance_evaluation1.Hide()
+        Me.MyTraining1.Hide()
+        Me.MyPerformance1.Hide()
+        Me.MyLeave1.Hide()
+        Me.LeaveManagement1.Hide()
+        Me.PerformanceManagement1.Hide()
 
     End Sub
 
@@ -123,17 +129,17 @@
         Dim connectToAccess = New Connect_To_Access()
         connectToAccess.getAttendanceList(HomeDashboard1.datagrid_attendance, Me.emp_id.Text.ToString)
         Me.HomeDashboard1.Show()
-        Me.JobApplicantsComponent1.Hide()
         Me.PersonalDetailsComponent1.Hide()
+        Me.JobApplicantsComponent1.Hide()
         Me.EditProfile1.Hide()
         Me.ChangePassword1.Hide()
         Me.Attendance1.Hide()
-        Me.My_Training.Hide()
-        Me.Performance1.Hide()
-        Me.Performance_overview1.Hide()
-        Me.Leave_H_Management1.Hide()
-        Me.Payroll_H_Management1.Hide()
-        Me.Performance_evaluation1.Hide()
+        Me.MyTraining1.Hide()
+        Me.MyPerformance1.Hide()
+        Me.MyLeave1.Hide()
+        Me.LeaveManagement1.Hide()
+        Me.PerformanceManagement1.Hide()
+        Me.TrainingManagement1.Hide()
 
     End Sub
 
@@ -144,55 +150,94 @@
         Me.EditProfile1.Hide()
         Me.ChangePassword1.Hide()
         Me.Attendance1.Hide()
-        Me.My_Training.Hide()
-        Me.Performance1.Hide()
-        Me.Performance_overview1.Hide()
-        Me.Payroll_H_Management1.Hide()
-        Me.Performance_evaluation1.Hide()
+        Me.MyTraining1.Hide()
+        Me.MyPerformance1.Hide()
+        Me.MyLeave1.Hide()
+        Me.PerformanceManagement1.Hide()
+        Me.TrainingManagement1.Hide()
         Dim connectToAccess = New Connect_To_Access
         'connectToAccess.getNewLeaveList(Me.Leave_H_Management1.datagrid_my_leave, Me.emp_id.Text.ToString)
-        connectToAccess.getEmployeeLeaves(Me.Leave_H_Management1.datagrid_leave_history, Me.emp_id.Text.ToString)
-        connectToAccess.getEmployeeLeavesRequest(Me.Leave_H_Management1.datagrid_leave_request, Me.emp_id.Text.ToString)
-        Me.Leave_H_Management1.Show()
+        'connectToAccess.getEmployeeLeaves(Me.Leave_H_Management1.datagrid_leave_history, Me.emp_id.Text.ToString)
+        'connectToAccess.getEmployeeLeavesRequest(Me.Leave_H_Management1.datagrid_leave_request, Me.emp_id.Text.ToString)
+        Me.LeaveManagement1.Show()
 
     End Sub
 
     Private Sub btn_payroll_management_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_payroll_management.Click
-        Me.HomeDashboard1.Show()
+        Me.HomeDashboard1.Hide()
         Me.PersonalDetailsComponent1.Hide()
         Me.JobApplicantsComponent1.Hide()
         Me.EditProfile1.Hide()
         Me.ChangePassword1.Hide()
         Me.Attendance1.Hide()
-        Me.My_Training.Hide()
-        Me.Performance1.Hide()
-        Me.Performance_overview1.Hide()
-        Me.Leave_H_Management1.Hide()
-        Me.Performance_evaluation1.Hide()
-        Me.Payroll_H_Management1.Show()
-        Dim connectToAccess = New Connect_To_Access()
-        connectToAccess.getClaimsList(Me.Payroll_H_Management1.datagrid_payroll_mgmt, Me.emp_id.Text.ToString)
-        connectToAccess.getClaimsStatus(Me.Payroll_H_Management1.datagrid_status, Me.emp_id.Text.ToString)
-
+        Me.MyTraining1.Hide()
+        Me.MyPerformance1.Hide()
+        Me.MyLeave1.Hide()
+        Me.LeaveManagement1.Hide()
+        Me.PerformanceManagement1.Hide()
+        Me.TrainingManagement1.Hide()
+        Me.LeaveManagement1.Show()
+        
     End Sub
 
 
-    Private Sub btn_performance_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_performance.Click
-        Me.Performance_overview1.Show()
-        Dim connectToAccess = New Connect_To_Access()
-        connectToAccess.getNewTrainingList(Me.My_Training.data_grid_TrNewTraining, Me.emp_id.Text.ToString)
-        connectToAccess.getTrainingManagementList(Me.My_Training.DataGridView2)
-
+    Private Sub btn_performance_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_my_performance.Click
+        Me.MyPerformance1.Show()
         Me.HomeDashboard1.Hide()
-        Me.JobApplicantsComponent1.Hide()
         Me.PersonalDetailsComponent1.Hide()
+        Me.JobApplicantsComponent1.Hide()
         Me.EditProfile1.Hide()
         Me.ChangePassword1.Hide()
         Me.Attendance1.Hide()
-        Me.Performance1.Hide()
-        Me.My_Training.Hide()
-        Me.Leave_H_Management1.Hide()
-        Me.Payroll_H_Management1.Hide()
-        Me.Performance_evaluation1.Hide()
+        Me.MyTraining1.Hide()
+        Me.MyLeave1.Hide()
+        Me.LeaveManagement1.Hide()
+        Me.PerformanceManagement1.Hide()
+        Me.TrainingManagement1.Hide()
+    End Sub
+
+    Private Sub btn_my_leave_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_my_leave.Click
+        Me.HomeDashboard1.Hide()
+        Me.PersonalDetailsComponent1.Hide()
+        Me.JobApplicantsComponent1.Hide()
+        Me.EditProfile1.Hide()
+        Me.ChangePassword1.Hide()
+        Me.Attendance1.Hide()
+        Me.MyTraining1.Hide()
+        Me.MyPerformance1.Hide()
+        Me.MyLeave1.Show()
+        Me.LeaveManagement1.Hide()
+        Me.PerformanceManagement1.Hide()
+        Me.TrainingManagement1.Hide()
+    End Sub
+
+    Private Sub btn_performance_management_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_performance_management.Click
+        Me.HomeDashboard1.Hide()
+        Me.PersonalDetailsComponent1.Hide()
+        Me.JobApplicantsComponent1.Hide()
+        Me.EditProfile1.Hide()
+        Me.ChangePassword1.Hide()
+        Me.Attendance1.Hide()
+        Me.MyTraining1.Hide()
+        Me.MyPerformance1.Hide()
+        Me.MyLeave1.Hide()
+        Me.LeaveManagement1.Hide()
+        Me.PerformanceManagement1.Show()
+        Me.TrainingManagement1.Hide()
+    End Sub
+
+    Private Sub btn_my_training_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_my_training.Click
+        Me.HomeDashboard1.Hide()
+        Me.PersonalDetailsComponent1.Hide()
+        Me.JobApplicantsComponent1.Hide()
+        Me.EditProfile1.Hide()
+        Me.ChangePassword1.Hide()
+        Me.Attendance1.Hide()
+        Me.MyTraining1.Show()
+        Me.MyPerformance1.Hide()
+        Me.MyLeave1.Hide()
+        Me.LeaveManagement1.Hide()
+        Me.PerformanceManagement1.Hide()
+        Me.TrainingManagement1.Hide()
     End Sub
 End Class

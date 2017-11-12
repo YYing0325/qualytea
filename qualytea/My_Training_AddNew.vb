@@ -43,7 +43,7 @@ Public Class My_Training_AddNew
             MsgBox(ex.Message, MsgBoxStyle.OkOnly, "OK")
         End Try
         myConnection.Close()
-        My.Forms.landing_page.My_Training.RefeshDataGrid()
+        'My.Forms.landing_page.MyTraining1.RefeshDataGrid()
         Me.Close()
     End Sub
 
@@ -172,7 +172,7 @@ Public Class My_Training_AddNew
             MsgBox(ex.Message, MsgBoxStyle.OkOnly, "OK")
         End Try
         myConnection.Close()
-        My.Forms.landing_page.My_Training.RefeshDataGrid()
+        'My.Forms.landing_page.My_Training.RefeshDataGrid()
         Me.Close()
     End Sub
 

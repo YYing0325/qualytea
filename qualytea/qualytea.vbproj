@@ -151,6 +151,30 @@
     <Compile Include="Leave Report.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="LeaveManagement.Designer.vb">
+      <DependentUpon>LeaveManagement.vb</DependentUpon>
+    </Compile>
+    <Compile Include="LeaveManagement.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MyLeave.Designer.vb">
+      <DependentUpon>MyLeave.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MyLeave.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MyPerformance.Designer.vb">
+      <DependentUpon>MyPerformance.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MyPerformance.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MyTraining.Designer.vb">
+      <DependentUpon>MyTraining.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MyTraining.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="My_Training Feedback.Designer.vb">
       <DependentUpon>My_Training Feedback.vb</DependentUpon>
     </Compile>
@@ -211,6 +235,12 @@
       <DependentUpon>Payroll H Management.vb</DependentUpon>
     </Compile>
     <Compile Include="Payroll H Management.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PerformanceManagement.Designer.vb">
+      <DependentUpon>PerformanceManagement.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PerformanceManagement.vb">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Performance_test.Designer.vb">
@@ -321,6 +351,12 @@
     <Compile Include="AcceptApplicant.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="TrainingManagement.Designer.vb">
+      <DependentUpon>TrainingManagement.vb</DependentUpon>
+    </Compile>
+    <Compile Include="TrainingManagement.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="voucher_redeem_v2.Designer.vb">
       <DependentUpon>voucher_redeem_v2.vb</DependentUpon>
     </Compile>
@@ -343,6 +379,22 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Leave Report.resx">
       <DependentUpon>Leave Report.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LeaveManagement.resx">
+      <DependentUpon>LeaveManagement.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyLeave.resx">
+      <DependentUpon>MyLeave.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyPerformance.resx">
+      <DependentUpon>MyPerformance.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyTraining.resx">
+      <DependentUpon>MyTraining.vb</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="My_Training Detail.resx">
@@ -379,6 +431,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Payroll H Management.resx">
       <DependentUpon>Payroll H Management.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PerformanceManagement.resx">
+      <DependentUpon>PerformanceManagement.vb</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Performance_test.resx">
@@ -445,6 +501,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AcceptApplicant.resx">
       <DependentUpon>AcceptApplicant.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TrainingManagement.resx">
+      <DependentUpon>TrainingManagement.vb</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="voucher_redeem_v2.resx">

@@ -26,6 +26,7 @@ Partial Class My_Training
         Me.DataGridView1 = New System.Windows.Forms.DataGridView
         Me.TabControl1 = New System.Windows.Forms.TabControl
         Me.TabPage1 = New System.Windows.Forms.TabPage
+        Me.lb_trNewtraining = New System.Windows.Forms.Label
         Me.data_grid_TrComplete = New System.Windows.Forms.DataGridView
         Me.data_grid_TrProgress = New System.Windows.Forms.DataGridView
         Me.data_grid_TrNewTraining = New System.Windows.Forms.DataGridView
@@ -39,6 +40,16 @@ Partial Class My_Training
         Me.btn_trdetails102 = New System.Windows.Forms.Button
         Me.btn_trAddNew102 = New System.Windows.Forms.Button
         Me.TabPage3 = New System.Windows.Forms.TabPage
+        Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel
+        Me.lb_trCourse104 = New System.Windows.Forms.Label
+        Me.lb_tremployee104 = New System.Windows.Forms.Label
+        Me.lb_q1104 = New System.Windows.Forms.Label
+        Me.lb_q2104 = New System.Windows.Forms.Label
+        Me.lb_q3104 = New System.Windows.Forms.Label
+        Me.lb_q4104 = New System.Windows.Forms.Label
+        Me.lb_q5104 = New System.Windows.Forms.Label
+        Me.lb_trRecommend104 = New System.Windows.Forms.Label
+        Me.lb_trNo104 = New System.Windows.Forms.Label
         Me.TrainingsBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
         Me.HRDataSetBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.HRDataSet = New WindowsApplication1.HRDataSet
@@ -48,17 +59,6 @@ Partial Class My_Training
         Me.TableLayoutPanel3 = New System.Windows.Forms.TableLayoutPanel
         Me.lbno101 = New System.Windows.Forms.Label
         Me.lbcourse104 = New System.Windows.Forms.Label
-        Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel
-        Me.lb_trNo104 = New System.Windows.Forms.Label
-        Me.lb_trCourse104 = New System.Windows.Forms.Label
-        Me.lb_tremployee104 = New System.Windows.Forms.Label
-        Me.lb_q1104 = New System.Windows.Forms.Label
-        Me.lb_q2104 = New System.Windows.Forms.Label
-        Me.lb_q3104 = New System.Windows.Forms.Label
-        Me.lb_q4104 = New System.Windows.Forms.Label
-        Me.lb_q5104 = New System.Windows.Forms.Label
-        Me.lb_trRecommend104 = New System.Windows.Forms.Label
-        Me.lb_trNewtraining = New System.Windows.Forms.Label
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
@@ -68,12 +68,12 @@ Partial Class My_Training
         Me.TabPage2.SuspendLayout()
         CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPage3.SuspendLayout()
+        Me.TableLayoutPanel1.SuspendLayout()
         CType(Me.TrainingsBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.HRDataSetBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.HRDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TrainingsBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TableLayoutPanel3.SuspendLayout()
-        Me.TableLayoutPanel1.SuspendLayout()
         Me.SuspendLayout()
         '
         'DataGridView1
@@ -112,6 +112,15 @@ Partial Class My_Training
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "My Training"
         Me.TabPage1.UseVisualStyleBackColor = True
+        '
+        'lb_trNewtraining
+        '
+        Me.lb_trNewtraining.AutoSize = True
+        Me.lb_trNewtraining.Location = New System.Drawing.Point(31, 15)
+        Me.lb_trNewtraining.Name = "lb_trNewtraining"
+        Me.lb_trNewtraining.Size = New System.Drawing.Size(70, 13)
+        Me.lb_trNewtraining.TabIndex = 6
+        Me.lb_trNewtraining.Text = "New Training"
         '
         'data_grid_TrComplete
         '
@@ -237,75 +246,6 @@ Partial Class My_Training
         Me.TabPage3.Text = "Feedback"
         Me.TabPage3.UseVisualStyleBackColor = True
         '
-        'TrainingsBindingSource1
-        '
-        Me.TrainingsBindingSource1.DataMember = "trainings"
-        Me.TrainingsBindingSource1.DataSource = Me.HRDataSetBindingSource
-        '
-        'HRDataSetBindingSource
-        '
-        Me.HRDataSetBindingSource.DataSource = Me.HRDataSet
-        Me.HRDataSetBindingSource.Position = 0
-        '
-        'HRDataSet
-        '
-        Me.HRDataSet.DataSetName = "HRDataSet"
-        Me.HRDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'TrainingsBindingSource
-        '
-        Me.TrainingsBindingSource.DataMember = "trainings"
-        Me.TrainingsBindingSource.DataSource = Me.HRDataSetBindingSource
-        '
-        'TrainingsTableAdapter
-        '
-        Me.TrainingsTableAdapter.ClearBeforeFill = True
-        '
-        'TableAdapterManager1
-        '
-        Me.TableAdapterManager1.BackupDataSetBeforeUpdate = False
-        Me.TableAdapterManager1.locationsTableAdapter = Nothing
-        Me.TableAdapterManager1.trainingsTableAdapter = Me.TrainingsTableAdapter
-        Me.TableAdapterManager1.UpdateOrder = WindowsApplication1.HRDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.UpdateInsertDelete
-        '
-        'TableLayoutPanel3
-        '
-        Me.TableLayoutPanel3.ColumnCount = 9
-        Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 28.68217!))
-        Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 71.31783!))
-        Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 136.0!))
-        Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 43.0!))
-        Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 42.0!))
-        Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 47.0!))
-        Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 44.0!))
-        Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 44.0!))
-        Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 316.0!))
-        Me.TableLayoutPanel3.Controls.Add(Me.lbno101, 0, 0)
-        Me.TableLayoutPanel3.Location = New System.Drawing.Point(0, 0)
-        Me.TableLayoutPanel3.Name = "TableLayoutPanel3"
-        Me.TableLayoutPanel3.RowCount = 1
-        Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
-        Me.TableLayoutPanel3.Size = New System.Drawing.Size(200, 100)
-        Me.TableLayoutPanel3.TabIndex = 0
-        '
-        'lbno101
-        '
-        Me.lbno101.AutoSize = True
-        Me.lbno101.Location = New System.Drawing.Point(3, 0)
-        Me.lbno101.Name = "lbno101"
-        Me.lbno101.Size = New System.Drawing.Size(1, 13)
-        Me.lbno101.TabIndex = 0
-        Me.lbno101.Text = "No."
-        '
-        'lbcourse104
-        '
-        Me.lbcourse104.AutoSize = True
-        Me.lbcourse104.Location = New System.Drawing.Point(40, 0)
-        Me.lbcourse104.Name = "lbcourse104"
-        Me.lbcourse104.Size = New System.Drawing.Size(40, 13)
-        Me.lbcourse104.TabIndex = 1
-        Me.lbcourse104.Text = "Course"
-        '
         'TableLayoutPanel1
         '
         Me.TableLayoutPanel1.ColumnCount = 9
@@ -334,15 +274,6 @@ Partial Class My_Training
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
         Me.TableLayoutPanel1.Size = New System.Drawing.Size(801, 100)
         Me.TableLayoutPanel1.TabIndex = 129
-        '
-        'lb_trNo104
-        '
-        Me.lb_trNo104.AutoSize = True
-        Me.lb_trNo104.Location = New System.Drawing.Point(3, 0)
-        Me.lb_trNo104.Name = "lb_trNo104"
-        Me.lb_trNo104.Size = New System.Drawing.Size(24, 13)
-        Me.lb_trNo104.TabIndex = 0
-        Me.lb_trNo104.Text = "No."
         '
         'lb_trCourse104
         '
@@ -416,14 +347,83 @@ Partial Class My_Training
         Me.lb_trRecommend104.TabIndex = 8
         Me.lb_trRecommend104.Text = "Recommendation"
         '
-        'lb_trNewtraining
+        'lb_trNo104
         '
-        Me.lb_trNewtraining.AutoSize = True
-        Me.lb_trNewtraining.Location = New System.Drawing.Point(31, 15)
-        Me.lb_trNewtraining.Name = "lb_trNewtraining"
-        Me.lb_trNewtraining.Size = New System.Drawing.Size(70, 13)
-        Me.lb_trNewtraining.TabIndex = 6
-        Me.lb_trNewtraining.Text = "New Training"
+        Me.lb_trNo104.AutoSize = True
+        Me.lb_trNo104.Location = New System.Drawing.Point(3, 0)
+        Me.lb_trNo104.Name = "lb_trNo104"
+        Me.lb_trNo104.Size = New System.Drawing.Size(24, 13)
+        Me.lb_trNo104.TabIndex = 0
+        Me.lb_trNo104.Text = "No."
+        '
+        'TrainingsBindingSource1
+        '
+        Me.TrainingsBindingSource1.DataMember = "trainings"
+        Me.TrainingsBindingSource1.DataSource = Me.HRDataSetBindingSource
+        '
+        'HRDataSetBindingSource
+        '
+        Me.HRDataSetBindingSource.DataSource = Me.HRDataSet
+        Me.HRDataSetBindingSource.Position = 0
+        '
+        'HRDataSet
+        '
+        Me.HRDataSet.DataSetName = "HRDataSet"
+        Me.HRDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'TrainingsBindingSource
+        '
+        Me.TrainingsBindingSource.DataMember = "trainings"
+        Me.TrainingsBindingSource.DataSource = Me.HRDataSetBindingSource
+        '
+        'TrainingsTableAdapter
+        '
+        Me.TrainingsTableAdapter.ClearBeforeFill = True
+        '
+        'TableAdapterManager1
+        '
+        Me.TableAdapterManager1.BackupDataSetBeforeUpdate = False
+        Me.TableAdapterManager1.locationsTableAdapter = Nothing
+        Me.TableAdapterManager1.trainingsTableAdapter = Me.TrainingsTableAdapter
+        Me.TableAdapterManager1.UpdateOrder = WindowsApplication1.HRDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.UpdateInsertDelete
+        '
+        'TableLayoutPanel3
+        '
+        Me.TableLayoutPanel3.ColumnCount = 9
+        Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 28.68217!))
+        Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 71.31783!))
+        Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 136.0!))
+        Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 43.0!))
+        Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 42.0!))
+        Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 47.0!))
+        Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 44.0!))
+        Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 44.0!))
+        Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 316.0!))
+        Me.TableLayoutPanel3.Controls.Add(Me.lbno101, 0, 0)
+        Me.TableLayoutPanel3.Location = New System.Drawing.Point(0, 0)
+        Me.TableLayoutPanel3.Name = "TableLayoutPanel3"
+        Me.TableLayoutPanel3.RowCount = 1
+        Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
+        Me.TableLayoutPanel3.Size = New System.Drawing.Size(200, 100)
+        Me.TableLayoutPanel3.TabIndex = 0
+        '
+        'lbno101
+        '
+        Me.lbno101.AutoSize = True
+        Me.lbno101.Location = New System.Drawing.Point(3, 0)
+        Me.lbno101.Name = "lbno101"
+        Me.lbno101.Size = New System.Drawing.Size(1, 13)
+        Me.lbno101.TabIndex = 0
+        Me.lbno101.Text = "No."
+        '
+        'lbcourse104
+        '
+        Me.lbcourse104.AutoSize = True
+        Me.lbcourse104.Location = New System.Drawing.Point(40, 0)
+        Me.lbcourse104.Name = "lbcourse104"
+        Me.lbcourse104.Size = New System.Drawing.Size(40, 13)
+        Me.lbcourse104.TabIndex = 1
+        Me.lbcourse104.Text = "Course"
         '
         'My_Training
         '
@@ -443,14 +443,14 @@ Partial Class My_Training
         Me.TabPage2.ResumeLayout(False)
         CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage3.ResumeLayout(False)
+        Me.TableLayoutPanel1.ResumeLayout(False)
+        Me.TableLayoutPanel1.PerformLayout()
         CType(Me.TrainingsBindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.HRDataSetBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.HRDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TrainingsBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TableLayoutPanel3.ResumeLayout(False)
         Me.TableLayoutPanel3.PerformLayout()
-        Me.TableLayoutPanel1.ResumeLayout(False)
-        Me.TableLayoutPanel1.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub

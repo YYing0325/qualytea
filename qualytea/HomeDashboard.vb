@@ -1,26 +1,16 @@
 ﻿Public Class HomeDashboard
 
     Private Sub btnPunchInOut_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnPunchInOut.Click
-
+        MsgBox(My.MySettings.Default.attendance_status)
         If My.MySettings.Default.attendance_status.ToString.Equals("checked_out") Then
-
-            Dim punchIn = New PunchIn()
-            punchIn.Show()
-            punchIn.empId = landing_page.emp_id.Text.ToString
-            punchIn.dateTime = DateTime.Now
-            punchIn.currentTime.Text = DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss")
+            'PunchIn.Show()
+            My.MySettings.Default.attendance_status = "checked_in"
         ElseIf My.MySettings.Default.attendance_status.Equals("checked_in") Then
-            Dim punchOut = New PunchOut()
-            punchOut.Show()
-            punchOut.empId = landing_page.emp_id.Text.ToString
-            punchOut.dateTime = DateTime.Now
-            punchOut.currentTime.Text = DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss")
+            'PunchOut.Show()
+            My.MySettings.Default.attendance_status = "checked_out"
         ElseIf My.MySettings.Default.attendance_status.Equals("") Then
-            Dim punchIn = New PunchIn()
-            punchIn.Show()
-            punchIn.empId = landing_page.emp_id.Text.ToString
-            punchIn.dateTime = DateTime.Now
-            punchIn.currentTime.Text = DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss")
+            'PunchIn.Show()
+            My.MySettings.Default.attendance_status = "checked_in"
         End If
     End Sub
 

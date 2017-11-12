@@ -474,4 +474,31 @@ Public Class Connect_To_Access
         End Try
 
     End Sub
+
+    Public Function getSalary(ByVal empId As String) As Dictionary(Of String, String)
+        Dim dict = New Dictionary(Of String, String)
+        myConnection.ConnectionString = connString
+        myConnection.Open()
+        Try
+            Dim empCmd As OleDbCommand = New OleDbCommand("SELECT * FROM [payroll] WHERE [employee_id]=" & empId, myConnection)
+            Dim dr As OleDbDataReader = empCmd.ExecuteReader
+            While dr.Read
+                If dr.HasRows = True Then
+                    dict.Add("basic_salary", dr("basic_salary"))
+                    dict.Add("overtime", dr("overtime").ToString)
+                    dict.Add("allowance", dr("allowance").ToString)
+                    dict.Add("epf", dr("epf").ToString)
+                    dict.Add("socso", dr("socso").ToString)
+                    dict.Add("claims", dr("claims").ToString)
+                    dict.Add("others", dr("others").ToString)
+                End If
+            End While
+            myConnection.Close()
+
+        Catch ex As Exception
+            MsgBox("Connection To Database Failed:" & ex.Message.ToString)
+        End Try
+        Return dict
+    End Function
+
 End Class

@@ -24,6 +24,8 @@ Partial Class PerformanceManagement
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(PerformanceManagement))
         Me.TabPage1 = New System.Windows.Forms.TabPage
+        Me.cb_perf_year = New System.Windows.Forms.ComboBox
+        Me.lb_perf_year = New System.Windows.Forms.Label
         Me.cb_pf10 = New System.Windows.Forms.ComboBox
         Me.cb_pf9 = New System.Windows.Forms.ComboBox
         Me.cb_pf8 = New System.Windows.Forms.ComboBox
@@ -47,7 +49,7 @@ Partial Class PerformanceManagement
         Me.lbplease1 = New System.Windows.Forms.Label
         Me.lbtechnology2 = New System.Windows.Forms.Label
         Me.lbproblem2 = New System.Windows.Forms.Label
-        Me.lbdepartment1 = New System.Windows.Forms.Label
+        Me.lb_department = New System.Windows.Forms.Label
         Me.lbtechnology1 = New System.Windows.Forms.Label
         Me.lbproblem1 = New System.Windows.Forms.Label
         Me.lbquality1 = New System.Windows.Forms.Label
@@ -64,13 +66,19 @@ Partial Class PerformanceManagement
         Me.lbquality2 = New System.Windows.Forms.Label
         Me.lbflexibility2 = New System.Windows.Forms.Label
         Me.tbct1 = New System.Windows.Forms.TabControl
+        Me.TabPage2 = New System.Windows.Forms.TabPage
+        Me.datagrid_evaluation = New System.Windows.Forms.DataGridView
         Me.TabPage1.SuspendLayout()
         Me.tbct1.SuspendLayout()
+        Me.TabPage2.SuspendLayout()
+        CType(Me.datagrid_evaluation, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'TabPage1
         '
         Me.TabPage1.AutoScroll = True
+        Me.TabPage1.Controls.Add(Me.cb_perf_year)
+        Me.TabPage1.Controls.Add(Me.lb_perf_year)
         Me.TabPage1.Controls.Add(Me.cb_pf10)
         Me.TabPage1.Controls.Add(Me.cb_pf9)
         Me.TabPage1.Controls.Add(Me.cb_pf8)
@@ -94,7 +102,7 @@ Partial Class PerformanceManagement
         Me.TabPage1.Controls.Add(Me.lbplease1)
         Me.TabPage1.Controls.Add(Me.lbtechnology2)
         Me.TabPage1.Controls.Add(Me.lbproblem2)
-        Me.TabPage1.Controls.Add(Me.lbdepartment1)
+        Me.TabPage1.Controls.Add(Me.lb_department)
         Me.TabPage1.Controls.Add(Me.lbtechnology1)
         Me.TabPage1.Controls.Add(Me.lbproblem1)
         Me.TabPage1.Controls.Add(Me.lbquality1)
@@ -113,10 +121,28 @@ Partial Class PerformanceManagement
         Me.TabPage1.Location = New System.Drawing.Point(4, 22)
         Me.TabPage1.Name = "TabPage1"
         Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage1.Size = New System.Drawing.Size(716, 421)
+        Me.TabPage1.Size = New System.Drawing.Size(899, 824)
         Me.TabPage1.TabIndex = 2
         Me.TabPage1.Text = "Evaluation"
         Me.TabPage1.UseVisualStyleBackColor = True
+        '
+        'cb_perf_year
+        '
+        Me.cb_perf_year.FormattingEnabled = True
+        Me.cb_perf_year.Items.AddRange(New Object() {"2017", "2018"})
+        Me.cb_perf_year.Location = New System.Drawing.Point(413, 14)
+        Me.cb_perf_year.Name = "cb_perf_year"
+        Me.cb_perf_year.Size = New System.Drawing.Size(203, 21)
+        Me.cb_perf_year.TabIndex = 211
+        '
+        'lb_perf_year
+        '
+        Me.lb_perf_year.AutoSize = True
+        Me.lb_perf_year.Location = New System.Drawing.Point(378, 19)
+        Me.lb_perf_year.Name = "lb_perf_year"
+        Me.lb_perf_year.Size = New System.Drawing.Size(29, 13)
+        Me.lb_perf_year.TabIndex = 210
+        Me.lb_perf_year.Text = "Year"
         '
         'cb_pf10
         '
@@ -219,6 +245,7 @@ Partial Class PerformanceManagement
         'cb_department
         '
         Me.cb_department.FormattingEnabled = True
+        Me.cb_department.Items.AddRange(New Object() {"Administration", "Human Resource"})
         Me.cb_department.Location = New System.Drawing.Point(103, 14)
         Me.cb_department.Name = "cb_department"
         Me.cb_department.Size = New System.Drawing.Size(203, 21)
@@ -322,14 +349,14 @@ Partial Class PerformanceManagement
         Me.lbproblem2.TabIndex = 190
         Me.lbproblem2.Text = resources.GetString("lbproblem2.Text")
         '
-        'lbdepartment1
+        'lb_department
         '
-        Me.lbdepartment1.AutoSize = True
-        Me.lbdepartment1.Location = New System.Drawing.Point(17, 19)
-        Me.lbdepartment1.Name = "lbdepartment1"
-        Me.lbdepartment1.Size = New System.Drawing.Size(62, 13)
-        Me.lbdepartment1.TabIndex = 171
-        Me.lbdepartment1.Text = "Department"
+        Me.lb_department.AutoSize = True
+        Me.lb_department.Location = New System.Drawing.Point(17, 19)
+        Me.lb_department.Name = "lb_department"
+        Me.lb_department.Size = New System.Drawing.Size(62, 13)
+        Me.lb_department.TabIndex = 171
+        Me.lb_department.Text = "Department"
         '
         'lbtechnology1
         '
@@ -472,13 +499,34 @@ Partial Class PerformanceManagement
         'tbct1
         '
         Me.tbct1.Controls.Add(Me.TabPage1)
+        Me.tbct1.Controls.Add(Me.TabPage2)
         Me.tbct1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.tbct1.Location = New System.Drawing.Point(0, 0)
         Me.tbct1.Name = "tbct1"
         Me.tbct1.SelectedIndex = 0
-        Me.tbct1.Size = New System.Drawing.Size(724, 447)
+        Me.tbct1.Size = New System.Drawing.Size(907, 850)
         Me.tbct1.TabIndex = 39
         Me.tbct1.Tag = ""
+        '
+        'TabPage2
+        '
+        Me.TabPage2.Controls.Add(Me.datagrid_evaluation)
+        Me.TabPage2.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage2.Name = "TabPage2"
+        Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage2.Size = New System.Drawing.Size(899, 824)
+        Me.TabPage2.TabIndex = 3
+        Me.TabPage2.Text = "Overview"
+        Me.TabPage2.UseVisualStyleBackColor = True
+        '
+        'datagrid_evaluation
+        '
+        Me.datagrid_evaluation.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.datagrid_evaluation.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.datagrid_evaluation.Location = New System.Drawing.Point(3, 3)
+        Me.datagrid_evaluation.Name = "datagrid_evaluation"
+        Me.datagrid_evaluation.Size = New System.Drawing.Size(893, 818)
+        Me.datagrid_evaluation.TabIndex = 0
         '
         'PerformanceManagement
         '
@@ -486,10 +534,12 @@ Partial Class PerformanceManagement
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.Controls.Add(Me.tbct1)
         Me.Name = "PerformanceManagement"
-        Me.Size = New System.Drawing.Size(724, 447)
+        Me.Size = New System.Drawing.Size(907, 850)
         Me.TabPage1.ResumeLayout(False)
         Me.TabPage1.PerformLayout()
         Me.tbct1.ResumeLayout(False)
+        Me.TabPage2.ResumeLayout(False)
+        CType(Me.datagrid_evaluation, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -517,7 +567,7 @@ Partial Class PerformanceManagement
     Friend WithEvents lbplease1 As System.Windows.Forms.Label
     Friend WithEvents lbtechnology2 As System.Windows.Forms.Label
     Friend WithEvents lbproblem2 As System.Windows.Forms.Label
-    Friend WithEvents lbdepartment1 As System.Windows.Forms.Label
+    Friend WithEvents lb_department As System.Windows.Forms.Label
     Friend WithEvents lbtechnology1 As System.Windows.Forms.Label
     Friend WithEvents lbproblem1 As System.Windows.Forms.Label
     Friend WithEvents lbquality1 As System.Windows.Forms.Label
@@ -534,5 +584,9 @@ Partial Class PerformanceManagement
     Friend WithEvents lbquality2 As System.Windows.Forms.Label
     Friend WithEvents lbflexibility2 As System.Windows.Forms.Label
     Friend WithEvents tbct1 As System.Windows.Forms.TabControl
+    Friend WithEvents cb_perf_year As System.Windows.Forms.ComboBox
+    Friend WithEvents lb_perf_year As System.Windows.Forms.Label
+    Friend WithEvents TabPage2 As System.Windows.Forms.TabPage
+    Friend WithEvents datagrid_evaluation As System.Windows.Forms.DataGridView
 
 End Class

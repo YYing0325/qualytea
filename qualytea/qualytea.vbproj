@@ -133,6 +133,7 @@
     <Compile Include="Claims Application Form.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Connect_To_Access_Performance.vb" />
     <Compile Include="Leave Application Form.Designer.vb">
       <DependentUpon>Leave Application Form.vb</DependentUpon>
     </Compile>

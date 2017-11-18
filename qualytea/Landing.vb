@@ -222,8 +222,10 @@
         Me.MyPerformance1.Hide()
         Me.MyLeave1.Hide()
         Me.LeaveManagement1.Hide()
-        Me.PerformanceManagement1.Show()
         Me.TrainingManagement1.Hide()
+        Me.PerformanceManagement1.Show()
+        Dim connectToAccess = New Connect_To_Access_Performance
+        connectToAccess.getEvaluationList(Me.PerformanceManagement1.datagrid_evaluation)
     End Sub
 
     Private Sub btn_my_training_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_my_training.Click

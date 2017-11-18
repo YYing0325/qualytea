@@ -499,6 +499,7 @@ Public Class Connect_To_Access
                     dict.Add("first_name", dr("first_name"))
                     dict.Add("last_name", dr("last_name"))
                     dict.Add("department_id", dr("department_id"))
+                    dict.Add("point", dr("point"))
                     Dim deptId = Convert.ToInt32(dr("department_id"))
 
                     Dim empCmd2 As OleDbCommand = New OleDbCommand("SELECT * FROM [departments] WHERE [department_id]=" & deptId, myConnection)
@@ -537,7 +538,7 @@ Public Class Connect_To_Access
         Return dict
     End Function
 
-    Public Sub addToEvaluation(ByVal data As Dictionary(Of String, String))
+    Public Sub addToEvaluation(ByVal data As Dictionary(Of String, Int32))
         'Should be use to insert data of performance_evaluation.vb
         Try
             Dim accStr = "INSERT INTO performance_evaluation([department_id],[employee_id],[performance_year],[c1_quality_productivity],[c2_flexibility],[c3_initiative],[c4_dependability],[c5_collaboration],[c6_communication],[c7_problem_solving],[c8_technology_skill],[c9_perseverance],[c10_agility]) VALUES(@department_id,@employee_id,@performance_year,@c1_quality_productivity,@c2_flexibility,@c3_initiative,@c4_dependability,@c5_collaboration,@c6_communication,@c7_problem_solving,@c8_technology_skill,@c9_perseverance,@c10_agility)"
@@ -545,19 +546,20 @@ Public Class Connect_To_Access
             myConnection.ConnectionString = connString
             Using accquery As New System.Data.OleDb.OleDbCommand(accStr, myConnection)
                 myConnection.Open()
-                accquery.Parameters.AddWithValue("@department_id", data.Item("department_id").ToString)
-                accquery.Parameters.AddWithValue("@employee_id", data.Item("emplotee_id").ToString)
-                accquery.Parameters.AddWithValue("@performance_year", data.Item("performance_year").ToString)
-                accquery.Parameters.AddWithValue("@c1_quality_productivity", data.Item("c1_quality_productivity").ToString)
-                accquery.Parameters.AddWithValue("@c2_flexibility", data.Item("c2_flexibility").ToString)
-                accquery.Parameters.AddWithValue("@c3_initiative", data.Item("c3_initiative").ToString)
-                accquery.Parameters.AddWithValue("@c4_dependability", data.Item("c4_dependability").ToString)
-                accquery.Parameters.AddWithValue("@c5_collaboration", data.Item("c5_collaboration").ToString)
-                accquery.Parameters.AddWithValue("@c6_communication", data.Item("c6_communication").ToString)
-                accquery.Parameters.AddWithValue("@c7_problem_solving", Convert.ToInt16(data.Item("c7_problem_solving").ToString))
-                accquery.Parameters.AddWithValue("@c8_technology_skill", data.Item("c8_technology_skill").ToString)
-                accquery.Parameters.AddWithValue("@c9_perseverance", data.Item("c9_perseverance").ToString)
-                accquery.Parameters.AddWithValue("@c10_agility", data.Item("c10_agility").ToString)
+
+                accquery.Parameters.AddWithValue("@department_id", data.Item("department_id"))
+                accquery.Parameters.AddWithValue("@employee_id", data.Item("employee_id"))
+                accquery.Parameters.AddWithValue("@performance_year", data.Item("performance_year"))
+                accquery.Parameters.AddWithValue("@c1_quality_productivity", data.Item("c1_quality_productivity"))
+                accquery.Parameters.AddWithValue("@c2_flexibility", data.Item("c2_flexibility"))
+                accquery.Parameters.AddWithValue("@c3_initiative", data.Item("c3_initiative"))
+                accquery.Parameters.AddWithValue("@c4_dependability", data.Item("c4_dependability"))
+                accquery.Parameters.AddWithValue("@c5_collaboration", data.Item("c5_collaboration"))
+                accquery.Parameters.AddWithValue("@c6_communication", data.Item("c6_communication"))
+                accquery.Parameters.AddWithValue("@c7_problem_solving", data.Item("c7_problem_solving"))
+                accquery.Parameters.AddWithValue("@c8_technology_skill", data.Item("c8_technology_skill"))
+                accquery.Parameters.AddWithValue("@c9_perseverance", data.Item("c9_perseverance"))
+                accquery.Parameters.AddWithValue("@c10_agility", data.Item("c10_agility"))
                 accquery.ExecuteNonQuery()
                 myConnection.Close()
             End Using
@@ -568,22 +570,25 @@ Public Class Connect_To_Access
 
     End Sub
 
-    Public Sub addToVoucherRedeemed(ByVal data As Dictionary(Of String, String))
-        'Should be use to insert data of Reward tab inside performance_evaluation
+    Public Sub addTotalPoint(ByVal data As Dictionary(Of String, Integer))
+        'Should be use to insert calculated total point of the year to kpi history
         Try
-            Dim accStr = "INSERT INTO voucher_redeem([employee_id],[voucher_code_id]) VALUES(@employee_id,@voucher_code_id)"
+            Dim accStr = "INSERT INTO [employee_kpi]([employee_id],[credit_year],[point]) VALUES(@employee_id,@credit_year,@point)"
             myConnection.ConnectionString = connString
             Using accquery As New System.Data.OleDb.OleDbCommand(accStr, myConnection)
                 myConnection.Open()
-                accquery.Parameters.AddWithValue("@employee_id", data.Item("employee_id").ToString)
-                accquery.Parameters.AddWithValue("@voucher_code_id", data.Item("voucher_code_id").ToString)
+                accquery.Parameters.AddWithValue("@employee_id", data.Item("employee_id"))
+                accquery.Parameters.AddWithValue("@credit_year", data.Item("performance_year"))
+                accquery.Parameters.AddWithValue("@point)", data.Item("point"))
+
                 accquery.ExecuteNonQuery()
                 myConnection.Close()
             End Using
-            'MsgBox("Evaluation succesfully added into database.")
+
         Catch ex As Exception
             MsgBox("Connection To Database Failed: " & ex.Message.ToString)
         End Try
+
     End Sub
 
     Public Sub getAttendanceList(ByVal dataGrid As DataGridView, ByVal empId As String)

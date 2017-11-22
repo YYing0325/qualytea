@@ -36,4 +36,7 @@
     End Sub
 
 
+    Private Sub data_grid_TrNewTraining_CellContentClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles data_grid_TrNewTraining.CellContentClick
+
+    End Sub
 End Class

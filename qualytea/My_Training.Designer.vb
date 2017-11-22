@@ -383,6 +383,7 @@ Partial Class My_Training
         'TableAdapterManager1
         '
         Me.TableAdapterManager1.BackupDataSetBeforeUpdate = False
+        Me.TableAdapterManager1.jobsTableAdapter = Nothing
         Me.TableAdapterManager1.locationsTableAdapter = Nothing
         Me.TableAdapterManager1.trainingsTableAdapter = Me.TrainingsTableAdapter
         Me.TableAdapterManager1.UpdateOrder = WindowsApplication1.HRDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.UpdateInsertDelete

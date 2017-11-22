@@ -96,12 +96,13 @@
 
     End Sub
 
-    Private Sub Button3_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_training_management.Click
-        Me.TrainingManagement1.Show()
-        Dim connectToAccess = New Connect_To_Access()
-        'connectToAccess.getNewTrainingList(Me.TrainingManagement1.data_grid_TrNewTraining, Me.emp_id.Text.ToString)
+    Private Sub btn_TrainingManagement_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_training_management.Click
+        'Me.TrainingManagement1.Show()
+        Dim connectToAccess = New Connect_To_Access_Training()
+        'connectToAccess.getNewTrainingList(Me.TrainingManagement1.DataGridView1, Me.emp_id.Text.ToString)
         connectToAccess.getTrainingManagementList(Me.TrainingManagement1.DataGridView2)
-
+        connectToAccess.getFeedBackList(Me.TrainingManagement1.cbx_feedback101)
+        Me.TrainingManagement1.Show()
         Me.HomeDashboard1.Hide()
         Me.PersonalDetailsComponent1.Hide()
         Me.JobApplicantsComponent1.Hide()
@@ -227,6 +228,12 @@
     End Sub
 
     Private Sub btn_my_training_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_my_training.Click
+        Dim connectToAccessTraining = New Connect_To_Access_Training()
+        connectToAccessTraining.emp_id = Me.emp_id.ToString
+        connectToAccessTraining.getNewTrainingList(Me.MyTraining1.data_grid_TrNewTraining, Me.emp_id.Text.ToString)
+        connectToAccessTraining.getInProgressTrainingList(Me.MyTraining1.data_grid_TrProgress, Me.emp_id.Text.ToString)
+        connectToAccessTraining.getCompletionList(Me.MyTraining1.data_grid_TrComplete, Me.emp_id.Text.ToString)
+
         Me.HomeDashboard1.Hide()
         Me.PersonalDetailsComponent1.Hide()
         Me.JobApplicantsComponent1.Hide()
@@ -239,5 +246,9 @@
         Me.LeaveManagement1.Hide()
         Me.PerformanceManagement1.Hide()
         Me.TrainingManagement1.Hide()
+    End Sub
+
+    Private Sub PerformanceManagement1_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles PerformanceManagement1.Load
+
     End Sub
 End Class

@@ -22,6 +22,7 @@ Partial Class TrainingManagement
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container
         Me.DataGridView2 = New System.Windows.Forms.DataGridView
         Me.btn_trAddNew102 = New System.Windows.Forms.Button
         Me.btn_trdelete102 = New System.Windows.Forms.Button
@@ -29,22 +30,27 @@ Partial Class TrainingManagement
         Me.btn_trdetails102 = New System.Windows.Forms.Button
         Me.TabControl1 = New System.Windows.Forms.TabControl
         Me.tab_training = New System.Windows.Forms.TabPage
-        Me.TabPage2 = New System.Windows.Forms.TabPage
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView
-        Me.Panel2 = New System.Windows.Forms.Panel
         Me.Panel3 = New System.Windows.Forms.Panel
-        Me.Panel1 = New System.Windows.Forms.Panel
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox
         Me.Panel4 = New System.Windows.Forms.Panel
+        Me.btn_trG_data102 = New System.Windows.Forms.Button
+        Me.TabPage2 = New System.Windows.Forms.TabPage
+        Me.Panel1 = New System.Windows.Forms.Panel
+        Me.cbx_feedback101 = New System.Windows.Forms.ComboBox
+        Me.Panel2 = New System.Windows.Forms.Panel
+        Me.dataGrid_Feedback = New System.Windows.Forms.DataGridView
+        Me.HRDataSet = New WindowsApplication1.HRDataSet
+        Me.HRDataSetBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabControl1.SuspendLayout()
         Me.tab_training.SuspendLayout()
-        Me.TabPage2.SuspendLayout()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.Panel2.SuspendLayout()
         Me.Panel3.SuspendLayout()
-        Me.Panel1.SuspendLayout()
         Me.Panel4.SuspendLayout()
+        Me.TabPage2.SuspendLayout()
+        Me.Panel1.SuspendLayout()
+        Me.Panel2.SuspendLayout()
+        CType(Me.dataGrid_Feedback, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.HRDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.HRDataSetBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'DataGridView2
@@ -62,7 +68,7 @@ Partial Class TrainingManagement
         '
         'btn_trAddNew102
         '
-        Me.btn_trAddNew102.Location = New System.Drawing.Point(0, 0)
+        Me.btn_trAddNew102.Location = New System.Drawing.Point(3, 3)
         Me.btn_trAddNew102.Name = "btn_trAddNew102"
         Me.btn_trAddNew102.Size = New System.Drawing.Size(75, 29)
         Me.btn_trAddNew102.TabIndex = 10
@@ -71,7 +77,7 @@ Partial Class TrainingManagement
         '
         'btn_trdelete102
         '
-        Me.btn_trdelete102.Location = New System.Drawing.Point(0, 0)
+        Me.btn_trdelete102.Location = New System.Drawing.Point(633, 3)
         Me.btn_trdelete102.Name = "btn_trdelete102"
         Me.btn_trdelete102.Size = New System.Drawing.Size(75, 23)
         Me.btn_trdelete102.TabIndex = 14
@@ -80,7 +86,7 @@ Partial Class TrainingManagement
         '
         'btn_tredit102
         '
-        Me.btn_tredit102.Location = New System.Drawing.Point(0, 0)
+        Me.btn_tredit102.Location = New System.Drawing.Point(552, 3)
         Me.btn_tredit102.Name = "btn_tredit102"
         Me.btn_tredit102.Size = New System.Drawing.Size(75, 23)
         Me.btn_tredit102.TabIndex = 13
@@ -89,7 +95,7 @@ Partial Class TrainingManagement
         '
         'btn_trdetails102
         '
-        Me.btn_trdetails102.Location = New System.Drawing.Point(0, 0)
+        Me.btn_trdetails102.Location = New System.Drawing.Point(471, 3)
         Me.btn_trdetails102.Name = "btn_trdetails102"
         Me.btn_trdetails102.Size = New System.Drawing.Size(75, 23)
         Me.btn_trdetails102.TabIndex = 12
@@ -119,6 +125,36 @@ Partial Class TrainingManagement
         Me.tab_training.Text = "TrainingList"
         Me.tab_training.UseVisualStyleBackColor = True
         '
+        'Panel3
+        '
+        Me.Panel3.Controls.Add(Me.DataGridView2)
+        Me.Panel3.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.Panel3.Location = New System.Drawing.Point(3, 59)
+        Me.Panel3.Name = "Panel3"
+        Me.Panel3.Size = New System.Drawing.Size(711, 363)
+        Me.Panel3.TabIndex = 15
+        '
+        'Panel4
+        '
+        Me.Panel4.Controls.Add(Me.btn_trG_data102)
+        Me.Panel4.Controls.Add(Me.btn_trAddNew102)
+        Me.Panel4.Controls.Add(Me.btn_trdetails102)
+        Me.Panel4.Controls.Add(Me.btn_tredit102)
+        Me.Panel4.Controls.Add(Me.btn_trdelete102)
+        Me.Panel4.Location = New System.Drawing.Point(3, 3)
+        Me.Panel4.Name = "Panel4"
+        Me.Panel4.Size = New System.Drawing.Size(711, 50)
+        Me.Panel4.TabIndex = 16
+        '
+        'btn_trG_data102
+        '
+        Me.btn_trG_data102.Location = New System.Drawing.Point(390, 3)
+        Me.btn_trG_data102.Name = "btn_trG_data102"
+        Me.btn_trG_data102.Size = New System.Drawing.Size(75, 23)
+        Me.btn_trG_data102.TabIndex = 15
+        Me.btn_trG_data102.Text = "Generate Data"
+        Me.btn_trG_data102.UseVisualStyleBackColor = True
+        '
         'TabPage2
         '
         Me.TabPage2.Controls.Add(Me.Panel1)
@@ -131,61 +167,45 @@ Partial Class TrainingManagement
         Me.TabPage2.Text = "Feedback"
         Me.TabPage2.UseVisualStyleBackColor = True
         '
-        'DataGridView1
-        '
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.DataGridView1.Location = New System.Drawing.Point(0, 0)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.Size = New System.Drawing.Size(711, 363)
-        Me.DataGridView1.TabIndex = 0
-        '
-        'Panel2
-        '
-        Me.Panel2.Controls.Add(Me.DataGridView1)
-        Me.Panel2.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Panel2.Location = New System.Drawing.Point(3, 59)
-        Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(711, 363)
-        Me.Panel2.TabIndex = 2
-        '
-        'Panel3
-        '
-        Me.Panel3.Controls.Add(Me.DataGridView2)
-        Me.Panel3.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Panel3.Location = New System.Drawing.Point(3, 59)
-        Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(711, 363)
-        Me.Panel3.TabIndex = 15
-        '
         'Panel1
         '
-        Me.Panel1.Controls.Add(Me.ComboBox1)
+        Me.Panel1.Controls.Add(Me.cbx_feedback101)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel1.Location = New System.Drawing.Point(3, 3)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(711, 50)
         Me.Panel1.TabIndex = 3
         '
-        'ComboBox1
+        'cbx_feedback101
         '
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(20, 13)
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(121, 21)
-        Me.ComboBox1.TabIndex = 0
+        Me.cbx_feedback101.FormattingEnabled = True
+        Me.cbx_feedback101.Location = New System.Drawing.Point(20, 13)
+        Me.cbx_feedback101.Name = "cbx_feedback101"
+        Me.cbx_feedback101.Size = New System.Drawing.Size(121, 21)
+        Me.cbx_feedback101.TabIndex = 0
         '
-        'Panel4
+        'Panel2
         '
-        Me.Panel4.Controls.Add(Me.btn_trAddNew102)
-        Me.Panel4.Controls.Add(Me.btn_trdetails102)
-        Me.Panel4.Controls.Add(Me.btn_tredit102)
-        Me.Panel4.Controls.Add(Me.btn_trdelete102)
-        Me.Panel4.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel4.Location = New System.Drawing.Point(3, 3)
-        Me.Panel4.Name = "Panel4"
-        Me.Panel4.Size = New System.Drawing.Size(711, 50)
-        Me.Panel4.TabIndex = 16
+        Me.Panel2.Controls.Add(Me.dataGrid_Feedback)
+        Me.Panel2.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.Panel2.Location = New System.Drawing.Point(3, 59)
+        Me.Panel2.Name = "Panel2"
+        Me.Panel2.Size = New System.Drawing.Size(711, 363)
+        Me.Panel2.TabIndex = 2
+        '
+        'dataGrid_Feedback
+        '
+        Me.dataGrid_Feedback.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dataGrid_Feedback.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.dataGrid_Feedback.Location = New System.Drawing.Point(0, 0)
+        Me.dataGrid_Feedback.Name = "dataGrid_Feedback"
+        Me.dataGrid_Feedback.Size = New System.Drawing.Size(711, 363)
+        Me.dataGrid_Feedback.TabIndex = 0
+        '
+        'HRDataSet
+        '
+        Me.HRDataSet.DataSetName = "HRDataSet"
+        Me.HRDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'TrainingManagement
         '
@@ -197,12 +217,14 @@ Partial Class TrainingManagement
         CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabControl1.ResumeLayout(False)
         Me.tab_training.ResumeLayout(False)
-        Me.TabPage2.ResumeLayout(False)
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.Panel2.ResumeLayout(False)
         Me.Panel3.ResumeLayout(False)
-        Me.Panel1.ResumeLayout(False)
         Me.Panel4.ResumeLayout(False)
+        Me.TabPage2.ResumeLayout(False)
+        Me.Panel1.ResumeLayout(False)
+        Me.Panel2.ResumeLayout(False)
+        CType(Me.dataGrid_Feedback, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.HRDataSet, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.HRDataSetBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -217,8 +239,11 @@ Partial Class TrainingManagement
     Friend WithEvents Panel4 As System.Windows.Forms.Panel
     Friend WithEvents Panel3 As System.Windows.Forms.Panel
     Friend WithEvents Panel1 As System.Windows.Forms.Panel
-    Friend WithEvents ComboBox1 As System.Windows.Forms.ComboBox
+    Friend WithEvents cbx_feedback101 As System.Windows.Forms.ComboBox
     Friend WithEvents Panel2 As System.Windows.Forms.Panel
-    Friend WithEvents DataGridView1 As System.Windows.Forms.DataGridView
+    Friend WithEvents dataGrid_Feedback As System.Windows.Forms.DataGridView
+    Friend WithEvents btn_trG_data102 As System.Windows.Forms.Button
+    Friend WithEvents HRDataSet As WindowsApplication1.HRDataSet
+    Friend WithEvents HRDataSetBindingSource As System.Windows.Forms.BindingSource
 
 End Class

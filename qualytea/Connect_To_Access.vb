@@ -170,14 +170,12 @@ Public Class Connect_To_Access
             table.Columns.Add("Time", GetType(String))
             table.Columns.Add("Venue", GetType(String))
             table.Columns.Add("Required Dept", GetType(String))
-            table.Columns.Add("Remarks", GetType(String))
-
 
 
             Using cmd As OleDbCommand = New OleDbCommand(query, myConnection)
                 myConnection.Open()
-                'cmd.Parameters.AddWithValue("@p1", empId) 'remark this so that will show all from training table.
-                'cmd.Parameters.AddWithValue("@p2", "new") 'remark this so that will show all from training table.
+                cmd.Parameters.AddWithValue("@p1", empId) 'remark this so that will show all from training table.
+                cmd.Parameters.AddWithValue("@p2", "new") 'remark this so that will show all from training table.
                 Using dr As OleDbDataReader = cmd.ExecuteReader
                     While dr.Read
                         If dr.HasRows = True Then
@@ -189,7 +187,7 @@ Public Class Connect_To_Access
                                 Using dr2 As OleDbDataReader = cmd2.ExecuteReader
                                     While dr2.Read
                                         If dr2.HasRows = True Then
-                                            table.Rows.Add(dr2("training_id"), dr2("training_code"), dr2("training_name"), dr2("training_description"), dr2("Training_datetime"), dr2("expired_at"), dr2("venue"))
+                                            table.Rows.Add(dr2("training_id"), dr2("training_code"), dr2("training_name"), dr2("training_description"), dr2("Training_datetime"), dr2("expired_at"), dr2("required_dept"))
                                         End If
                                     End While
                                 End Using
@@ -219,13 +217,23 @@ Public Class Connect_To_Access
             table.Columns.Add("Time", GetType(String))
             table.Columns.Add("Venue", GetType(String))
             table.Columns.Add("Required Dept", GetType(String))
-            table.Columns.Add("Remarks", GetType(String))
+
             Using cmd As OleDbCommand = New OleDbCommand(query, myConnection)
                 myConnection.Open()
                 Using dr As OleDbDataReader = cmd.ExecuteReader
                     While dr.Read
-                        table.Rows.Add(dr("training_id"), dr("training_code"), dr("training_name"), dr("training_description"), dr("Training_datetime"), dr("expired_at"), dr("venue"), dr("remark"))
+                        table.Rows.Add(dr("training_id"), dr("training_code"), dr("training_name"), dr("training_description"), dr("Training_datetime"), dr("expired_at"), dr("venue"), dr("required_dept"))
+                        If dataGrid.ColumnCount.Equals(8) Then
+                            Dim btn As New DataGridViewButtonColumn()
+                            dataGrid.Columns.Add(btn)
+                            btn.HeaderText = ""
+                            btn.Text = "Generate"
+                            btn.Name = "btn_Generate"
+                            btn.ToolTipText = "Click to accept the training"
+                            btn.UseColumnTextForButtonValue = True
+                        End If
                     End While
+                    
                 End Using
 
             End Using
@@ -651,35 +659,57 @@ Public Class Connect_To_Access
     Public Sub getNewTrainingList(ByVal dataGrid As DataGridView, ByVal empId As String)
         Try
             myConnection.ConnectionString = connString
-            Dim query = "SELECT * FROM [employee_trainings] WHERE [employee_id]=? AND [status]=?"
+            Dim query = "SELECT * FROM [employee_trainings] WHERE [employee_id]=? AND [status]=?" 'this will show only new employee
+            'Dim query = "SELECT * FROM [employee_trainings]" 'this will show all training course
             Dim table As New DataTable
             table.Columns.Add("Code", GetType(String))
             table.Columns.Add("Course", GetType(String))
             table.Columns.Add("Course Description", GetType(String))
             table.Columns.Add("Date", GetType(String))
-            table.Columns.Add("Expired At", GetType(String))
-            table.Columns.Add("Location", GetType(String))
+            table.Columns.Add("Time", GetType(String))
+            table.Columns.Add("Venue", GetType(String))
+            table.Columns.Add("Required Dept", GetType(String))
+           
 
             Using cmd As OleDbCommand = New OleDbCommand(query, myConnection)
                 myConnection.Open()
-                cmd.Parameters.AddWithValue("@p1", empId)
-                cmd.Parameters.AddWithValue("@p2", "new")
+                cmd.Parameters.AddWithValue("@p1", empId) 'remark this so that will show all from training table.
+                cmd.Parameters.AddWithValue("@p2", "new") 'remark this so that will show all from training table.
                 Using dr As OleDbDataReader = cmd.ExecuteReader
                     While dr.Read
                         If dr.HasRows = True Then
+                            'table.Rows.Add(dr("check_in_at"), dr("check_out_at"), dr("working_minutes"), dr("note"))
                             Dim trainingId = dr("training_id")
                             Dim query2 = "SELECT * FROM [trainings] WHERE [training_id]=?"
+                            'Dim query2 = "SELECT * FROM [trainings]"
                             Using cmd2 As OleDbCommand = New OleDbCommand(query2, myConnection)
                                 cmd2.Parameters.AddWithValue("@p1", trainingId)
                                 Using dr2 As OleDbDataReader = cmd2.ExecuteReader
                                     While dr2.Read
                                         If dr2.HasRows = True Then
-                                            table.Rows.Add(dr2("training_id"), dr2("training_name"), dr2("training_description"), dr2("training_datetime"), dr2("expired_at"), dr2("location"))
+                                            table.Rows.Add(dr2("training_code"), dr2("training_name"), dr2("training_description"), dr2("Training_datetime"), dr2("expired_at"), dr2("venue"), dr2("required_dept"))
                                         End If
                                     End While
+                                    dataGrid.DataSource = table
+                                    If dataGrid.ColumnCount.Equals(7) Then
+                                        Dim btn As New DataGridViewButtonColumn()
+                                        dataGrid.Columns.Add(btn)
+                                        btn.HeaderText = ""
+                                        btn.Text = "Accept"
+                                        btn.Name = "btn_accept"
+                                        btn.ToolTipText = "Click to accept the training"
+                                        btn.UseColumnTextForButtonValue = True
+
+                                        Dim btn1 As New DataGridViewButtonColumn()
+                                        dataGrid.Columns.Add(btn1)
+                                        btn1.HeaderText = ""
+                                        btn1.Text = "Reject"
+                                        btn1.Name = "btn_reject"
+                                        btn.ToolTipText = "Click to reject the training"
+                                        btn1.UseColumnTextForButtonValue = True
+                                    End If
                                 End Using
                             End Using
-
                         End If
                     End While
                 End Using

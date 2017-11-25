@@ -168,9 +168,9 @@ Public Class landing_page
         Me.PerformanceManagement1.Hide()
         Me.TrainingManagement1.Hide()
         Dim connectToAccess = New Connect_To_Access
-        'connectToAccess.getNewLeaveList(Me.Leave_H_Management1.datagrid_my_leave, Me.emp_id.Text.ToString)
-        'connectToAccess.getEmployeeLeaves(Me.Leave_H_Management1.datagrid_leave_history, Me.emp_id.Text.ToString)
-        'connectToAccess.getEmployeeLeavesRequest(Me.Leave_H_Management1.datagrid_leave_request, Me.emp_id.Text.ToString)
+        'connectToAccess.getNewLeaveList(Me.LeaveManagement1.datagrid_leave, Me.emp_id.Text.ToString)
+        'connectToAccess.getEmployeeLeaves(Me.LeaveManagement1.datagrid_leave_history, Me.emp_id.Text.ToString)
+        'connectToAccess.getEmployeeLeavesRequest(Me.LeaveManagement1.datagrid_leave_request, Me.emp_id.Text.ToString)
         Me.LeaveManagement1.Show()
 
     End Sub
@@ -189,7 +189,12 @@ Public Class landing_page
         Me.PerformanceManagement1.Hide()
         Me.TrainingManagement1.Hide()
         Me.LeaveManagement1.Show()
+<<<<<<< HEAD
 
+=======
+        Dim connectToAccessLeave = New Connect_To_Access_Leave
+        connectToAccessLeave.getEmployeeSalary(Me.LeaveManagement1.datagrid_salary)
+>>>>>>> leave-2
     End Sub
 
 
@@ -221,6 +226,8 @@ Public Class landing_page
         Me.LeaveManagement1.Hide()
         Me.PerformanceManagement1.Hide()
         Me.TrainingManagement1.Hide()
+        Dim connectToAccess = New Connect_To_Access_Leave
+        connectToAccess.getMyLeave(Me.MyLeave1.datagrid_leave, Me.emp_id.Text.ToString)
     End Sub
 
     Private Sub btn_performance_management_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_performance_management.Click

@@ -13,15 +13,13 @@
     End Sub
 
     Private Sub Button8_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_apply.Click
-
         MsgBox("Your application is being processed.", MsgBoxStyle.Information, "Thank You!")
         Close()
-        Dim connectToAccess = New Connect_To_Access
-        'connectToAccess.getEmployeeLeaves(landing_page.Leave_H_Management1.datagrid_leave_history, landing_page.emp_id.Text.ToString)
-        'connectToAccess.getEmployeeLeavesRequest(landing_page.Leave_H_Management1.datagrid_leave_request, landing_page.emp_id.Text.ToString)
-        'landing_page.Leave_H_Management1.Show()
+        landing_page.MyLeave1.Show()
+        Dim empId = landing_page.emp_id.Text
 
-
+        Dim connectToAccess = New Connect_To_Access_Leave
+        connectToAccess.addToMyLeave(empId, cb_type_of_leave.SelectedItem, dtp_leave_from.Value, dtp_leave_until.Value, cb_reason.SelectedItem)
 
     End Sub
 

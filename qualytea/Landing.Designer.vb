@@ -36,18 +36,18 @@ Partial Class landing_page
         Me.btn_training_management = New System.Windows.Forms.Button
         Me.btn_leave_management = New System.Windows.Forms.Button
         Me.btn_personal = New System.Windows.Forms.Button
+        Me.PerformanceManagement1 = New WindowsApplication1.PerformanceManagement
+        Me.LeaveManagement1 = New WindowsApplication1.LeaveManagement
+        Me.TrainingManagement1 = New WindowsApplication1.TrainingManagement
+        Me.MyTraining1 = New WindowsApplication1.MyTraining
+        Me.MyPerformance1 = New WindowsApplication1.MyPerformance
+        Me.MyLeave1 = New WindowsApplication1.MyLeave
         Me.HomeDashboard1 = New WindowsApplication1.HomeDashboard
         Me.Attendance1 = New WindowsApplication1.Attendance
         Me.ChangePassword1 = New WindowsApplication1.ChangePassword
         Me.EditProfile1 = New WindowsApplication1.EditProfile
         Me.JobApplicantsComponent1 = New WindowsApplication1.JobApplicantsComponent
         Me.PersonalDetailsComponent1 = New WindowsApplication1.PersonalDetailsComponent
-        Me.MyLeave1 = New WindowsApplication1.MyLeave
-        Me.MyPerformance1 = New WindowsApplication1.MyPerformance
-        Me.MyTraining1 = New WindowsApplication1.MyTraining
-        Me.TrainingManagement1 = New WindowsApplication1.TrainingManagement
-        Me.LeaveManagement1 = New WindowsApplication1.LeaveManagement
-        Me.PerformanceManagement1 = New WindowsApplication1.PerformanceManagement
         Me.SplitContainer1.Panel1.SuspendLayout()
         Me.SplitContainer1.Panel2.SuspendLayout()
         Me.SplitContainer1.SuspendLayout()
@@ -101,7 +101,7 @@ Partial Class landing_page
         Me.btn_performance_management.FlatAppearance.BorderColor = System.Drawing.Color.White
         Me.btn_performance_management.FlatAppearance.BorderSize = 0
         Me.btn_performance_management.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btn_performance_management.Font = New System.Drawing.Font("Lato", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_performance_management.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_performance_management.ForeColor = System.Drawing.SystemColors.ButtonHighlight
         Me.btn_performance_management.Location = New System.Drawing.Point(7, 82)
         Me.btn_performance_management.Name = "btn_performance_management"
@@ -116,7 +116,7 @@ Partial Class landing_page
         Me.btn_my_leave.FlatAppearance.BorderColor = System.Drawing.Color.White
         Me.btn_my_leave.FlatAppearance.BorderSize = 0
         Me.btn_my_leave.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btn_my_leave.Font = New System.Drawing.Font("Lato", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_my_leave.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_my_leave.ForeColor = System.Drawing.SystemColors.ButtonHighlight
         Me.btn_my_leave.Location = New System.Drawing.Point(15, 23)
         Me.btn_my_leave.Name = "btn_my_leave"
@@ -131,7 +131,7 @@ Partial Class landing_page
         Me.btn_my_training.FlatAppearance.BorderColor = System.Drawing.Color.White
         Me.btn_my_training.FlatAppearance.BorderSize = 0
         Me.btn_my_training.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btn_my_training.Font = New System.Drawing.Font("Lato", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_my_training.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_my_training.ForeColor = System.Drawing.SystemColors.ButtonHighlight
         Me.btn_my_training.Location = New System.Drawing.Point(3, 142)
         Me.btn_my_training.Name = "btn_my_training"
@@ -146,7 +146,7 @@ Partial Class landing_page
         Me.btn_home.FlatAppearance.BorderColor = System.Drawing.Color.White
         Me.btn_home.FlatAppearance.BorderSize = 0
         Me.btn_home.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btn_home.Font = New System.Drawing.Font("Lato", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_home.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_home.ForeColor = System.Drawing.SystemColors.ButtonHighlight
         Me.btn_home.Location = New System.Drawing.Point(8, 231)
         Me.btn_home.Name = "btn_home"
@@ -158,7 +158,7 @@ Partial Class landing_page
         'emp_id
         '
         Me.emp_id.AutoSize = True
-        Me.emp_id.Font = New System.Drawing.Font("Lato", 8.0!)
+        Me.emp_id.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!)
         Me.emp_id.Location = New System.Drawing.Point(123, 7)
         Me.emp_id.Name = "emp_id"
         Me.emp_id.Size = New System.Drawing.Size(14, 13)
@@ -168,10 +168,10 @@ Partial Class landing_page
         'lbl_emp_id
         '
         Me.lbl_emp_id.AutoSize = True
-        Me.lbl_emp_id.Font = New System.Drawing.Font("Lato", 8.0!)
+        Me.lbl_emp_id.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!)
         Me.lbl_emp_id.Location = New System.Drawing.Point(12, 7)
         Me.lbl_emp_id.Name = "lbl_emp_id"
-        Me.lbl_emp_id.Size = New System.Drawing.Size(75, 13)
+        Me.lbl_emp_id.Size = New System.Drawing.Size(73, 13)
         Me.lbl_emp_id.TabIndex = 7
         Me.lbl_emp_id.Text = "Employee ID :"
         '
@@ -181,7 +181,7 @@ Partial Class landing_page
         Me.btn_payroll_management.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.btn_payroll_management.FlatAppearance.BorderSize = 0
         Me.btn_payroll_management.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btn_payroll_management.Font = New System.Drawing.Font("Lato", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_payroll_management.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_payroll_management.ForeColor = System.Drawing.SystemColors.ButtonHighlight
         Me.btn_payroll_management.Location = New System.Drawing.Point(2, 442)
         Me.btn_payroll_management.Name = "btn_payroll_management"
@@ -282,6 +282,54 @@ Partial Class landing_page
         Me.btn_personal.Text = "Personal Information"
         Me.btn_personal.UseVisualStyleBackColor = False
         '
+        'PerformanceManagement1
+        '
+        Me.PerformanceManagement1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.PerformanceManagement1.Location = New System.Drawing.Point(0, 0)
+        Me.PerformanceManagement1.Name = "PerformanceManagement1"
+        Me.PerformanceManagement1.Size = New System.Drawing.Size(791, 662)
+        Me.PerformanceManagement1.TabIndex = 14
+        '
+        'LeaveManagement1
+        '
+        Me.LeaveManagement1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.LeaveManagement1.Location = New System.Drawing.Point(0, 0)
+        Me.LeaveManagement1.Name = "LeaveManagement1"
+        Me.LeaveManagement1.Size = New System.Drawing.Size(791, 662)
+        Me.LeaveManagement1.TabIndex = 13
+        '
+        'TrainingManagement1
+        '
+        Me.TrainingManagement1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.TrainingManagement1.Location = New System.Drawing.Point(0, 0)
+        Me.TrainingManagement1.Name = "TrainingManagement1"
+        Me.TrainingManagement1.Size = New System.Drawing.Size(791, 662)
+        Me.TrainingManagement1.TabIndex = 12
+        '
+        'MyTraining1
+        '
+        Me.MyTraining1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.MyTraining1.Location = New System.Drawing.Point(0, 0)
+        Me.MyTraining1.Name = "MyTraining1"
+        Me.MyTraining1.Size = New System.Drawing.Size(791, 662)
+        Me.MyTraining1.TabIndex = 11
+        '
+        'MyPerformance1
+        '
+        Me.MyPerformance1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.MyPerformance1.Location = New System.Drawing.Point(0, 0)
+        Me.MyPerformance1.Name = "MyPerformance1"
+        Me.MyPerformance1.Size = New System.Drawing.Size(791, 662)
+        Me.MyPerformance1.TabIndex = 10
+        '
+        'MyLeave1
+        '
+        Me.MyLeave1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.MyLeave1.Location = New System.Drawing.Point(0, 0)
+        Me.MyLeave1.Name = "MyLeave1"
+        Me.MyLeave1.Size = New System.Drawing.Size(791, 662)
+        Me.MyLeave1.TabIndex = 9
+        '
         'HomeDashboard1
         '
         Me.HomeDashboard1.Dock = System.Windows.Forms.DockStyle.Fill
@@ -331,54 +379,6 @@ Partial Class landing_page
         Me.PersonalDetailsComponent1.Name = "PersonalDetailsComponent1"
         Me.PersonalDetailsComponent1.Size = New System.Drawing.Size(791, 662)
         Me.PersonalDetailsComponent1.TabIndex = 0
-        '
-        'MyLeave1
-        '
-        Me.MyLeave1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.MyLeave1.Location = New System.Drawing.Point(0, 0)
-        Me.MyLeave1.Name = "MyLeave1"
-        Me.MyLeave1.Size = New System.Drawing.Size(791, 662)
-        Me.MyLeave1.TabIndex = 9
-        '
-        'MyPerformance1
-        '
-        Me.MyPerformance1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.MyPerformance1.Location = New System.Drawing.Point(0, 0)
-        Me.MyPerformance1.Name = "MyPerformance1"
-        Me.MyPerformance1.Size = New System.Drawing.Size(791, 662)
-        Me.MyPerformance1.TabIndex = 10
-        '
-        'MyTraining1
-        '
-        Me.MyTraining1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.MyTraining1.Location = New System.Drawing.Point(0, 0)
-        Me.MyTraining1.Name = "MyTraining1"
-        Me.MyTraining1.Size = New System.Drawing.Size(791, 662)
-        Me.MyTraining1.TabIndex = 11
-        '
-        'TrainingManagement1
-        '
-        Me.TrainingManagement1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.TrainingManagement1.Location = New System.Drawing.Point(0, 0)
-        Me.TrainingManagement1.Name = "TrainingManagement1"
-        Me.TrainingManagement1.Size = New System.Drawing.Size(791, 662)
-        Me.TrainingManagement1.TabIndex = 12
-        '
-        'LeaveManagement1
-        '
-        Me.LeaveManagement1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.LeaveManagement1.Location = New System.Drawing.Point(0, 0)
-        Me.LeaveManagement1.Name = "LeaveManagement1"
-        Me.LeaveManagement1.Size = New System.Drawing.Size(791, 662)
-        Me.LeaveManagement1.TabIndex = 13
-        '
-        'PerformanceManagement1
-        '
-        Me.PerformanceManagement1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.PerformanceManagement1.Location = New System.Drawing.Point(0, 0)
-        Me.PerformanceManagement1.Name = "PerformanceManagement1"
-        Me.PerformanceManagement1.Size = New System.Drawing.Size(791, 662)
-        Me.PerformanceManagement1.TabIndex = 14
         '
         'landing_page
         '

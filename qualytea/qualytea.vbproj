@@ -133,7 +133,11 @@
     <Compile Include="Claims Application Form.vb">
       <SubType>Form</SubType>
     </Compile>
+<<<<<<< HEAD
     <Compile Include="Connect_To_Access_Job_Applicants.vb" />
+=======
+    <Compile Include="Connect_To_Access_Training.vb" />
+>>>>>>> b2e6921db1f82bf5cdbd5fb0141f1ce86114dc0d
     <Compile Include="Leave Application Form.Designer.vb">
       <DependentUpon>Leave Application Form.vb</DependentUpon>
     </Compile>
@@ -182,16 +186,16 @@
     <Compile Include="MyTraining.vb">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="My_Training Feedback.Designer.vb">
-      <DependentUpon>My_Training Feedback.vb</DependentUpon>
+    <Compile Include="My_Training_Feedback.Designer.vb">
+      <DependentUpon>My_Training_Feedback.vb</DependentUpon>
     </Compile>
-    <Compile Include="My_Training Feedback.vb">
+    <Compile Include="My_Training_Feedback.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="My_Training Detail.Designer.vb">
-      <DependentUpon>My_Training Detail.vb</DependentUpon>
+    <Compile Include="My_Training_Detail.Designer.vb">
+      <DependentUpon>My_Training_Detail.vb</DependentUpon>
     </Compile>
-    <Compile Include="My_Training Detail.vb">
+    <Compile Include="My_Training_Detail.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="HRDataSet.Designer.vb">
@@ -419,12 +423,12 @@
       <DependentUpon>MyTraining.vb</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="My_Training Detail.resx">
-      <DependentUpon>My_Training Detail.vb</DependentUpon>
+    <EmbeddedResource Include="My_Training_Detail.resx">
+      <DependentUpon>My_Training_Detail.vb</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="My_Training Feedback.resx">
-      <DependentUpon>My_Training Feedback.vb</DependentUpon>
+    <EmbeddedResource Include="My_Training_Feedback.resx">
+      <DependentUpon>My_Training_Feedback.vb</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="My_Training_AddNew.resx">

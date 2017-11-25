@@ -15,23 +15,41 @@
       <Value Profile="(Default)">checked_out</Value>
     </Setting>
     <Setting Name="database_path" Type="System.String" Scope="User">
+<<<<<<< HEAD
       <Value Profile="(Default)">D:\Documents\Visual Studio 2008\Projects\qualytea\HR.accdb</Value>
+=======
+      <Value Profile="(Default)">C:\Users\user\Desktop\New folder (4)\third\GitHub\qualytea\HR.accdb</Value>
+>>>>>>> b2e6921db1f82bf5cdbd5fb0141f1ce86114dc0d
     </Setting>
     <Setting Name="HRConnectionString" Type="(Connection string)" Scope="Application">
       <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
 &lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+<<<<<<< HEAD
   &lt;ConnectionString&gt;Provider=Microsoft.ACE.OLEDB.12.0;Data Source="D:\Documents\Visual Studio 2008\Projects\qualytea\HR.accdb";Persist Security Info=True&lt;/ConnectionString&gt;
   &lt;ProviderName&gt;System.Data.OleDb&lt;/ProviderName&gt;
 &lt;/SerializableConnectionString&gt;</DesignTimeValue>
       <Value Profile="(Default)">Provider=Microsoft.ACE.OLEDB.12.0;Data Source="D:\Documents\Visual Studio 2008\Projects\qualytea\HR.accdb";Persist Security Info=True</Value>
+=======
+  &lt;ConnectionString&gt;Provider=Microsoft.ACE.OLEDB.12.0;Data Source="C:\Users\user\Desktop\New folder (3)\GitHub\qualytea\HR.accdb";Persist Security Info=True&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;System.Data.OleDb&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">Provider=Microsoft.ACE.OLEDB.12.0;Data Source="C:\Users\user\Desktop\New folder (3)\GitHub\qualytea\HR.accdb";Persist Security Info=True</Value>
+>>>>>>> b2e6921db1f82bf5cdbd5fb0141f1ce86114dc0d
     </Setting>
     <Setting Name="HRConnectionString1" Type="(Connection string)" Scope="Application">
       <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
 &lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+<<<<<<< HEAD
   &lt;ConnectionString&gt;Provider=Microsoft.ACE.OLEDB.12.0;Data Source="D:\Documents\Visual Studio 2008\Projects\qualytea\HR.accdb";Persist Security Info=True&lt;/ConnectionString&gt;
   &lt;ProviderName&gt;System.Data.OleDb&lt;/ProviderName&gt;
 &lt;/SerializableConnectionString&gt;</DesignTimeValue>
       <Value Profile="(Default)">Provider=Microsoft.ACE.OLEDB.12.0;Data Source="D:\Documents\Visual Studio 2008\Projects\qualytea\HR.accdb";Persist Security Info=True</Value>
+=======
+  &lt;ConnectionString&gt;Provider=Microsoft.ACE.OLEDB.12.0;Data Source="C:\Users\user\Desktop\New folder (3)\GitHub\qualytea\HR.accdb";Persist Security Info=True&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;System.Data.OleDb&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">Provider=Microsoft.ACE.OLEDB.12.0;Data Source="C:\Users\user\Desktop\New folder (3)\GitHub\qualytea\HR.accdb";Persist Security Info=True</Value>
+>>>>>>> b2e6921db1f82bf5cdbd5fb0141f1ce86114dc0d
     </Setting>
     <Setting Name="punch_in_time" Type="System.DateTime" Scope="User">
       <Value Profile="(Default)" />

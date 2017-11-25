@@ -24,7 +24,7 @@ Public Class My_Training_AddNew
         myConnection.ConnectionString = connString
         myConnection.Open()
         Dim query1 As String
-        query1 = "INSERT INTO trainings (training_code,training_name,training_type_id,training_description,training_datetime,training_time,Expired_at,Venue,created_at,created_by,required_dept,required_role,required_Status)VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?)"
+        query1 = "INSERT INTO trainings (training_code,training_name,training_type_id,training_description,training_datetime,training_time,Expired_at,Venue,created_at,created_by,required_dept)VALUES(?,?,?,?,?,?,?,?,?,?,?)"
         Dim cmd As OleDbCommand = New OleDbCommand(query1, myConnection)
         cmd.Parameters.Add(New OleDbParameter("training_code", CType(txt_trCode101.Text, String)))
         cmd.Parameters.Add(New OleDbParameter("training_name", CType(txt_trCourse101.Text, String)))
@@ -37,8 +37,7 @@ Public Class My_Training_AddNew
         cmd.Parameters.Add(New OleDbParameter("created_at", CType(New DateTime, String)))
         cmd.Parameters.Add(New OleDbParameter("created_by", CType("5", String)))
         cmd.Parameters.Add(New OleDbParameter("required_dept", CType(txtTrainingType, String)))
-        cmd.Parameters.Add(New OleDbParameter("required_role", CType(cbx_trRoles101.SelectedValue.ToString, String)))
-        cmd.Parameters.Add(New OleDbParameter("required_Status", CType(cbx_trStatus101.SelectedItem.ToString, String)))
+        
         Try
             cmd.ExecuteNonQuery()
             MsgBox("Successful Submit !!!", MsgBoxStyle.OkOnly, "Record Submitted")
@@ -106,30 +105,24 @@ Public Class My_Training_AddNew
                         dtp_trDate101.Value = dr2("training_datetime").ToString
                         txt_trTime101.Text = dr2("training_time").ToString
                         cbx_trVenue101.SelectedValue = dr2("venue").ToString
-                        cbx_trRoles101.SelectedValue = dr2("required_role").ToString
-                        cbx_trStatus101.SelectedValue = dr2("required_status").ToString
                         Dim txtTrainingType As String = dr2("required_dept").ToString
-                        Dim patern As String = "\,"
-                        Dim TrainingTypeList() As String = Regex.Split(txtTrainingType, ",")
-                        For Each trainingtype As String In TrainingTypeList
-                            Select Case trainingtype
-                                Case StrComp(trainingtype.Trim, "14")
-                                    Console.WriteLine(trainingtype.ToString)
-                                Case trainingtype.Equals("2")
-                                    cb_trFinanceDept.Checked = True
-                                Case trainingtype.Equals("3")
-                                    cb_trHRDept.Checked = True
-                                Case trainingtype.Equals("4")
-                                    cb_trTaxDepartment.Checked = True
-                                Case trainingtype.Equals("5")
-                                    cb_trSafetyDept.Checked = True
-                                Case trainingtype.Equals("6")
-                                    cb_trSalesDept.Checked = True
-                                Case trainingtype.Equals("7")
-                                    cb_trPurchasingDept.Checked = True
-                            End Select
+                        'Dim patern As String = "\,"
+                        'Dim TrainingTypeList() As String = Regex.Split(txtTrainingType, ",")
 
-                        Next
+                        Select Case txtTrainingType
+                            Case "0"
+                                rb_All101.Checked = True
+                            Case "1"
+                                rb_trHRDept101.Checked = True
+                            Case "2"
+                                rb_trFinanceDept101.Checked = True
+                            Case "3"
+                                rb_trSalesDept101.Checked = True
+                            Case "4"
+                                rb_trSafetyDept101.Checked = True
+                            Case "5"
+                                rb_trPurchasingDept101.Checked = True
+                        End Select
 
                         'cbx_trVenue101.SelectedIndex = cbx_trVenue101.SelectedIndex(cbx_trVenue101.SelectedValue)
                         'cbx_trVenue101.SelectedIndex = cbx_trVenue101.FindString(cbx_trVenue101.Text)
@@ -159,8 +152,6 @@ Public Class My_Training_AddNew
         query1 += """ ,[Venue]=""" + cbx_trVenue101.SelectedValue.ToString
         query1 += """ ,[created_at]=""" + New DateTime
         query1 += """ ,[created_by]=""" + "5"
-        query1 += """ ,[required_role]=""" + cbx_trRoles101.SelectedValue.ToString
-        query1 += """ ,[required_status]=""" + cbx_trStatus101.SelectedItem.ToString
         query1 += """ ,[required_dept]=""" + txtTrainingType.ToString
         query1 += """  WHERE [training_id]=" + Me.CurrentID + ""
 
@@ -172,6 +163,7 @@ Public Class My_Training_AddNew
             MsgBox(ex.Message, MsgBoxStyle.OkOnly, "OK")
         End Try
         myConnection.Close()
+
         My.Forms.landing_page.TrainingManagement1.RefeshDataGrid()
         Me.Close()
     End Sub
@@ -184,7 +176,7 @@ Public Class My_Training_AddNew
         Me.LoadLocationFromDatabase()
     End Sub
     'TODO: Get Value from checkbox and combine into a string seperated by comma (,)
-    Public Function GetTrainingTypeList() As String
+    Public Function GetTrainingTypeList_old() As String
         '****************get checked box item set as training type, ready to save as required department*****
         '**** start *****
         Dim txtTrainingType As String = ""
@@ -196,7 +188,7 @@ Public Class My_Training_AddNew
                         txtTrainingType += "8,"
                     Case "Human Resourse and Administration Department"
                         txtTrainingType += "2,"
-                    Case "Tax Department"
+                    Case "All Department"
                         txtTrainingType += "9,"
                     Case "Food Safety and Environmental Department"
                         txtTrainingType += "10,"
@@ -215,8 +207,34 @@ Public Class My_Training_AddNew
         Return txtTrainingType
     End Function
 
-    Private Sub My_Training_Panel101_Paint(ByVal sender As System.Object, ByVal e As System.Windows.Forms.PaintEventArgs) Handles My_Training_Panel101.Paint
+    Private Function GetTrainingTypeList() As String
+        Dim txtTrainingType As String = ""
+        For Each gbCheck As RadioButton In tr_gpbx101.Controls
 
+            If gbCheck.Checked Then
+                Select Case gbCheck.Text
+                    Case "All Department"
+                        txtTrainingType = "0"
+                    Case "Human Resourse and Administration Department"
+                        txtTrainingType = "1"
+                    Case "Finance Department"
+                        txtTrainingType = "2"
+                    Case "Sales and Marketing Department"
+                        txtTrainingType = "3"
+                    Case "Food Safety and Environmental Department"
+                        txtTrainingType = "4"
+                    Case "Purchasing Department"
+                        txtTrainingType = "5"
+                End Select
+            End If
+        Next
+        Return txtTrainingType
+    End Function
+
+    Private Sub My_Training_Panel101_Paint(ByVal sender As System.Object, ByVal e As System.Windows.Forms.PaintEventArgs) Handles My_Training_Panel101.Paint
+        Dim connectToAccess = New Connect_To_Access_Training()
+        Dim list = connectToAccess.getLocationList()
+        cbx_trVenue101.DataSource = list
     End Sub
 
     Private Sub lb_tr_code101_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles lb_tr_code101.Click
@@ -250,13 +268,13 @@ Public Class My_Training_AddNew
 
     End Sub
 
-    Public Sub doGenerateData(ByVal id As String, ByVal status As String)
+    Public Sub doGenerateData(ByVal id As String, ByVal trainingCode As String, ByVal status As String)
         Me.CurrentID = id
         myConnection.ConnectionString = connString
         myConnection.Open()
         Dim query1 As String
         Dim query2 As String
-        query1 = "Select [required_role],[required_status], [required_dept] From trainings where training_id=?"
+        query1 = "Select[required_dept] From trainings where training_id=?"
         Dim cmd As OleDbCommand = New OleDbCommand(query1, myConnection)
         cmd.Parameters.AddWithValue("@p1", CurrentID)
         Try
@@ -283,10 +301,11 @@ Public Class My_Training_AddNew
                             Using dr3 As OleDbDataReader = cmd2.ExecuteReader
                                 While dr3.Read
                                     If dr3.HasRows Then
-                                        Dim query3 = "insert into employee_trainings (training_id,employee_id,created_at)values(?,?,?)"
+                                        Dim query3 = "insert into employee_trainings (training_id,employee_id,training_code,created_at)values(?,?,?)"
                                         Dim cmd3 As OleDbCommand = New OleDbCommand(query3, myConnection)
                                         cmd3.Parameters.AddWithValue("@p1", CurrentID)
                                         cmd3.Parameters.AddWithValue("@p2", dr3("employee_id"))
+                                        cmd3.Parameters.AddWithValue("@p3", trainingCode)
                                         cmd3.ExecuteNonQuery()
                                     End If
                                 End While
@@ -307,11 +326,15 @@ Public Class My_Training_AddNew
 
     End Sub
 
-    Private Sub cbx_trRoles101_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cbx_trRoles101.SelectedIndexChanged
+    Private Sub cbx_trRoles101_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs)
 
     End Sub
 
-    Private Sub cbx_trStatus101_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cbx_trStatus101.SelectedIndexChanged
+    Private Sub cbx_trStatus101_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs)
+
+    End Sub
+
+    Private Sub cb_trFinanceDept_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs)
 
     End Sub
 End Class

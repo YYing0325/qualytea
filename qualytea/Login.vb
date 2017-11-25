@@ -1,5 +1,5 @@
 ﻿Imports System.Data.OleDb
-
+Imports System.Threading
 Public Class cmdlogin
 
     Dim provider As String
@@ -45,8 +45,10 @@ Public Class cmdlogin
 
             'End While
             'FrmWelcome.Show()
-            landing_page.Show()
-            Me.Hide()
+            Dim loading = New Loading()
+            loading.empId = emp("employee_id").ToString
+            loading.Show()
+            Me.Close()
         Else
             MsgBox("Sorry, username or password invalid!", MsgBoxStyle.OkOnly, "Invalid")
         End If

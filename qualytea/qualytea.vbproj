@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>9.0.21022</ProductVersion>
+    <ProductVersion>9.0.30729</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{6DF65D33-5633-4427-814D-BDF3EF1DCA75}</ProjectGuid>
     <OutputType>WinExe</OutputType>
@@ -133,6 +133,7 @@
     <Compile Include="Claims Application Form.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Connect_To_Access_Job_Applicants.vb" />
     <Compile Include="Leave Application Form.Designer.vb">
       <DependentUpon>Leave Application Form.vb</DependentUpon>
     </Compile>
@@ -156,6 +157,12 @@
     </Compile>
     <Compile Include="LeaveManagement.vb">
       <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Loading.Designer.vb">
+      <DependentUpon>Loading.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Loading.vb">
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="MyLeave.Designer.vb">
       <DependentUpon>MyLeave.vb</DependentUpon>
@@ -261,6 +268,12 @@
     <Compile Include="performance_overview.vb">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="PromoteForm.Designer.vb">
+      <DependentUpon>PromoteForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PromoteForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="PunchIn.Designer.vb">
       <DependentUpon>PunchIn.vb</DependentUpon>
     </Compile>
@@ -351,6 +364,12 @@
     <Compile Include="AcceptApplicant.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="TerminationForm.Designer.vb">
+      <DependentUpon>TerminationForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="TerminationForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="TrainingManagement.Designer.vb">
       <DependentUpon>TrainingManagement.vb</DependentUpon>
     </Compile>
@@ -384,6 +403,9 @@
     <EmbeddedResource Include="LeaveManagement.resx">
       <DependentUpon>LeaveManagement.vb</DependentUpon>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Loading.resx">
+      <DependentUpon>Loading.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MyLeave.resx">
       <DependentUpon>MyLeave.vb</DependentUpon>
@@ -449,6 +471,9 @@
       <DependentUpon>performance_overview.vb</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="PromoteForm.resx">
+      <DependentUpon>PromoteForm.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PunchIn.resx">
       <DependentUpon>PunchIn.vb</DependentUpon>
       <SubType>Designer</SubType>
@@ -502,6 +527,9 @@
     <EmbeddedResource Include="AcceptApplicant.resx">
       <DependentUpon>AcceptApplicant.vb</DependentUpon>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TerminationForm.resx">
+      <DependentUpon>TerminationForm.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TrainingManagement.resx">
       <DependentUpon>TrainingManagement.vb</DependentUpon>
@@ -565,6 +593,7 @@
     <Content Include="HR.accdb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="Resources\loading.gif" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

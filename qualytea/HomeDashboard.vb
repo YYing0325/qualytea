@@ -25,6 +25,7 @@
     End Sub
 
     Private Sub dashboard_panel_Paint(ByVal sender As System.Object, ByVal e As System.Windows.Forms.PaintEventArgs) Handles dashboard_panel.Paint
+        Me.lblTodayMonth.Text = DateAndTime.Now.ToString("MMMM")
         If My.MySettings.Default.attendance_status.Equals("checked_out") Then
             btnPunchInOut.Text = "Punch-In"
         ElseIf My.MySettings.Default.attendance_status.Equals("checked_in") Then
@@ -33,4 +34,5 @@
             btnPunchInOut.Text = "Punch-In"
         End If
     End Sub
+
 End Class

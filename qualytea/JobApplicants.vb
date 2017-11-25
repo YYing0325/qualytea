@@ -92,8 +92,27 @@ Public Class JobApplicantsComponent
             Dim connectToAccess = New Connect_To_Access()
             connectToAccess.getInterviewList(Me.data_grid_interview)
         ElseIf e.TabPageIndex = 2 Then
-
+            Dim connectToAccess = New Connect_To_Access_Job_Applicants()
+            connectToAccess.getApplicantList(Me.data_grid_rejected_applicant, 2)
+        ElseIf e.TabPageIndex = 3 Then
+            Dim connectToAccess = New Connect_To_Access_Job_Applicants()
+            connectToAccess.getApplicantList(Me.data_grid_accepted_applicant, 1)
+        ElseIf e.TabPageIndex = 4 Then
+            Dim connectToAccess = New Connect_To_Access_Job_Applicants()
+            connectToAccess.getEmployeeList(Me.data_grid_current_employee)
         End If
 
+    End Sub
+
+
+    Sub handleCellClick3(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles data_grid_current_employee.CellClick
+
+        If data_grid_current_employee.Columns(e.ColumnIndex).Name = "btn_promote" Then
+            PromoteForm.Show()
+        ElseIf data_grid_current_employee.Columns(e.ColumnIndex).Name = "btn_terminate" Then
+            TerminationForm.Show()
+        End If
+
+        
     End Sub
 End Class

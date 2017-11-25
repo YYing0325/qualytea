@@ -592,8 +592,8 @@ Public Class Connect_To_Access
             Dim query = "SELECT * FROM [employee_attendance] WHERE [employee_id]=?"
             Dim table As New DataTable
             table.Columns.Add("Date", GetType(Date))
-            table.Columns.Add("Time In", GetType(String))
-            table.Columns.Add("Time Out", GetType(String))
+            table.Columns.Add("Time In", System.Type.GetType("System.DateTime"))
+            table.Columns.Add("Time Out", System.Type.GetType("System.DateTime"))
             table.Columns.Add("Working Minutes", GetType(String))
             table.Columns.Add("Note", GetType(String))
             Using cmd As OleDbCommand = New OleDbCommand(query, myConnection)
@@ -606,10 +606,9 @@ Public Class Connect_To_Access
                         End If
                     End While
                 End Using
-
                 dataGrid.DataSource = table
-
-                
+                dataGrid.Columns("Time In").DefaultCellStyle.Format = "hh:mm:ss tt"
+                dataGrid.Columns("Time Out").DefaultCellStyle.Format = "hh:mm:ss tt"
                 myConnection.Close()
             End Using
         Catch ex As Exception

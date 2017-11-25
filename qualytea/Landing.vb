@@ -1,8 +1,14 @@
-﻿Public Class landing_page
-
-    Private Sub SplitContainer1_Panel1_Paint(ByVal sender As System.Object, ByVal e As System.Windows.Forms.PaintEventArgs) Handles SplitContainer1.Panel1.Paint
-        ' Full Width
+﻿Imports System.ComponentModel
+Public Class landing_page
+    Private Sub SplitContainer1_Panel1_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Me.Load
         Me.WindowState = FormWindowState.Maximized
+        loadingControl()
+        'Dim t1 As System.Threading.Thread = New System.Threading.Thread(AddressOf Me.loadingControl)
+        't1.Start()
+    End Sub
+
+    Private Sub loadingControl()
+        ' Full Width
         Me.btn_home.Width = SplitContainer1.Panel1.Width
         Me.btn_personal.Width = SplitContainer1.Panel1.Width
         Me.btn_training_management.Width = SplitContainer1.Panel1.Width
@@ -30,7 +36,7 @@
         'Me.logo.Location = New Point(0, Me.emp_id.Bottom)
         'Me.logo.Height = Me.btn_home.Top - Me.emp_id.Bottom
 
-        Me.HomeDashboard1.Hide()
+        'Me.HomeDashboard1.Hide()
         Me.PersonalDetailsComponent1.Hide()
         Me.JobApplicantsComponent1.Hide()
         Me.EditProfile1.Hide()
@@ -42,15 +48,20 @@
         Me.LeaveManagement1.Hide()
         Me.PerformanceManagement1.Hide()
         Me.TrainingManagement1.Hide()
-
     End Sub
+
+    Private Sub SplitContainer1_Panel1_Shown(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Me.Shown
+        Loading.Close()
+        Me.Show()
+    End Sub
+
 
     Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_personal.Click
         Dim personalDetailsComponent = Me.PersonalDetailsComponent1
-        PersonalDetailsComponent.Show()
-        PersonalDetailsComponent.Dock = DockStyle.Fill
-        PersonalDetailsComponent.Size = New Size(SplitContainer1.Panel2.Width, SplitContainer1.Panel2.Height)
-        PersonalDetailsComponent.empId = Me.emp_id.Text
+        personalDetailsComponent.Show()
+        personalDetailsComponent.Dock = DockStyle.Fill
+        personalDetailsComponent.Size = New Size(SplitContainer1.Panel2.Width, SplitContainer1.Panel2.Height)
+        personalDetailsComponent.empId = Me.emp_id.Text
         personalDetailsComponent.getProfile()
         personalDetailsComponent.Show()
         Dim editProfileComponent = Me.EditProfile1
@@ -177,7 +188,7 @@
         Me.PerformanceManagement1.Hide()
         Me.TrainingManagement1.Hide()
         Me.LeaveManagement1.Show()
-        
+
     End Sub
 
 

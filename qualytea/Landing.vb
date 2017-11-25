@@ -189,12 +189,8 @@ Public Class landing_page
         Me.PerformanceManagement1.Hide()
         Me.TrainingManagement1.Hide()
         Me.LeaveManagement1.Show()
-<<<<<<< HEAD
-
-=======
         Dim connectToAccessLeave = New Connect_To_Access_Leave
         connectToAccessLeave.getEmployeeSalary(Me.LeaveManagement1.datagrid_salary)
->>>>>>> leave-2
     End Sub
 
 

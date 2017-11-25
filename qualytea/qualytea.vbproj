@@ -133,12 +133,6 @@
     <Compile Include="Claims Application Form.vb">
       <SubType>Form</SubType>
     </Compile>
-<<<<<<< HEAD
-
-
-=======
-    <Compile Include="Connect_To_Access_Leave.vb" />
->>>>>>> leave-2
     <Compile Include="Leave Application Form.Designer.vb">
       <DependentUpon>Leave Application Form.vb</DependentUpon>
     </Compile>
@@ -299,6 +293,7 @@
     </Compile>
     <Compile Include="Connect_To_SQL.vb" />
     <Compile Include="Connect_To_Access.vb" />
+    <Compile Include="Connect_To_Access_Leave.vb" />
     <Compile Include="Connect_To_Access_Training.vb" />
     <Compile Include="Connect_To_Access_Performance.vb" />
     <Compile Include="Connect_To_Access_Job_Applicants.vb" />

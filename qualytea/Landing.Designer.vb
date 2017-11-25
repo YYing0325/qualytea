@@ -36,18 +36,18 @@ Partial Class landing_page
         Me.btn_training_management = New System.Windows.Forms.Button
         Me.btn_leave_management = New System.Windows.Forms.Button
         Me.btn_personal = New System.Windows.Forms.Button
+        Me.PerformanceManagement1 = New WindowsApplication1.PerformanceManagement
+        Me.LeaveManagement1 = New WindowsApplication1.LeaveManagement
+        Me.TrainingManagement1 = New WindowsApplication1.TrainingManagement
+        Me.MyTraining1 = New WindowsApplication1.MyTraining
+        Me.MyPerformance1 = New WindowsApplication1.MyPerformance
+        Me.MyLeave1 = New WindowsApplication1.MyLeave
         Me.HomeDashboard1 = New WindowsApplication1.HomeDashboard
         Me.Attendance1 = New WindowsApplication1.Attendance
         Me.ChangePassword1 = New WindowsApplication1.ChangePassword
         Me.EditProfile1 = New WindowsApplication1.EditProfile
         Me.JobApplicantsComponent1 = New WindowsApplication1.JobApplicantsComponent
         Me.PersonalDetailsComponent1 = New WindowsApplication1.PersonalDetailsComponent
-        Me.MyLeave1 = New WindowsApplication1.MyLeave
-        Me.MyPerformance1 = New WindowsApplication1.MyPerformance
-        Me.MyTraining1 = New WindowsApplication1.MyTraining
-        Me.TrainingManagement1 = New WindowsApplication1.TrainingManagement
-        Me.LeaveManagement1 = New WindowsApplication1.LeaveManagement
-        Me.PerformanceManagement1 = New WindowsApplication1.PerformanceManagement
         Me.SplitContainer1.Panel1.SuspendLayout()
         Me.SplitContainer1.Panel2.SuspendLayout()
         Me.SplitContainer1.SuspendLayout()
@@ -282,6 +282,54 @@ Partial Class landing_page
         Me.btn_personal.Text = "Personal Information"
         Me.btn_personal.UseVisualStyleBackColor = False
         '
+        'PerformanceManagement1
+        '
+        Me.PerformanceManagement1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.PerformanceManagement1.Location = New System.Drawing.Point(0, 0)
+        Me.PerformanceManagement1.Name = "PerformanceManagement1"
+        Me.PerformanceManagement1.Size = New System.Drawing.Size(791, 662)
+        Me.PerformanceManagement1.TabIndex = 14
+        '
+        'LeaveManagement1
+        '
+        Me.LeaveManagement1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.LeaveManagement1.Location = New System.Drawing.Point(0, 0)
+        Me.LeaveManagement1.Name = "LeaveManagement1"
+        Me.LeaveManagement1.Size = New System.Drawing.Size(791, 662)
+        Me.LeaveManagement1.TabIndex = 13
+        '
+        'TrainingManagement1
+        '
+        Me.TrainingManagement1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.TrainingManagement1.Location = New System.Drawing.Point(0, 0)
+        Me.TrainingManagement1.Name = "TrainingManagement1"
+        Me.TrainingManagement1.Size = New System.Drawing.Size(791, 662)
+        Me.TrainingManagement1.TabIndex = 12
+        '
+        'MyTraining1
+        '
+        Me.MyTraining1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.MyTraining1.Location = New System.Drawing.Point(0, 0)
+        Me.MyTraining1.Name = "MyTraining1"
+        Me.MyTraining1.Size = New System.Drawing.Size(791, 662)
+        Me.MyTraining1.TabIndex = 11
+        '
+        'MyPerformance1
+        '
+        Me.MyPerformance1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.MyPerformance1.Location = New System.Drawing.Point(0, 0)
+        Me.MyPerformance1.Name = "MyPerformance1"
+        Me.MyPerformance1.Size = New System.Drawing.Size(791, 662)
+        Me.MyPerformance1.TabIndex = 10
+        '
+        'MyLeave1
+        '
+        Me.MyLeave1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.MyLeave1.Location = New System.Drawing.Point(0, 0)
+        Me.MyLeave1.Name = "MyLeave1"
+        Me.MyLeave1.Size = New System.Drawing.Size(791, 662)
+        Me.MyLeave1.TabIndex = 9
+        '
         'HomeDashboard1
         '
         Me.HomeDashboard1.Dock = System.Windows.Forms.DockStyle.Fill
@@ -331,54 +379,6 @@ Partial Class landing_page
         Me.PersonalDetailsComponent1.Name = "PersonalDetailsComponent1"
         Me.PersonalDetailsComponent1.Size = New System.Drawing.Size(791, 662)
         Me.PersonalDetailsComponent1.TabIndex = 0
-        '
-        'MyLeave1
-        '
-        Me.MyLeave1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.MyLeave1.Location = New System.Drawing.Point(0, 0)
-        Me.MyLeave1.Name = "MyLeave1"
-        Me.MyLeave1.Size = New System.Drawing.Size(791, 662)
-        Me.MyLeave1.TabIndex = 9
-        '
-        'MyPerformance1
-        '
-        Me.MyPerformance1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.MyPerformance1.Location = New System.Drawing.Point(0, 0)
-        Me.MyPerformance1.Name = "MyPerformance1"
-        Me.MyPerformance1.Size = New System.Drawing.Size(791, 662)
-        Me.MyPerformance1.TabIndex = 10
-        '
-        'MyTraining1
-        '
-        Me.MyTraining1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.MyTraining1.Location = New System.Drawing.Point(0, 0)
-        Me.MyTraining1.Name = "MyTraining1"
-        Me.MyTraining1.Size = New System.Drawing.Size(791, 662)
-        Me.MyTraining1.TabIndex = 11
-        '
-        'TrainingManagement1
-        '
-        Me.TrainingManagement1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.TrainingManagement1.Location = New System.Drawing.Point(0, 0)
-        Me.TrainingManagement1.Name = "TrainingManagement1"
-        Me.TrainingManagement1.Size = New System.Drawing.Size(791, 662)
-        Me.TrainingManagement1.TabIndex = 12
-        '
-        'LeaveManagement1
-        '
-        Me.LeaveManagement1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.LeaveManagement1.Location = New System.Drawing.Point(0, 0)
-        Me.LeaveManagement1.Name = "LeaveManagement1"
-        Me.LeaveManagement1.Size = New System.Drawing.Size(791, 662)
-        Me.LeaveManagement1.TabIndex = 13
-        '
-        'PerformanceManagement1
-        '
-        Me.PerformanceManagement1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.PerformanceManagement1.Location = New System.Drawing.Point(0, 0)
-        Me.PerformanceManagement1.Name = "PerformanceManagement1"
-        Me.PerformanceManagement1.Size = New System.Drawing.Size(791, 662)
-        Me.PerformanceManagement1.TabIndex = 14
         '
         'landing_page
         '

@@ -104,7 +104,7 @@ Namespace My
         
         <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("C:\Users\LeeChengSui\Documents\GitHub\qualytea\HR.accdb")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("C:\Users\LeeChengSui\Documents\GitHub\qualytea_zjun\HR.accdb")>  _
         Public Property database_path() As String
             Get
                 Return CType(Me("database_path"),String)
@@ -112,28 +112,6 @@ Namespace My
             Set
                 Me("database_path") = value
             End Set
-        End Property
-        
-        <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
-         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\LeeChengSui\Documents\GitH"& _ 
-            "ub\qualytea\HR.accdb;Persist Security Info=True")>  _
-        Public ReadOnly Property HRConnectionString() As String
-            Get
-                Return CType(Me("HRConnectionString"),String)
-            End Get
-        End Property
-        
-        <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
-         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\LeeChengSui\Documents\GitH"& _ 
-            "ub\qualytea\HR.accdb;Persist Security Info=True")>  _
-        Public ReadOnly Property HRConnectionString1() As String
-            Get
-                Return CType(Me("HRConnectionString1"),String)
-            End Get
         End Property
         
         <Global.System.Configuration.UserScopedSettingAttribute(),  _
@@ -157,6 +135,28 @@ Namespace My
             Set
                 Me("punch_in_note") = value
             End Set
+        End Property
+        
+        <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\LeeChengSui\Documents\GitH"& _ 
+            "ub\qualytea\HR.accdb;Persist Security Info=True")>  _
+        Public ReadOnly Property HRConnectionString1() As String
+            Get
+                Return CType(Me("HRConnectionString1"),String)
+            End Get
+        End Property
+        
+        <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\LeeChengSui\Documents\GitH"& _ 
+            "ub\qualytea\HR.accdb;Persist Security Info=True")>  _
+        Public ReadOnly Property HRConnectionString() As String
+            Get
+                Return CType(Me("HRConnectionString"),String)
+            End Get
         End Property
     End Class
 End Namespace

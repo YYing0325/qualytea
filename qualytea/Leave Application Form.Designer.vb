@@ -39,7 +39,6 @@ Partial Class Leave_Application_Form
         Me.Button7 = New System.Windows.Forms.Button
         Me.ListBox1 = New System.Windows.Forms.ListBox
         Me.Label22 = New System.Windows.Forms.Label
-        Me.tb_reason = New System.Windows.Forms.TextBox
         Me.lb_reason = New System.Windows.Forms.Label
         Me.dtp_leave_until = New System.Windows.Forms.DateTimePicker
         Me.lb_leave_until = New System.Windows.Forms.Label
@@ -48,6 +47,7 @@ Partial Class Leave_Application_Form
         Me.btn_apply = New System.Windows.Forms.Button
         Me.lb_type_of_leave = New System.Windows.Forms.Label
         Me.cb_type_of_leave = New System.Windows.Forms.ComboBox
+        Me.cb_reason = New System.Windows.Forms.ComboBox
         Me.SuspendLayout()
         '
         'Button4
@@ -196,13 +196,6 @@ Partial Class Leave_Application_Form
         Me.Label22.TabIndex = 73
         Me.Label22.Text = "Type of leave:"
         '
-        'tb_reason
-        '
-        Me.tb_reason.Location = New System.Drawing.Point(193, 249)
-        Me.tb_reason.Name = "tb_reason"
-        Me.tb_reason.Size = New System.Drawing.Size(497, 20)
-        Me.tb_reason.TabIndex = 101
-        '
         'lb_reason
         '
         Me.lb_reason.AutoSize = True
@@ -271,13 +264,22 @@ Partial Class Leave_Application_Form
         Me.cb_type_of_leave.Size = New System.Drawing.Size(188, 21)
         Me.cb_type_of_leave.TabIndex = 102
         '
+        'cb_reason
+        '
+        Me.cb_reason.FormattingEnabled = True
+        Me.cb_reason.Items.AddRange(New Object() {"Travel", "Sick", "Emergency", "Others"})
+        Me.cb_reason.Location = New System.Drawing.Point(193, 253)
+        Me.cb_reason.Name = "cb_reason"
+        Me.cb_reason.Size = New System.Drawing.Size(188, 21)
+        Me.cb_reason.TabIndex = 103
+        '
         'Leave_Application_Form
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(768, 445)
+        Me.Controls.Add(Me.cb_reason)
         Me.Controls.Add(Me.cb_type_of_leave)
-        Me.Controls.Add(Me.tb_reason)
         Me.Controls.Add(Me.lb_reason)
         Me.Controls.Add(Me.dtp_leave_until)
         Me.Controls.Add(Me.lb_leave_until)
@@ -308,7 +310,6 @@ Partial Class Leave_Application_Form
     Friend WithEvents Button7 As System.Windows.Forms.Button
     Friend WithEvents ListBox1 As System.Windows.Forms.ListBox
     Friend WithEvents Label22 As System.Windows.Forms.Label
-    Friend WithEvents tb_reason As System.Windows.Forms.TextBox
     Friend WithEvents lb_reason As System.Windows.Forms.Label
     Friend WithEvents dtp_leave_until As System.Windows.Forms.DateTimePicker
     Friend WithEvents lb_leave_until As System.Windows.Forms.Label
@@ -317,4 +318,5 @@ Partial Class Leave_Application_Form
     Friend WithEvents btn_apply As System.Windows.Forms.Button
     Friend WithEvents lb_type_of_leave As System.Windows.Forms.Label
     Friend WithEvents cb_type_of_leave As System.Windows.Forms.ComboBox
+    Friend WithEvents cb_reason As System.Windows.Forms.ComboBox
 End Class

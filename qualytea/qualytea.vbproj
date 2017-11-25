@@ -134,10 +134,14 @@
       <SubType>Form</SubType>
     </Compile>
 <<<<<<< HEAD
+<<<<<<< HEAD
     <Compile Include="Connect_To_Access_Job_Applicants.vb" />
 =======
     <Compile Include="Connect_To_Access_Training.vb" />
 >>>>>>> b2e6921db1f82bf5cdbd5fb0141f1ce86114dc0d
+=======
+    <Compile Include="Connect_To_Access_Performance.vb" />
+>>>>>>> performance-2
     <Compile Include="Leave Application Form.Designer.vb">
       <DependentUpon>Leave Application Form.vb</DependentUpon>
     </Compile>

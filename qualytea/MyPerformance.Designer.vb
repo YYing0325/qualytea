@@ -47,7 +47,7 @@ Partial Class MyPerformance
         Me.lb_problem = New System.Windows.Forms.Label
         Me.lb_performancefactors = New System.Windows.Forms.Label
         Me.lb_avg_mark = New System.Windows.Forms.Label
-        Me.lbdepartment2 = New System.Windows.Forms.Label
+        Me.lb_department = New System.Windows.Forms.Label
         Me.lb_communication = New System.Windows.Forms.Label
         Me.lb_collaboration = New System.Windows.Forms.Label
         Me.lb_dependability = New System.Windows.Forms.Label
@@ -57,6 +57,7 @@ Partial Class MyPerformance
         Me.lb_quality = New System.Windows.Forms.Label
         Me.lb_marks = New System.Windows.Forms.Label
         Me.TabPage2 = New System.Windows.Forms.TabPage
+        Me.lb_reward_cond = New System.Windows.Forms.Label
         Me.GroupBox1 = New System.Windows.Forms.GroupBox
         Me.rb_cosas_united = New System.Windows.Forms.RadioButton
         Me.rb_universal_traveller = New System.Windows.Forms.RadioButton
@@ -92,7 +93,7 @@ Partial Class MyPerformance
         Me.tbct1.Location = New System.Drawing.Point(0, 0)
         Me.tbct1.Name = "tbct1"
         Me.tbct1.SelectedIndex = 0
-        Me.tbct1.Size = New System.Drawing.Size(700, 478)
+        Me.tbct1.Size = New System.Drawing.Size(900, 900)
         Me.tbct1.TabIndex = 39
         Me.tbct1.Tag = ""
         '
@@ -122,7 +123,7 @@ Partial Class MyPerformance
         Me.tbpgbyindividual1.Controls.Add(Me.lb_problem)
         Me.tbpgbyindividual1.Controls.Add(Me.lb_performancefactors)
         Me.tbpgbyindividual1.Controls.Add(Me.lb_avg_mark)
-        Me.tbpgbyindividual1.Controls.Add(Me.lbdepartment2)
+        Me.tbpgbyindividual1.Controls.Add(Me.lb_department)
         Me.tbpgbyindividual1.Controls.Add(Me.lb_communication)
         Me.tbpgbyindividual1.Controls.Add(Me.lb_collaboration)
         Me.tbpgbyindividual1.Controls.Add(Me.lb_dependability)
@@ -134,7 +135,7 @@ Partial Class MyPerformance
         Me.tbpgbyindividual1.Location = New System.Drawing.Point(4, 22)
         Me.tbpgbyindividual1.Name = "tbpgbyindividual1"
         Me.tbpgbyindividual1.Padding = New System.Windows.Forms.Padding(3)
-        Me.tbpgbyindividual1.Size = New System.Drawing.Size(692, 452)
+        Me.tbpgbyindividual1.Size = New System.Drawing.Size(892, 874)
         Me.tbpgbyindividual1.TabIndex = 0
         Me.tbpgbyindividual1.Text = "Personal"
         Me.tbpgbyindividual1.UseVisualStyleBackColor = True
@@ -346,14 +347,14 @@ Partial Class MyPerformance
         Me.lb_avg_mark.TabIndex = 52
         Me.lb_avg_mark.Text = "Total Marks"
         '
-        'lbdepartment2
+        'lb_department
         '
-        Me.lbdepartment2.AutoSize = True
-        Me.lbdepartment2.Location = New System.Drawing.Point(57, 45)
-        Me.lbdepartment2.Name = "lbdepartment2"
-        Me.lbdepartment2.Size = New System.Drawing.Size(62, 13)
-        Me.lbdepartment2.TabIndex = 35
-        Me.lbdepartment2.Text = "Department"
+        Me.lb_department.AutoSize = True
+        Me.lb_department.Location = New System.Drawing.Point(57, 45)
+        Me.lb_department.Name = "lb_department"
+        Me.lb_department.Size = New System.Drawing.Size(62, 13)
+        Me.lb_department.TabIndex = 35
+        Me.lb_department.Text = "Department"
         '
         'lb_communication
         '
@@ -429,6 +430,7 @@ Partial Class MyPerformance
         '
         'TabPage2
         '
+        Me.TabPage2.Controls.Add(Me.lb_reward_cond)
         Me.TabPage2.Controls.Add(Me.GroupBox1)
         Me.TabPage2.Controls.Add(Me.lbtotalrewardpoint1)
         Me.TabPage2.Controls.Add(Me.bt_clear)
@@ -439,10 +441,23 @@ Partial Class MyPerformance
         Me.TabPage2.Location = New System.Drawing.Point(4, 22)
         Me.TabPage2.Name = "TabPage2"
         Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
+<<<<<<< HEAD
         Me.TabPage2.Size = New System.Drawing.Size(692, 452)
+=======
+        Me.TabPage2.Size = New System.Drawing.Size(785, 667)
+>>>>>>> performance-2
         Me.TabPage2.TabIndex = 3
         Me.TabPage2.Text = "Reward"
         Me.TabPage2.UseVisualStyleBackColor = True
+        '
+        'lb_reward_cond
+        '
+        Me.lb_reward_cond.AutoSize = True
+        Me.lb_reward_cond.Location = New System.Drawing.Point(23, 49)
+        Me.lb_reward_cond.Name = "lb_reward_cond"
+        Me.lb_reward_cond.Size = New System.Drawing.Size(222, 13)
+        Me.lb_reward_cond.TabIndex = 53
+        Me.lb_reward_cond.Text = "* 1 Reward point = RM 1.00 value of voucher"
         '
         'GroupBox1
         '
@@ -671,7 +686,7 @@ Partial Class MyPerformance
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.Controls.Add(Me.tbct1)
         Me.Name = "MyPerformance"
-        Me.Size = New System.Drawing.Size(700, 478)
+        Me.Size = New System.Drawing.Size(900, 900)
         Me.tbct1.ResumeLayout(False)
         Me.tbpgbyindividual1.ResumeLayout(False)
         Me.tbpgbyindividual1.PerformLayout()
@@ -709,7 +724,7 @@ Partial Class MyPerformance
     Friend WithEvents lb_problem As System.Windows.Forms.Label
     Friend WithEvents lb_performancefactors As System.Windows.Forms.Label
     Friend WithEvents lb_avg_mark As System.Windows.Forms.Label
-    Friend WithEvents lbdepartment2 As System.Windows.Forms.Label
+    Friend WithEvents lb_department As System.Windows.Forms.Label
     Friend WithEvents lb_communication As System.Windows.Forms.Label
     Friend WithEvents lb_collaboration As System.Windows.Forms.Label
     Friend WithEvents lb_dependability As System.Windows.Forms.Label
@@ -739,5 +754,6 @@ Partial Class MyPerformance
     Friend WithEvents rb_rm20 As System.Windows.Forms.RadioButton
     Friend WithEvents rb_rm50 As System.Windows.Forms.RadioButton
     Friend WithEvents rb_rm100 As System.Windows.Forms.RadioButton
+    Friend WithEvents lb_reward_cond As System.Windows.Forms.Label
 
 End Class

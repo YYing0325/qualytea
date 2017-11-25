@@ -113,11 +113,7 @@
         selectedRadio = 6
     End Sub
 
-<<<<<<< HEAD
-    Private Sub GroupBox1_Enter(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles GroupBox1.Enter
 
-    End Sub
-=======
     Private Sub rb_tesco_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles rb_tesco.CheckedChanged
         selectedRadio = 7
     End Sub
@@ -146,5 +142,4 @@
         selectedAmount = 100
     End Sub
 
->>>>>>> performance-2
 End Class

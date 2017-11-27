@@ -195,5 +195,36 @@ Public Class Connect_To_Access_Job_Applicants
         Return dict
     End Function
 
+    Public Sub terminateEmployee(ByVal empId As String)
+        myConnection.ConnectionString = connString
+        Dim today = DateTime.Now().ToShortDateString
+        Try
+            Dim query = "UPDATE [employees] SET [termination_date]=? WHERE [employee_id]=?"
+            Using cmd = New OleDbCommand(query, myConnection)
+                cmd.Parameters.AddWithValue("@p1", today)
+                cmd.Parameters.AddWithValue("@p2", empId)
+                myConnection.Open()
+                cmd.ExecuteNonQuery()
+                myConnection.Close()
+            End Using
+        Catch ex As Exception
+            MsgBox("Connection To Database Failed: " & ex.Message.ToString)
+        End Try
 
+    End Sub
+
+    Public Sub promoteEmployee(ByVal empId As String, ByVal salary As Integer, ByVal department As Integer, ByVal job As Integer)
+        myConnection.ConnectionString = connString
+        Try
+            Dim query = "UPDATE [employees] SET [salary]=" & salary & " AND [department_id]=" & department & " AND [job_id]=" & job & " WHERE [employee_id]=" & empId
+            Using cmd = New OleDbCommand(query, myConnection)
+                myConnection.Open()
+                cmd.ExecuteNonQuery()
+                myConnection.Close()
+            End Using
+        Catch ex As Exception
+            MsgBox("Connection To Database Failed: " & ex.Message.ToString)
+        End Try
+
+    End Sub
 End Class

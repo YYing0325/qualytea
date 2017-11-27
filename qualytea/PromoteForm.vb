@@ -13,4 +13,14 @@
         cmb_job.ValueMember = "Key"
         cmb_job.DisplayMember = "Value"
     End Sub
+
+    Private Sub btn_confirm_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_confirm.Click
+        Dim department = Convert.ToInt32(Me.cmb_department.SelectedValue)
+        Dim job = Convert.ToInt32(Me.cmb_job.SelectedValue)
+        Dim salary = Convert.ToInt32(Me.input_salary.Text)
+        Dim connectToAccess = New Connect_To_Access_Job_Applicants()
+        connectToAccess.promoteEmployee(empId.ToString, salary, department, job)
+        MsgBox("Employee is promoted")
+        landing_page.JobApplicantsComponent1.data_grid_current_employee.Refresh()
+    End Sub
 End Class

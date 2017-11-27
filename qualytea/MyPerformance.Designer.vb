@@ -93,7 +93,7 @@ Partial Class MyPerformance
         Me.tbct1.Location = New System.Drawing.Point(0, 0)
         Me.tbct1.Name = "tbct1"
         Me.tbct1.SelectedIndex = 0
-        Me.tbct1.Size = New System.Drawing.Size(900, 900)
+        Me.tbct1.Size = New System.Drawing.Size(900, 831)
         Me.tbct1.TabIndex = 39
         Me.tbct1.Tag = ""
         '
@@ -135,7 +135,7 @@ Partial Class MyPerformance
         Me.tbpgbyindividual1.Location = New System.Drawing.Point(4, 22)
         Me.tbpgbyindividual1.Name = "tbpgbyindividual1"
         Me.tbpgbyindividual1.Padding = New System.Windows.Forms.Padding(3)
-        Me.tbpgbyindividual1.Size = New System.Drawing.Size(892, 874)
+        Me.tbpgbyindividual1.Size = New System.Drawing.Size(892, 805)
         Me.tbpgbyindividual1.TabIndex = 0
         Me.tbpgbyindividual1.Text = "Personal"
         Me.tbpgbyindividual1.UseVisualStyleBackColor = True
@@ -143,188 +143,188 @@ Partial Class MyPerformance
         'perf_year
         '
         Me.perf_year.FormattingEnabled = True
-        Me.perf_year.Location = New System.Drawing.Point(427, 45)
+        Me.perf_year.Location = New System.Drawing.Point(427, 42)
         Me.perf_year.Name = "perf_year"
-        Me.perf_year.Size = New System.Drawing.Size(60, 21)
+        Me.perf_year.Size = New System.Drawing.Size(60, 20)
         Me.perf_year.TabIndex = 78
         '
         'lb_year
         '
         Me.lb_year.AutoSize = True
-        Me.lb_year.Location = New System.Drawing.Point(366, 45)
+        Me.lb_year.Location = New System.Drawing.Point(366, 42)
         Me.lb_year.Name = "lb_year"
-        Me.lb_year.Size = New System.Drawing.Size(29, 13)
+        Me.lb_year.Size = New System.Drawing.Size(29, 12)
         Me.lb_year.TabIndex = 77
         Me.lb_year.Text = "Year"
         '
         'c_avg_mark
         '
         Me.c_avg_mark.AutoSize = True
-        Me.c_avg_mark.Location = New System.Drawing.Point(435, 467)
+        Me.c_avg_mark.Location = New System.Drawing.Point(435, 431)
         Me.c_avg_mark.Name = "c_avg_mark"
-        Me.c_avg_mark.Size = New System.Drawing.Size(13, 13)
+        Me.c_avg_mark.Size = New System.Drawing.Size(11, 12)
         Me.c_avg_mark.TabIndex = 76
         Me.c_avg_mark.Text = "1"
         '
         'c10_mark
         '
         Me.c10_mark.AutoSize = True
-        Me.c10_mark.Location = New System.Drawing.Point(435, 422)
+        Me.c10_mark.Location = New System.Drawing.Point(435, 390)
         Me.c10_mark.Name = "c10_mark"
-        Me.c10_mark.Size = New System.Drawing.Size(13, 13)
+        Me.c10_mark.Size = New System.Drawing.Size(11, 12)
         Me.c10_mark.TabIndex = 75
         Me.c10_mark.Text = "1"
         '
         'c9_mark
         '
         Me.c9_mark.AutoSize = True
-        Me.c9_mark.Location = New System.Drawing.Point(435, 396)
+        Me.c9_mark.Location = New System.Drawing.Point(435, 366)
         Me.c9_mark.Name = "c9_mark"
-        Me.c9_mark.Size = New System.Drawing.Size(13, 13)
+        Me.c9_mark.Size = New System.Drawing.Size(11, 12)
         Me.c9_mark.TabIndex = 74
         Me.c9_mark.Text = "1"
         '
         'c8_mark
         '
         Me.c8_mark.AutoSize = True
-        Me.c8_mark.Location = New System.Drawing.Point(435, 370)
+        Me.c8_mark.Location = New System.Drawing.Point(435, 342)
         Me.c8_mark.Name = "c8_mark"
-        Me.c8_mark.Size = New System.Drawing.Size(13, 13)
+        Me.c8_mark.Size = New System.Drawing.Size(11, 12)
         Me.c8_mark.TabIndex = 73
         Me.c8_mark.Text = "1"
         '
         'c7_mark
         '
         Me.c7_mark.AutoSize = True
-        Me.c7_mark.Location = New System.Drawing.Point(435, 344)
+        Me.c7_mark.Location = New System.Drawing.Point(435, 318)
         Me.c7_mark.Name = "c7_mark"
-        Me.c7_mark.Size = New System.Drawing.Size(13, 13)
+        Me.c7_mark.Size = New System.Drawing.Size(11, 12)
         Me.c7_mark.TabIndex = 72
         Me.c7_mark.Text = "1"
         '
         'c6_mark
         '
         Me.c6_mark.AutoSize = True
-        Me.c6_mark.Location = New System.Drawing.Point(435, 318)
+        Me.c6_mark.Location = New System.Drawing.Point(435, 294)
         Me.c6_mark.Name = "c6_mark"
-        Me.c6_mark.Size = New System.Drawing.Size(13, 13)
+        Me.c6_mark.Size = New System.Drawing.Size(11, 12)
         Me.c6_mark.TabIndex = 71
         Me.c6_mark.Text = "1"
         '
         'c5_mark
         '
         Me.c5_mark.AutoSize = True
-        Me.c5_mark.Location = New System.Drawing.Point(435, 292)
+        Me.c5_mark.Location = New System.Drawing.Point(435, 270)
         Me.c5_mark.Name = "c5_mark"
-        Me.c5_mark.Size = New System.Drawing.Size(13, 13)
+        Me.c5_mark.Size = New System.Drawing.Size(11, 12)
         Me.c5_mark.TabIndex = 70
         Me.c5_mark.Text = "1"
         '
         'c4_mark
         '
         Me.c4_mark.AutoSize = True
-        Me.c4_mark.Location = New System.Drawing.Point(435, 266)
+        Me.c4_mark.Location = New System.Drawing.Point(435, 246)
         Me.c4_mark.Name = "c4_mark"
-        Me.c4_mark.Size = New System.Drawing.Size(13, 13)
+        Me.c4_mark.Size = New System.Drawing.Size(11, 12)
         Me.c4_mark.TabIndex = 69
         Me.c4_mark.Text = "1"
         '
         'c3_mark
         '
         Me.c3_mark.AutoSize = True
-        Me.c3_mark.Location = New System.Drawing.Point(435, 240)
+        Me.c3_mark.Location = New System.Drawing.Point(435, 222)
         Me.c3_mark.Name = "c3_mark"
-        Me.c3_mark.Size = New System.Drawing.Size(13, 13)
+        Me.c3_mark.Size = New System.Drawing.Size(11, 12)
         Me.c3_mark.TabIndex = 68
         Me.c3_mark.Text = "1"
         '
         'c2_mark
         '
         Me.c2_mark.AutoSize = True
-        Me.c2_mark.Location = New System.Drawing.Point(435, 214)
+        Me.c2_mark.Location = New System.Drawing.Point(435, 198)
         Me.c2_mark.Name = "c2_mark"
-        Me.c2_mark.Size = New System.Drawing.Size(13, 13)
+        Me.c2_mark.Size = New System.Drawing.Size(11, 12)
         Me.c2_mark.TabIndex = 67
         Me.c2_mark.Text = "1"
         '
         'c1_mark
         '
         Me.c1_mark.AutoSize = True
-        Me.c1_mark.Location = New System.Drawing.Point(435, 188)
+        Me.c1_mark.Location = New System.Drawing.Point(435, 174)
         Me.c1_mark.Name = "c1_mark"
-        Me.c1_mark.Size = New System.Drawing.Size(13, 13)
+        Me.c1_mark.Size = New System.Drawing.Size(11, 12)
         Me.c1_mark.TabIndex = 66
         Me.c1_mark.Text = "1"
         '
         'emp_last_name
         '
         Me.emp_last_name.AutoSize = True
-        Me.emp_last_name.Location = New System.Drawing.Point(175, 118)
+        Me.emp_last_name.Location = New System.Drawing.Point(175, 109)
         Me.emp_last_name.Name = "emp_last_name"
-        Me.emp_last_name.Size = New System.Drawing.Size(23, 13)
+        Me.emp_last_name.Size = New System.Drawing.Size(23, 12)
         Me.emp_last_name.TabIndex = 65
         Me.emp_last_name.Text = "Lim"
         '
         'lb_employee_last_name
         '
         Me.lb_employee_last_name.AutoSize = True
-        Me.lb_employee_last_name.Location = New System.Drawing.Point(57, 118)
+        Me.lb_employee_last_name.Location = New System.Drawing.Point(57, 109)
         Me.lb_employee_last_name.Name = "lb_employee_last_name"
-        Me.lb_employee_last_name.Size = New System.Drawing.Size(58, 13)
+        Me.lb_employee_last_name.Size = New System.Drawing.Size(59, 12)
         Me.lb_employee_last_name.TabIndex = 64
         Me.lb_employee_last_name.Text = "Last Name"
         '
         'emp_first_name
         '
         Me.emp_first_name.AutoSize = True
-        Me.emp_first_name.Location = New System.Drawing.Point(175, 82)
+        Me.emp_first_name.Location = New System.Drawing.Point(175, 76)
         Me.emp_first_name.Name = "emp_first_name"
-        Me.emp_first_name.Size = New System.Drawing.Size(50, 13)
+        Me.emp_first_name.Size = New System.Drawing.Size(53, 12)
         Me.emp_first_name.TabIndex = 63
         Me.emp_first_name.Text = "Ying Yee"
         '
         'emp_dept
         '
         Me.emp_dept.AutoSize = True
-        Me.emp_dept.Location = New System.Drawing.Point(175, 45)
+        Me.emp_dept.Location = New System.Drawing.Point(175, 42)
         Me.emp_dept.Name = "emp_dept"
-        Me.emp_dept.Size = New System.Drawing.Size(90, 13)
+        Me.emp_dept.Size = New System.Drawing.Size(89, 12)
         Me.emp_dept.TabIndex = 62
         Me.emp_dept.Text = "Human Resource"
         '
         'lb_agility
         '
         Me.lb_agility.AutoSize = True
-        Me.lb_agility.Location = New System.Drawing.Point(70, 422)
+        Me.lb_agility.Location = New System.Drawing.Point(70, 390)
         Me.lb_agility.Name = "lb_agility"
-        Me.lb_agility.Size = New System.Drawing.Size(52, 13)
+        Me.lb_agility.Size = New System.Drawing.Size(71, 12)
         Me.lb_agility.TabIndex = 58
         Me.lb_agility.Text = "10. Agility"
         '
         'lb_perseverance
         '
         Me.lb_perseverance.AutoSize = True
-        Me.lb_perseverance.Location = New System.Drawing.Point(70, 396)
+        Me.lb_perseverance.Location = New System.Drawing.Point(70, 366)
         Me.lb_perseverance.Name = "lb_perseverance"
-        Me.lb_perseverance.Size = New System.Drawing.Size(85, 13)
+        Me.lb_perseverance.Size = New System.Drawing.Size(95, 12)
         Me.lb_perseverance.TabIndex = 57
         Me.lb_perseverance.Text = "9. Perseverance"
         '
         'lb_technology
         '
         Me.lb_technology.AutoSize = True
-        Me.lb_technology.Location = New System.Drawing.Point(70, 370)
+        Me.lb_technology.Location = New System.Drawing.Point(70, 342)
         Me.lb_technology.Name = "lb_technology"
-        Me.lb_technology.Size = New System.Drawing.Size(97, 13)
+        Me.lb_technology.Size = New System.Drawing.Size(119, 12)
         Me.lb_technology.TabIndex = 56
         Me.lb_technology.Text = "8. Technology Skill"
         '
         'lb_problem
         '
         Me.lb_problem.AutoSize = True
-        Me.lb_problem.Location = New System.Drawing.Point(70, 344)
+        Me.lb_problem.Location = New System.Drawing.Point(70, 318)
         Me.lb_problem.Name = "lb_problem"
-        Me.lb_problem.Size = New System.Drawing.Size(95, 13)
+        Me.lb_problem.Size = New System.Drawing.Size(113, 12)
         Me.lb_problem.TabIndex = 55
         Me.lb_problem.Text = "7. Problem Solving"
         '
@@ -332,7 +332,7 @@ Partial Class MyPerformance
         '
         Me.lb_performancefactors.AutoSize = True
         Me.lb_performancefactors.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lb_performancefactors.Location = New System.Drawing.Point(57, 150)
+        Me.lb_performancefactors.Location = New System.Drawing.Point(57, 138)
         Me.lb_performancefactors.Name = "lb_performancefactors"
         Me.lb_performancefactors.Size = New System.Drawing.Size(124, 13)
         Me.lb_performancefactors.TabIndex = 54
@@ -341,90 +341,90 @@ Partial Class MyPerformance
         'lb_avg_mark
         '
         Me.lb_avg_mark.AutoSize = True
-        Me.lb_avg_mark.Location = New System.Drawing.Point(274, 467)
+        Me.lb_avg_mark.Location = New System.Drawing.Point(274, 431)
         Me.lb_avg_mark.Name = "lb_avg_mark"
-        Me.lb_avg_mark.Size = New System.Drawing.Size(63, 13)
+        Me.lb_avg_mark.Size = New System.Drawing.Size(71, 12)
         Me.lb_avg_mark.TabIndex = 52
         Me.lb_avg_mark.Text = "Total Marks"
         '
         'lb_department
         '
         Me.lb_department.AutoSize = True
-        Me.lb_department.Location = New System.Drawing.Point(57, 45)
+        Me.lb_department.Location = New System.Drawing.Point(57, 42)
         Me.lb_department.Name = "lb_department"
-        Me.lb_department.Size = New System.Drawing.Size(62, 13)
+        Me.lb_department.Size = New System.Drawing.Size(65, 12)
         Me.lb_department.TabIndex = 35
         Me.lb_department.Text = "Department"
         '
         'lb_communication
         '
         Me.lb_communication.AutoSize = True
-        Me.lb_communication.Location = New System.Drawing.Point(70, 318)
+        Me.lb_communication.Location = New System.Drawing.Point(70, 294)
         Me.lb_communication.Name = "lb_communication"
-        Me.lb_communication.Size = New System.Drawing.Size(91, 13)
+        Me.lb_communication.Size = New System.Drawing.Size(101, 12)
         Me.lb_communication.TabIndex = 44
         Me.lb_communication.Text = "6. Communication"
         '
         'lb_collaboration
         '
         Me.lb_collaboration.AutoSize = True
-        Me.lb_collaboration.Location = New System.Drawing.Point(70, 292)
+        Me.lb_collaboration.Location = New System.Drawing.Point(70, 270)
         Me.lb_collaboration.Name = "lb_collaboration"
-        Me.lb_collaboration.Size = New System.Drawing.Size(132, 13)
+        Me.lb_collaboration.Size = New System.Drawing.Size(161, 12)
         Me.lb_collaboration.TabIndex = 43
         Me.lb_collaboration.Text = "5. Collaboration, teamwork"
         '
         'lb_dependability
         '
         Me.lb_dependability.AutoSize = True
-        Me.lb_dependability.Location = New System.Drawing.Point(70, 266)
+        Me.lb_dependability.Location = New System.Drawing.Point(70, 246)
         Me.lb_dependability.Name = "lb_dependability"
-        Me.lb_dependability.Size = New System.Drawing.Size(83, 13)
+        Me.lb_dependability.Size = New System.Drawing.Size(101, 12)
         Me.lb_dependability.TabIndex = 42
         Me.lb_dependability.Text = "4. Dependability"
         '
         'lb_initiative
         '
         Me.lb_initiative.AutoSize = True
-        Me.lb_initiative.Location = New System.Drawing.Point(70, 240)
+        Me.lb_initiative.Location = New System.Drawing.Point(70, 222)
         Me.lb_initiative.Name = "lb_initiative"
-        Me.lb_initiative.Size = New System.Drawing.Size(58, 13)
+        Me.lb_initiative.Size = New System.Drawing.Size(83, 12)
         Me.lb_initiative.TabIndex = 41
         Me.lb_initiative.Text = "3. Initiative"
         '
         'lb_employee_first_name
         '
         Me.lb_employee_first_name.AutoSize = True
-        Me.lb_employee_first_name.Location = New System.Drawing.Point(58, 82)
+        Me.lb_employee_first_name.Location = New System.Drawing.Point(58, 76)
         Me.lb_employee_first_name.Name = "lb_employee_first_name"
-        Me.lb_employee_first_name.Size = New System.Drawing.Size(57, 13)
+        Me.lb_employee_first_name.Size = New System.Drawing.Size(65, 12)
         Me.lb_employee_first_name.TabIndex = 36
         Me.lb_employee_first_name.Text = "First Name"
         '
         'lb_flexibility
         '
         Me.lb_flexibility.AutoSize = True
-        Me.lb_flexibility.Location = New System.Drawing.Point(70, 214)
+        Me.lb_flexibility.Location = New System.Drawing.Point(70, 198)
         Me.lb_flexibility.Name = "lb_flexibility"
-        Me.lb_flexibility.Size = New System.Drawing.Size(60, 13)
+        Me.lb_flexibility.Size = New System.Drawing.Size(89, 12)
         Me.lb_flexibility.TabIndex = 40
         Me.lb_flexibility.Text = "2. Flexibility"
         '
         'lb_quality
         '
         Me.lb_quality.AutoSize = True
-        Me.lb_quality.Location = New System.Drawing.Point(70, 188)
+        Me.lb_quality.Location = New System.Drawing.Point(70, 174)
         Me.lb_quality.Name = "lb_quality"
-        Me.lb_quality.Size = New System.Drawing.Size(167, 13)
+        Me.lb_quality.Size = New System.Drawing.Size(215, 12)
         Me.lb_quality.TabIndex = 39
         Me.lb_quality.Text = "1. Quality of work and productivity"
         '
         'lb_marks
         '
         Me.lb_marks.AutoSize = True
-        Me.lb_marks.Location = New System.Drawing.Point(424, 150)
+        Me.lb_marks.Location = New System.Drawing.Point(424, 138)
         Me.lb_marks.Name = "lb_marks"
-        Me.lb_marks.Size = New System.Drawing.Size(36, 13)
+        Me.lb_marks.Size = New System.Drawing.Size(35, 12)
         Me.lb_marks.TabIndex = 45
         Me.lb_marks.Text = "Marks"
         '
@@ -441,7 +441,7 @@ Partial Class MyPerformance
         Me.TabPage2.Location = New System.Drawing.Point(4, 22)
         Me.TabPage2.Name = "TabPage2"
         Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage2.Size = New System.Drawing.Size(785, 667)
+        Me.TabPage2.Size = New System.Drawing.Size(892, 805)
         Me.TabPage2.TabIndex = 3
         Me.TabPage2.Text = "Reward"
         Me.TabPage2.UseVisualStyleBackColor = True
@@ -449,9 +449,9 @@ Partial Class MyPerformance
         'lb_reward_cond
         '
         Me.lb_reward_cond.AutoSize = True
-        Me.lb_reward_cond.Location = New System.Drawing.Point(23, 49)
+        Me.lb_reward_cond.Location = New System.Drawing.Point(23, 45)
         Me.lb_reward_cond.Name = "lb_reward_cond"
-        Me.lb_reward_cond.Size = New System.Drawing.Size(222, 13)
+        Me.lb_reward_cond.Size = New System.Drawing.Size(263, 12)
         Me.lb_reward_cond.TabIndex = 53
         Me.lb_reward_cond.Text = "* 1 Reward point = RM 1.00 value of voucher"
         '
@@ -467,9 +467,9 @@ Partial Class MyPerformance
         Me.GroupBox1.Controls.Add(Me.rb_samsung)
         Me.GroupBox1.Controls.Add(Me.rb_tesco)
         Me.GroupBox1.Controls.Add(Me.rb_aeon)
-        Me.GroupBox1.Location = New System.Drawing.Point(26, 143)
+        Me.GroupBox1.Location = New System.Drawing.Point(26, 132)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(280, 157)
+        Me.GroupBox1.Size = New System.Drawing.Size(280, 145)
         Me.GroupBox1.TabIndex = 50
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Participating Partner"
@@ -477,9 +477,9 @@ Partial Class MyPerformance
         'rb_cosas_united
         '
         Me.rb_cosas_united.AutoSize = True
-        Me.rb_cosas_united.Location = New System.Drawing.Point(6, 42)
+        Me.rb_cosas_united.Location = New System.Drawing.Point(6, 39)
         Me.rb_cosas_united.Name = "rb_cosas_united"
-        Me.rb_cosas_united.Size = New System.Drawing.Size(88, 17)
+        Me.rb_cosas_united.Size = New System.Drawing.Size(95, 16)
         Me.rb_cosas_united.TabIndex = 36
         Me.rb_cosas_united.TabStop = True
         Me.rb_cosas_united.Text = "Cosas United"
@@ -488,9 +488,9 @@ Partial Class MyPerformance
         'rb_universal_traveller
         '
         Me.rb_universal_traveller.AutoSize = True
-        Me.rb_universal_traveller.Location = New System.Drawing.Point(159, 65)
+        Me.rb_universal_traveller.Location = New System.Drawing.Point(159, 60)
         Me.rb_universal_traveller.Name = "rb_universal_traveller"
-        Me.rb_universal_traveller.Size = New System.Drawing.Size(113, 17)
+        Me.rb_universal_traveller.Size = New System.Drawing.Size(137, 16)
         Me.rb_universal_traveller.TabIndex = 35
         Me.rb_universal_traveller.TabStop = True
         Me.rb_universal_traveller.Text = "Universal Traveller"
@@ -499,9 +499,9 @@ Partial Class MyPerformance
         'rb_watson
         '
         Me.rb_watson.AutoSize = True
-        Me.rb_watson.Location = New System.Drawing.Point(159, 88)
+        Me.rb_watson.Location = New System.Drawing.Point(159, 81)
         Me.rb_watson.Name = "rb_watson"
-        Me.rb_watson.Size = New System.Drawing.Size(62, 17)
+        Me.rb_watson.Size = New System.Drawing.Size(59, 16)
         Me.rb_watson.TabIndex = 34
         Me.rb_watson.TabStop = True
         Me.rb_watson.Text = "Watson"
@@ -510,9 +510,9 @@ Partial Class MyPerformance
         'rb_yu_yan_sang
         '
         Me.rb_yu_yan_sang.AutoSize = True
-        Me.rb_yu_yan_sang.Location = New System.Drawing.Point(159, 111)
+        Me.rb_yu_yan_sang.Location = New System.Drawing.Point(159, 102)
         Me.rb_yu_yan_sang.Name = "rb_yu_yan_sang"
-        Me.rb_yu_yan_sang.Size = New System.Drawing.Size(88, 17)
+        Me.rb_yu_yan_sang.Size = New System.Drawing.Size(89, 16)
         Me.rb_yu_yan_sang.TabIndex = 33
         Me.rb_yu_yan_sang.TabStop = True
         Me.rb_yu_yan_sang.Text = "Yu Yan Sang"
@@ -521,9 +521,9 @@ Partial Class MyPerformance
         'rb_court_mammoth
         '
         Me.rb_court_mammoth.AutoSize = True
-        Me.rb_court_mammoth.Location = New System.Drawing.Point(6, 65)
+        Me.rb_court_mammoth.Location = New System.Drawing.Point(6, 60)
         Me.rb_court_mammoth.Name = "rb_court_mammoth"
-        Me.rb_court_mammoth.Size = New System.Drawing.Size(99, 17)
+        Me.rb_court_mammoth.Size = New System.Drawing.Size(101, 16)
         Me.rb_court_mammoth.TabIndex = 32
         Me.rb_court_mammoth.TabStop = True
         Me.rb_court_mammoth.Text = "Court Mammoth"
@@ -532,9 +532,9 @@ Partial Class MyPerformance
         'rb_ikea
         '
         Me.rb_ikea.AutoSize = True
-        Me.rb_ikea.Location = New System.Drawing.Point(6, 88)
+        Me.rb_ikea.Location = New System.Drawing.Point(6, 81)
         Me.rb_ikea.Name = "rb_ikea"
-        Me.rb_ikea.Size = New System.Drawing.Size(46, 17)
+        Me.rb_ikea.Size = New System.Drawing.Size(47, 16)
         Me.rb_ikea.TabIndex = 31
         Me.rb_ikea.TabStop = True
         Me.rb_ikea.Text = "Ikea"
@@ -543,9 +543,9 @@ Partial Class MyPerformance
         'rb_senheng
         '
         Me.rb_senheng.AutoSize = True
-        Me.rb_senheng.Location = New System.Drawing.Point(159, 19)
+        Me.rb_senheng.Location = New System.Drawing.Point(159, 18)
         Me.rb_senheng.Name = "rb_senheng"
-        Me.rb_senheng.Size = New System.Drawing.Size(73, 17)
+        Me.rb_senheng.Size = New System.Drawing.Size(71, 16)
         Me.rb_senheng.TabIndex = 30
         Me.rb_senheng.TabStop = True
         Me.rb_senheng.Text = "Sen Heng"
@@ -554,9 +554,9 @@ Partial Class MyPerformance
         'rb_samsung
         '
         Me.rb_samsung.AutoSize = True
-        Me.rb_samsung.Location = New System.Drawing.Point(6, 111)
+        Me.rb_samsung.Location = New System.Drawing.Point(6, 102)
         Me.rb_samsung.Name = "rb_samsung"
-        Me.rb_samsung.Size = New System.Drawing.Size(69, 17)
+        Me.rb_samsung.Size = New System.Drawing.Size(65, 16)
         Me.rb_samsung.TabIndex = 29
         Me.rb_samsung.TabStop = True
         Me.rb_samsung.Text = "Samsung"
@@ -565,9 +565,9 @@ Partial Class MyPerformance
         'rb_tesco
         '
         Me.rb_tesco.AutoSize = True
-        Me.rb_tesco.Location = New System.Drawing.Point(159, 42)
+        Me.rb_tesco.Location = New System.Drawing.Point(159, 39)
         Me.rb_tesco.Name = "rb_tesco"
-        Me.rb_tesco.Size = New System.Drawing.Size(55, 17)
+        Me.rb_tesco.Size = New System.Drawing.Size(53, 16)
         Me.rb_tesco.TabIndex = 28
         Me.rb_tesco.TabStop = True
         Me.rb_tesco.Text = "Tesco"
@@ -576,9 +576,9 @@ Partial Class MyPerformance
         'rb_aeon
         '
         Me.rb_aeon.AutoSize = True
-        Me.rb_aeon.Location = New System.Drawing.Point(6, 19)
+        Me.rb_aeon.Location = New System.Drawing.Point(6, 18)
         Me.rb_aeon.Name = "rb_aeon"
-        Me.rb_aeon.Size = New System.Drawing.Size(50, 17)
+        Me.rb_aeon.Size = New System.Drawing.Size(47, 16)
         Me.rb_aeon.TabIndex = 27
         Me.rb_aeon.TabStop = True
         Me.rb_aeon.Text = "Aeon"
@@ -587,26 +587,26 @@ Partial Class MyPerformance
         'lbtotalrewardpoint1
         '
         Me.lbtotalrewardpoint1.AutoSize = True
-        Me.lbtotalrewardpoint1.Location = New System.Drawing.Point(22, 21)
+        Me.lbtotalrewardpoint1.Location = New System.Drawing.Point(30, 19)
         Me.lbtotalrewardpoint1.Name = "lbtotalrewardpoint1"
-        Me.lbtotalrewardpoint1.Size = New System.Drawing.Size(123, 13)
+        Me.lbtotalrewardpoint1.Size = New System.Drawing.Size(149, 12)
         Me.lbtotalrewardpoint1.TabIndex = 48
         Me.lbtotalrewardpoint1.Text = "Available Reward Point :"
         '
         'bt_clear
         '
-        Me.bt_clear.Location = New System.Drawing.Point(360, 345)
+        Me.bt_clear.Location = New System.Drawing.Point(360, 318)
         Me.bt_clear.Name = "bt_clear"
-        Me.bt_clear.Size = New System.Drawing.Size(75, 23)
+        Me.bt_clear.Size = New System.Drawing.Size(75, 21)
         Me.bt_clear.TabIndex = 47
         Me.bt_clear.Text = "Clear"
         Me.bt_clear.UseVisualStyleBackColor = True
         '
         'btredeem1
         '
-        Me.btredeem1.Location = New System.Drawing.Point(254, 345)
+        Me.btredeem1.Location = New System.Drawing.Point(254, 318)
         Me.btredeem1.Name = "btredeem1"
-        Me.btredeem1.Size = New System.Drawing.Size(75, 23)
+        Me.btredeem1.Size = New System.Drawing.Size(75, 21)
         Me.btredeem1.TabIndex = 46
         Me.btredeem1.Text = "Redeem"
         Me.btredeem1.UseVisualStyleBackColor = True
@@ -615,7 +615,7 @@ Partial Class MyPerformance
         '
         Me.lb_available_point.AutoSize = True
         Me.lb_available_point.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lb_available_point.Location = New System.Drawing.Point(151, 21)
+        Me.lb_available_point.Location = New System.Drawing.Point(237, 19)
         Me.lb_available_point.Name = "lb_available_point"
         Me.lb_available_point.Size = New System.Drawing.Size(19, 13)
         Me.lb_available_point.TabIndex = 52
@@ -624,9 +624,9 @@ Partial Class MyPerformance
         'lbcongratulation1
         '
         Me.lbcongratulation1.AutoSize = True
-        Me.lbcongratulation1.Location = New System.Drawing.Point(23, 77)
+        Me.lbcongratulation1.Location = New System.Drawing.Point(23, 71)
         Me.lbcongratulation1.Name = "lbcongratulation1"
-        Me.lbcongratulation1.Size = New System.Drawing.Size(575, 13)
+        Me.lbcongratulation1.Size = New System.Drawing.Size(725, 12)
         Me.lbcongratulation1.TabIndex = 49
         Me.lbcongratulation1.Text = "Congratulation! You are elegible to redeem the following cash voucher by using th" & _
             "e reward point that you have collected."
@@ -636,9 +636,9 @@ Partial Class MyPerformance
         Me.GroupBox2.Controls.Add(Me.rb_rm20)
         Me.GroupBox2.Controls.Add(Me.rb_rm50)
         Me.GroupBox2.Controls.Add(Me.rb_rm100)
-        Me.GroupBox2.Location = New System.Drawing.Point(348, 143)
+        Me.GroupBox2.Location = New System.Drawing.Point(348, 132)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(87, 157)
+        Me.GroupBox2.Size = New System.Drawing.Size(87, 145)
         Me.GroupBox2.TabIndex = 51
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Amount"
@@ -646,9 +646,9 @@ Partial Class MyPerformance
         'rb_rm20
         '
         Me.rb_rm20.AutoSize = True
-        Me.rb_rm20.Location = New System.Drawing.Point(6, 32)
+        Me.rb_rm20.Location = New System.Drawing.Point(6, 30)
         Me.rb_rm20.Name = "rb_rm20"
-        Me.rb_rm20.Size = New System.Drawing.Size(57, 17)
+        Me.rb_rm20.Size = New System.Drawing.Size(53, 16)
         Me.rb_rm20.TabIndex = 32
         Me.rb_rm20.TabStop = True
         Me.rb_rm20.Text = "RM 20"
@@ -657,9 +657,9 @@ Partial Class MyPerformance
         'rb_rm50
         '
         Me.rb_rm50.AutoSize = True
-        Me.rb_rm50.Location = New System.Drawing.Point(6, 65)
+        Me.rb_rm50.Location = New System.Drawing.Point(6, 60)
         Me.rb_rm50.Name = "rb_rm50"
-        Me.rb_rm50.Size = New System.Drawing.Size(57, 17)
+        Me.rb_rm50.Size = New System.Drawing.Size(53, 16)
         Me.rb_rm50.TabIndex = 31
         Me.rb_rm50.TabStop = True
         Me.rb_rm50.Text = "RM 50"
@@ -668,9 +668,9 @@ Partial Class MyPerformance
         'rb_rm100
         '
         Me.rb_rm100.AutoSize = True
-        Me.rb_rm100.Location = New System.Drawing.Point(6, 102)
+        Me.rb_rm100.Location = New System.Drawing.Point(6, 94)
         Me.rb_rm100.Name = "rb_rm100"
-        Me.rb_rm100.Size = New System.Drawing.Size(63, 17)
+        Me.rb_rm100.Size = New System.Drawing.Size(59, 16)
         Me.rb_rm100.TabIndex = 29
         Me.rb_rm100.TabStop = True
         Me.rb_rm100.Text = "RM 100"
@@ -678,11 +678,11 @@ Partial Class MyPerformance
         '
         'MyPerformance
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.Controls.Add(Me.tbct1)
         Me.Name = "MyPerformance"
-        Me.Size = New System.Drawing.Size(900, 900)
+        Me.Size = New System.Drawing.Size(900, 831)
         Me.tbct1.ResumeLayout(False)
         Me.tbpgbyindividual1.ResumeLayout(False)
         Me.tbpgbyindividual1.PerformLayout()

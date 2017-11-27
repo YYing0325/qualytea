@@ -163,3 +163,8 @@ D:\Documents\Visual Studio 2008\Projects\qualytea\qualytea\bin\Debug\HR.accdb
 D:\Documents\Visual Studio 2008\Projects\qualytea\qualytea\bin\Debug\qualytea.exe
 D:\Documents\Visual Studio 2008\Projects\qualytea\qualytea\bin\Debug\qualytea.pdb
 D:\Documents\Visual Studio 2008\Projects\qualytea\qualytea\bin\Debug\qualytea.xml
+D:\Documents\Visual Studio 2008\Projects\qualytea\qualytea\bin\Debug\qualytea.exe.manifest
+D:\Documents\Visual Studio 2008\Projects\qualytea\qualytea\bin\Debug\qualytea.application
+D:\Documents\Visual Studio 2008\Projects\qualytea\qualytea\obj\Debug\qualytea.exe.manifest
+D:\Documents\Visual Studio 2008\Projects\qualytea\qualytea\obj\Debug\qualytea.application
+D:\Documents\Visual Studio 2008\Projects\qualytea\qualytea\bin\Debug\MySql.Data.dll

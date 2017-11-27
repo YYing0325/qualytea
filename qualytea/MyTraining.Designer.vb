@@ -67,7 +67,7 @@ Partial Class MyTraining
         Me.lb_trCourse104.AutoSize = True
         Me.lb_trCourse104.Location = New System.Drawing.Point(-132, 0)
         Me.lb_trCourse104.Name = "lb_trCourse104"
-        Me.lb_trCourse104.Size = New System.Drawing.Size(1, 13)
+        Me.lb_trCourse104.Size = New System.Drawing.Size(1, 12)
         Me.lb_trCourse104.TabIndex = 1
         Me.lb_trCourse104.Text = "Course"
         '
@@ -92,7 +92,7 @@ Partial Class MyTraining
         Me.TabPage1.Location = New System.Drawing.Point(4, 22)
         Me.TabPage1.Name = "TabPage1"
         Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage1.Size = New System.Drawing.Size(763, 605)
+        Me.TabPage1.Size = New System.Drawing.Size(763, 556)
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "My Training"
         Me.TabPage1.UseVisualStyleBackColor = True
@@ -100,60 +100,61 @@ Partial Class MyTraining
         'data_grid_TrComplete
         '
         Me.data_grid_TrComplete.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.data_grid_TrComplete.Location = New System.Drawing.Point(6, 429)
+        Me.data_grid_TrComplete.Location = New System.Drawing.Point(6, 396)
         Me.data_grid_TrComplete.Name = "data_grid_TrComplete"
-        Me.data_grid_TrComplete.Size = New System.Drawing.Size(738, 151)
+        Me.data_grid_TrComplete.RowTemplate.Height = 23
+        Me.data_grid_TrComplete.Size = New System.Drawing.Size(738, 139)
         Me.data_grid_TrComplete.TabIndex = 13
         '
         'lb_trCompletedTraining
         '
         Me.lb_trCompletedTraining.AutoSize = True
-        Me.lb_trCompletedTraining.Location = New System.Drawing.Point(3, 403)
+        Me.lb_trCompletedTraining.Location = New System.Drawing.Point(3, 372)
         Me.lb_trCompletedTraining.Name = "lb_trCompletedTraining"
-        Me.lb_trCompletedTraining.Size = New System.Drawing.Size(98, 13)
+        Me.lb_trCompletedTraining.Size = New System.Drawing.Size(113, 12)
         Me.lb_trCompletedTraining.TabIndex = 12
         Me.lb_trCompletedTraining.Text = "Completed Training"
         '
         'lb_trNewtraining
         '
         Me.lb_trNewtraining.AutoSize = True
-        Me.lb_trNewtraining.Location = New System.Drawing.Point(6, 17)
+        Me.lb_trNewtraining.Location = New System.Drawing.Point(6, 16)
         Me.lb_trNewtraining.Name = "lb_trNewtraining"
-        Me.lb_trNewtraining.Size = New System.Drawing.Size(70, 13)
+        Me.lb_trNewtraining.Size = New System.Drawing.Size(77, 12)
         Me.lb_trNewtraining.TabIndex = 11
         Me.lb_trNewtraining.Text = "New Training"
         '
         'data_grid_TrProgress
         '
         Me.data_grid_TrProgress.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.data_grid_TrProgress.Location = New System.Drawing.Point(6, 233)
+        Me.data_grid_TrProgress.Location = New System.Drawing.Point(6, 215)
         Me.data_grid_TrProgress.Name = "data_grid_TrProgress"
-        Me.data_grid_TrProgress.Size = New System.Drawing.Size(738, 151)
+        Me.data_grid_TrProgress.Size = New System.Drawing.Size(738, 139)
         Me.data_grid_TrProgress.TabIndex = 10
         '
         'data_grid_TrNewTraining
         '
         Me.data_grid_TrNewTraining.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.data_grid_TrNewTraining.Location = New System.Drawing.Point(6, 36)
+        Me.data_grid_TrNewTraining.Location = New System.Drawing.Point(6, 33)
         Me.data_grid_TrNewTraining.Name = "data_grid_TrNewTraining"
-        Me.data_grid_TrNewTraining.Size = New System.Drawing.Size(738, 151)
+        Me.data_grid_TrNewTraining.Size = New System.Drawing.Size(738, 139)
         Me.data_grid_TrNewTraining.TabIndex = 9
         '
         'lb_trInProgress
         '
         Me.lb_trInProgress.AutoSize = True
-        Me.lb_trInProgress.Location = New System.Drawing.Point(3, 208)
+        Me.lb_trInProgress.Location = New System.Drawing.Point(3, 192)
         Me.lb_trInProgress.Name = "lb_trInProgress"
-        Me.lb_trInProgress.Size = New System.Drawing.Size(60, 13)
+        Me.lb_trInProgress.Size = New System.Drawing.Size(71, 12)
         Me.lb_trInProgress.TabIndex = 8
         Me.lb_trInProgress.Text = "In Progress"
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(51, 85)
+        Me.Label1.Location = New System.Drawing.Point(51, 78)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(70, 13)
+        Me.Label1.Size = New System.Drawing.Size(77, 12)
         Me.Label1.TabIndex = 7
         Me.Label1.Text = "New Training"
         '
@@ -164,16 +165,16 @@ Partial Class MyTraining
         Me.My_training.Location = New System.Drawing.Point(0, 0)
         Me.My_training.Name = "My_training"
         Me.My_training.SelectedIndex = 0
-        Me.My_training.Size = New System.Drawing.Size(771, 631)
+        Me.My_training.Size = New System.Drawing.Size(771, 582)
         Me.My_training.TabIndex = 14
         '
         'MyTraining
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.Controls.Add(Me.My_training)
         Me.Name = "MyTraining"
-        Me.Size = New System.Drawing.Size(771, 631)
+        Me.Size = New System.Drawing.Size(771, 582)
         Me.TableLayoutPanel1.ResumeLayout(False)
         Me.TableLayoutPanel1.PerformLayout()
         Me.TabPage1.ResumeLayout(False)

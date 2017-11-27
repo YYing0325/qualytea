@@ -14,7 +14,8 @@ Public Class JobApplicantsComponent
             Dim dlUrl = data_grid_applicants.Rows(e.RowIndex).Cells("Resume").Value
             Dim fileNameArr = dlUrl.ToString.Split("/")
             Dim fileName = fileNameArr(fileNameArr.Length - 1)
-            My.Computer.Network.DownloadFile("http://" & dlUrl, "C:\Users\Yingyee\Desktop\" & fileName)
+            My.Computer.Network.DownloadFile("http://" & dlUrl, fileName)
+            MsgBox("File Downloaded")
         End If
 
         If data_grid_applicants.Columns(e.ColumnIndex).Name = "btn_invite_interview" Then
@@ -51,7 +52,8 @@ Public Class JobApplicantsComponent
             Dim dlUrl = data_grid_interview.Rows(e.RowIndex).Cells("Resume").Value
             Dim fileNameArr = dlUrl.ToString.Split("/")
             Dim fileName = fileNameArr(fileNameArr.Length - 1)
-            My.Computer.Network.DownloadFile("http://" & dlUrl, "C:\Users\Yingyee\Desktop\" & fileName)
+            My.Computer.Network.DownloadFile("http://" & dlUrl, fileName)
+            MsgBox("File is downloaded.")
         End If
 
         If data_grid_interview.Columns(e.ColumnIndex).Name = "btn_accept" Then
@@ -106,21 +108,21 @@ Public Class JobApplicantsComponent
 
 
     Sub handleCellClick3(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles data_grid_current_employee.CellClick
-
+        Dim empId = data_grid_current_employee.Rows(e.RowIndex).Cells("Employee Id").Value
         If data_grid_current_employee.Columns(e.ColumnIndex).Name = "btn_promote" Then
+            PromoteForm.empId = empId
             PromoteForm.Show()
         ElseIf data_grid_current_employee.Columns(e.ColumnIndex).Name = "btn_terminate" Then
-            TerminationForm.Show()
+            Dim connectToAccess = New Connect_To_Access_Job_Applicants()
+            connectToAccess.terminateEmployee(empId)
+            MsgBox("Employee is terminated")
+            data_grid_current_employee.Refresh()
+            data_grid_current_employee.Update()
+
         End If
 
         
     End Sub
 
-    Private Sub data_grid_applicants_CellContentClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles data_grid_applicants.CellContentClick
 
-    End Sub
-
-    Private Sub data_grid_interview_CellContentClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles data_grid_interview.CellContentClick
-
-    End Sub
 End Class

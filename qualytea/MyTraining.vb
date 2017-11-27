@@ -9,18 +9,6 @@ Public Class MyTraining
     Private CurrentID As String
 
 
-
-    Private Sub data_grid_TrNewTraining_CellContentClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles data_grid_TrNewTraining.CellContentClick
-
-    End Sub
-
-    Private Sub lb_trNewtraining_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles lb_trNewtraining.Click
-
-    End Sub
-
-    Private Sub TabPage1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TabPage1.Click
-
-    End Sub
     Sub handleCellClick_NewTraining(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles data_grid_TrNewTraining.CellClick
         If data_grid_TrNewTraining.Columns(e.ColumnIndex).Name = "btn_accept" Then
             MsgBox("Response has been submitted. " + e.RowIndex.ToString + "   Column" + e.ColumnIndex.ToString + " collum 0：" + data_grid_TrNewTraining.Rows(e.RowIndex).Cells("ID").Value.ToString)
@@ -57,7 +45,6 @@ Public Class MyTraining
     End Sub
     Sub handleCellClick_CompletedTraining(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles data_grid_TrComplete.CellClick
         If data_grid_TrComplete.Columns(e.ColumnIndex).Name = "btn_Feedback" Then
-            MsgBox("Completed Training have been summitted.")
             Dim mMyTrainingFeedback = New My_Training_Feedback
             mMyTrainingFeedback.onFeedbackShow(data_grid_TrComplete.Rows(e.RowIndex).Cells("ID").Value.ToString, data_grid_TrComplete.Rows(e.RowIndex).Cells("Code").Value.ToString, landing_page.emp_id.Text.ToString)
         End If
@@ -149,4 +136,6 @@ Public Class MyTraining
     Private Sub data_grid_TrComplete_CellContentClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles data_grid_TrComplete.CellContentClick
 
     End Sub
+
+
 End Class

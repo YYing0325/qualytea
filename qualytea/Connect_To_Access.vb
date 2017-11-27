@@ -519,7 +519,7 @@ Public Class Connect_To_Access
                     End While
 
 
-                    Dim empCmd3 As OleDbCommand = New OleDbCommand("SELECT * FROM [performance_evaluation] WHERE [performance_year]=" & performanceYear, myConnection)
+                    Dim empCmd3 As OleDbCommand = New OleDbCommand("SELECT * FROM [performance_evaluation] WHERE [performance_year]=" & performanceYear & " AND [employee_id]=" & empId, myConnection)
                     Dim dr3 As OleDbDataReader = empCmd3.ExecuteReader
                     While dr3.Read
                         If dr3.HasRows = True Then
@@ -541,7 +541,7 @@ Public Class Connect_To_Access
             myConnection.Close()
 
         Catch ex As Exception
-            MsgBox("Connection To Database Failed:" & ex.Message.ToString)
+            MsgBox("Connection To Database Failed :" & ex.Message.ToString)
         End Try
         Return dict
     End Function

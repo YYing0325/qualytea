@@ -24,6 +24,14 @@ Partial Class Payroll_H_Management
     Private Sub InitializeComponent()
         Me.tb_page = New System.Windows.Forms.TabControl
         Me.Salary = New System.Windows.Forms.TabPage
+        Me.lbtotal280 = New System.Windows.Forms.Label
+        Me.lbothers280 = New System.Windows.Forms.Label
+        Me.lbclaims280 = New System.Windows.Forms.Label
+        Me.lbsocso280 = New System.Windows.Forms.Label
+        Me.lbepf280 = New System.Windows.Forms.Label
+        Me.lballowance280 = New System.Windows.Forms.Label
+        Me.lbovertime280 = New System.Windows.Forms.Label
+        Me.lbbasic_salary280 = New System.Windows.Forms.Label
         Me.cbmonth = New System.Windows.Forms.ComboBox
         Me.lbtotal = New System.Windows.Forms.Label
         Me.lbothers = New System.Windows.Forms.Label
@@ -57,14 +65,6 @@ Partial Class Payroll_H_Management
         Me.lbovertime235 = New System.Windows.Forms.Label
         Me.Label1 = New System.Windows.Forms.Label
         Me.ListBox1 = New System.Windows.Forms.ListBox
-        Me.lbbasic_salary280 = New System.Windows.Forms.Label
-        Me.lbovertime280 = New System.Windows.Forms.Label
-        Me.lballowance280 = New System.Windows.Forms.Label
-        Me.lbepf280 = New System.Windows.Forms.Label
-        Me.lbsocso280 = New System.Windows.Forms.Label
-        Me.lbclaims280 = New System.Windows.Forms.Label
-        Me.lbothers280 = New System.Windows.Forms.Label
-        Me.lbtotal280 = New System.Windows.Forms.Label
         Me.tb_page.SuspendLayout()
         Me.Salary.SuspendLayout()
         Me.TabPage2.SuspendLayout()
@@ -81,7 +81,7 @@ Partial Class Payroll_H_Management
         Me.tb_page.Location = New System.Drawing.Point(3, 3)
         Me.tb_page.Name = "tb_page"
         Me.tb_page.SelectedIndex = 0
-        Me.tb_page.Size = New System.Drawing.Size(845, 472)
+        Me.tb_page.Size = New System.Drawing.Size(845, 436)
         Me.tb_page.TabIndex = 0
         '
         'Salary
@@ -107,25 +107,97 @@ Partial Class Payroll_H_Management
         Me.Salary.Location = New System.Drawing.Point(4, 22)
         Me.Salary.Name = "Salary"
         Me.Salary.Padding = New System.Windows.Forms.Padding(3)
-        Me.Salary.Size = New System.Drawing.Size(837, 446)
+        Me.Salary.Size = New System.Drawing.Size(837, 410)
         Me.Salary.TabIndex = 0
         Me.Salary.Text = "Salary"
         Me.Salary.UseVisualStyleBackColor = True
+        '
+        'lbtotal280
+        '
+        Me.lbtotal280.AutoSize = True
+        Me.lbtotal280.Location = New System.Drawing.Point(268, 352)
+        Me.lbtotal280.Name = "lbtotal280"
+        Me.lbtotal280.Size = New System.Drawing.Size(47, 12)
+        Me.lbtotal280.TabIndex = 140
+        Me.lbtotal280.Text = "Label10"
+        '
+        'lbothers280
+        '
+        Me.lbothers280.AutoSize = True
+        Me.lbothers280.Location = New System.Drawing.Point(268, 319)
+        Me.lbothers280.Name = "lbothers280"
+        Me.lbothers280.Size = New System.Drawing.Size(41, 12)
+        Me.lbothers280.TabIndex = 139
+        Me.lbothers280.Text = "Label9"
+        '
+        'lbclaims280
+        '
+        Me.lbclaims280.AutoSize = True
+        Me.lbclaims280.Location = New System.Drawing.Point(268, 288)
+        Me.lbclaims280.Name = "lbclaims280"
+        Me.lbclaims280.Size = New System.Drawing.Size(41, 12)
+        Me.lbclaims280.TabIndex = 138
+        Me.lbclaims280.Text = "Label8"
+        '
+        'lbsocso280
+        '
+        Me.lbsocso280.AutoSize = True
+        Me.lbsocso280.Location = New System.Drawing.Point(268, 260)
+        Me.lbsocso280.Name = "lbsocso280"
+        Me.lbsocso280.Size = New System.Drawing.Size(41, 12)
+        Me.lbsocso280.TabIndex = 137
+        Me.lbsocso280.Text = "Label7"
+        '
+        'lbepf280
+        '
+        Me.lbepf280.AutoSize = True
+        Me.lbepf280.Location = New System.Drawing.Point(268, 230)
+        Me.lbepf280.Name = "lbepf280"
+        Me.lbepf280.Size = New System.Drawing.Size(41, 12)
+        Me.lbepf280.TabIndex = 136
+        Me.lbepf280.Text = "Label6"
+        '
+        'lballowance280
+        '
+        Me.lballowance280.AutoSize = True
+        Me.lballowance280.Location = New System.Drawing.Point(268, 203)
+        Me.lballowance280.Name = "lballowance280"
+        Me.lballowance280.Size = New System.Drawing.Size(41, 12)
+        Me.lballowance280.TabIndex = 135
+        Me.lballowance280.Text = "Label5"
+        '
+        'lbovertime280
+        '
+        Me.lbovertime280.AutoSize = True
+        Me.lbovertime280.Location = New System.Drawing.Point(268, 171)
+        Me.lbovertime280.Name = "lbovertime280"
+        Me.lbovertime280.Size = New System.Drawing.Size(41, 12)
+        Me.lbovertime280.TabIndex = 134
+        Me.lbovertime280.Text = "Label4"
+        '
+        'lbbasic_salary280
+        '
+        Me.lbbasic_salary280.AutoSize = True
+        Me.lbbasic_salary280.Location = New System.Drawing.Point(268, 139)
+        Me.lbbasic_salary280.Name = "lbbasic_salary280"
+        Me.lbbasic_salary280.Size = New System.Drawing.Size(41, 12)
+        Me.lbbasic_salary280.TabIndex = 133
+        Me.lbbasic_salary280.Text = "Label3"
         '
         'cbmonth
         '
         Me.cbmonth.FormattingEnabled = True
         Me.cbmonth.Items.AddRange(New Object() {"January ", "February", "March ", "April", "May", "June", "July", "August", "September", "October", "November", "December "})
-        Me.cbmonth.Location = New System.Drawing.Point(178, 38)
+        Me.cbmonth.Location = New System.Drawing.Point(178, 35)
         Me.cbmonth.Name = "cbmonth"
-        Me.cbmonth.Size = New System.Drawing.Size(177, 21)
+        Me.cbmonth.Size = New System.Drawing.Size(177, 20)
         Me.cbmonth.TabIndex = 132
         '
         'lbtotal
         '
         Me.lbtotal.AutoSize = True
         Me.lbtotal.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbtotal.Location = New System.Drawing.Point(84, 378)
+        Me.lbtotal.Location = New System.Drawing.Point(84, 349)
         Me.lbtotal.Name = "lbtotal"
         Me.lbtotal.Size = New System.Drawing.Size(39, 16)
         Me.lbtotal.TabIndex = 130
@@ -135,7 +207,7 @@ Partial Class Payroll_H_Management
         '
         Me.lbothers.AutoSize = True
         Me.lbothers.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbothers.Location = New System.Drawing.Point(84, 344)
+        Me.lbothers.Location = New System.Drawing.Point(84, 318)
         Me.lbothers.Name = "lbothers"
         Me.lbothers.Size = New System.Drawing.Size(47, 16)
         Me.lbothers.TabIndex = 128
@@ -145,7 +217,7 @@ Partial Class Payroll_H_Management
         '
         Me.lbbasicsalary.AutoSize = True
         Me.lbbasicsalary.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbbasicsalary.Location = New System.Drawing.Point(84, 149)
+        Me.lbbasicsalary.Location = New System.Drawing.Point(84, 138)
         Me.lbbasicsalary.Name = "lbbasicsalary"
         Me.lbbasicsalary.Size = New System.Drawing.Size(84, 16)
         Me.lbbasicsalary.TabIndex = 127
@@ -155,7 +227,7 @@ Partial Class Payroll_H_Management
         '
         Me.lbclaims.AutoSize = True
         Me.lbclaims.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbclaims.Location = New System.Drawing.Point(84, 315)
+        Me.lbclaims.Location = New System.Drawing.Point(84, 291)
         Me.lbclaims.Name = "lbclaims"
         Me.lbclaims.Size = New System.Drawing.Size(49, 16)
         Me.lbclaims.TabIndex = 120
@@ -165,7 +237,7 @@ Partial Class Payroll_H_Management
         '
         Me.lbsocso.AutoSize = True
         Me.lbsocso.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbsocso.Location = New System.Drawing.Point(84, 284)
+        Me.lbsocso.Location = New System.Drawing.Point(84, 262)
         Me.lbsocso.Name = "lbsocso"
         Me.lbsocso.Size = New System.Drawing.Size(55, 16)
         Me.lbsocso.TabIndex = 119
@@ -175,7 +247,7 @@ Partial Class Payroll_H_Management
         '
         Me.lbepf.AutoSize = True
         Me.lbepf.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbepf.Location = New System.Drawing.Point(84, 253)
+        Me.lbepf.Location = New System.Drawing.Point(84, 234)
         Me.lbepf.Name = "lbepf"
         Me.lbepf.Size = New System.Drawing.Size(34, 16)
         Me.lbepf.TabIndex = 118
@@ -185,7 +257,7 @@ Partial Class Payroll_H_Management
         '
         Me.lballowance.AutoSize = True
         Me.lballowance.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lballowance.Location = New System.Drawing.Point(84, 220)
+        Me.lballowance.Location = New System.Drawing.Point(84, 203)
         Me.lballowance.Name = "lballowance"
         Me.lballowance.Size = New System.Drawing.Size(70, 16)
         Me.lballowance.TabIndex = 117
@@ -195,7 +267,7 @@ Partial Class Payroll_H_Management
         '
         Me.lbovertime.AutoSize = True
         Me.lbovertime.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbovertime.Location = New System.Drawing.Point(84, 185)
+        Me.lbovertime.Location = New System.Drawing.Point(84, 171)
         Me.lbovertime.Name = "lbovertime"
         Me.lbovertime.Size = New System.Drawing.Size(62, 16)
         Me.lbovertime.TabIndex = 116
@@ -205,7 +277,7 @@ Partial Class Payroll_H_Management
         '
         Me.lbmonth.AutoSize = True
         Me.lbmonth.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbmonth.Location = New System.Drawing.Point(84, 38)
+        Me.lbmonth.Location = New System.Drawing.Point(84, 35)
         Me.lbmonth.Name = "lbmonth"
         Me.lbmonth.Size = New System.Drawing.Size(44, 16)
         Me.lbmonth.TabIndex = 115
@@ -218,7 +290,7 @@ Partial Class Payroll_H_Management
         Me.TabPage2.Location = New System.Drawing.Point(4, 22)
         Me.TabPage2.Name = "TabPage2"
         Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage2.Size = New System.Drawing.Size(837, 446)
+        Me.TabPage2.Size = New System.Drawing.Size(837, 410)
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "Claims"
         Me.TabPage2.UseVisualStyleBackColor = True
@@ -226,16 +298,17 @@ Partial Class Payroll_H_Management
         'datagrid_payroll_mgmt
         '
         Me.datagrid_payroll_mgmt.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.datagrid_payroll_mgmt.Location = New System.Drawing.Point(0, 58)
+        Me.datagrid_payroll_mgmt.Location = New System.Drawing.Point(0, 54)
         Me.datagrid_payroll_mgmt.Name = "datagrid_payroll_mgmt"
-        Me.datagrid_payroll_mgmt.Size = New System.Drawing.Size(905, 378)
+        Me.datagrid_payroll_mgmt.RowTemplate.Height = 23
+        Me.datagrid_payroll_mgmt.Size = New System.Drawing.Size(905, 349)
         Me.datagrid_payroll_mgmt.TabIndex = 4
         '
         'btn_new_claim
         '
-        Me.btn_new_claim.Location = New System.Drawing.Point(9, 16)
+        Me.btn_new_claim.Location = New System.Drawing.Point(9, 15)
         Me.btn_new_claim.Name = "btn_new_claim"
-        Me.btn_new_claim.Size = New System.Drawing.Size(106, 36)
+        Me.btn_new_claim.Size = New System.Drawing.Size(106, 33)
         Me.btn_new_claim.TabIndex = 3
         Me.btn_new_claim.Text = "+ New"
         Me.btn_new_claim.UseVisualStyleBackColor = True
@@ -246,7 +319,7 @@ Partial Class Payroll_H_Management
         Me.TabPage3.Location = New System.Drawing.Point(4, 22)
         Me.TabPage3.Name = "TabPage3"
         Me.TabPage3.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage3.Size = New System.Drawing.Size(837, 446)
+        Me.TabPage3.Size = New System.Drawing.Size(837, 410)
         Me.TabPage3.TabIndex = 2
         Me.TabPage3.Text = "Status"
         Me.TabPage3.UseVisualStyleBackColor = True
@@ -254,9 +327,9 @@ Partial Class Payroll_H_Management
         'datagrid_status
         '
         Me.datagrid_status.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.datagrid_status.Location = New System.Drawing.Point(3, 9)
+        Me.datagrid_status.Location = New System.Drawing.Point(3, 8)
         Me.datagrid_status.Name = "datagrid_status"
-        Me.datagrid_status.Size = New System.Drawing.Size(802, 286)
+        Me.datagrid_status.Size = New System.Drawing.Size(802, 264)
         Me.datagrid_status.TabIndex = 1
         '
         'TextBox1
@@ -424,85 +497,13 @@ Partial Class Payroll_H_Management
         Me.ListBox1.Size = New System.Drawing.Size(203, 4)
         Me.ListBox1.TabIndex = 0
         '
-        'lbbasic_salary280
-        '
-        Me.lbbasic_salary280.AutoSize = True
-        Me.lbbasic_salary280.Location = New System.Drawing.Point(268, 151)
-        Me.lbbasic_salary280.Name = "lbbasic_salary280"
-        Me.lbbasic_salary280.Size = New System.Drawing.Size(39, 13)
-        Me.lbbasic_salary280.TabIndex = 133
-        Me.lbbasic_salary280.Text = "Label3"
-        '
-        'lbovertime280
-        '
-        Me.lbovertime280.AutoSize = True
-        Me.lbovertime280.Location = New System.Drawing.Point(268, 185)
-        Me.lbovertime280.Name = "lbovertime280"
-        Me.lbovertime280.Size = New System.Drawing.Size(39, 13)
-        Me.lbovertime280.TabIndex = 134
-        Me.lbovertime280.Text = "Label4"
-        '
-        'lballowance280
-        '
-        Me.lballowance280.AutoSize = True
-        Me.lballowance280.Location = New System.Drawing.Point(268, 220)
-        Me.lballowance280.Name = "lballowance280"
-        Me.lballowance280.Size = New System.Drawing.Size(39, 13)
-        Me.lballowance280.TabIndex = 135
-        Me.lballowance280.Text = "Label5"
-        '
-        'lbepf280
-        '
-        Me.lbepf280.AutoSize = True
-        Me.lbepf280.Location = New System.Drawing.Point(268, 249)
-        Me.lbepf280.Name = "lbepf280"
-        Me.lbepf280.Size = New System.Drawing.Size(39, 13)
-        Me.lbepf280.TabIndex = 136
-        Me.lbepf280.Text = "Label6"
-        '
-        'lbsocso280
-        '
-        Me.lbsocso280.AutoSize = True
-        Me.lbsocso280.Location = New System.Drawing.Point(268, 282)
-        Me.lbsocso280.Name = "lbsocso280"
-        Me.lbsocso280.Size = New System.Drawing.Size(39, 13)
-        Me.lbsocso280.TabIndex = 137
-        Me.lbsocso280.Text = "Label7"
-        '
-        'lbclaims280
-        '
-        Me.lbclaims280.AutoSize = True
-        Me.lbclaims280.Location = New System.Drawing.Point(268, 312)
-        Me.lbclaims280.Name = "lbclaims280"
-        Me.lbclaims280.Size = New System.Drawing.Size(39, 13)
-        Me.lbclaims280.TabIndex = 138
-        Me.lbclaims280.Text = "Label8"
-        '
-        'lbothers280
-        '
-        Me.lbothers280.AutoSize = True
-        Me.lbothers280.Location = New System.Drawing.Point(268, 346)
-        Me.lbothers280.Name = "lbothers280"
-        Me.lbothers280.Size = New System.Drawing.Size(39, 13)
-        Me.lbothers280.TabIndex = 139
-        Me.lbothers280.Text = "Label9"
-        '
-        'lbtotal280
-        '
-        Me.lbtotal280.AutoSize = True
-        Me.lbtotal280.Location = New System.Drawing.Point(268, 381)
-        Me.lbtotal280.Name = "lbtotal280"
-        Me.lbtotal280.Size = New System.Drawing.Size(45, 13)
-        Me.lbtotal280.TabIndex = 140
-        Me.lbtotal280.Text = "Label10"
-        '
         'Payroll_H_Management
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.Controls.Add(Me.tb_page)
         Me.Name = "Payroll_H_Management"
-        Me.Size = New System.Drawing.Size(878, 514)
+        Me.Size = New System.Drawing.Size(878, 474)
         Me.tb_page.ResumeLayout(False)
         Me.Salary.ResumeLayout(False)
         Me.Salary.PerformLayout()

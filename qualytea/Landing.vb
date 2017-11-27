@@ -21,18 +21,31 @@ Public Class landing_page
         Me.btn_performance_management.Width = SplitContainer1.Panel1.Width
         Me.btn_my_training.Width = SplitContainer1.Panel1.Width
         'Me.logo.Width = SplitContainer1.Panel1.Width
-
+        If emp_id.Text = "4" Then
+            Me.btn_job_applicants.Location = New Point(0, Me.btn_logout.Location.Y - 50)
+            Me.btn_performance_management.Location = New Point(0, Me.btn_job_applicants.Location.Y - 50)
+            Me.btn_payroll_management.Location = New Point(0, Me.btn_performance_management.Location.Y - 50)
+            Me.btn_leave_management.Location = New Point(0, Me.btn_performance_management.Location.Y - 50)
+            Me.btn_training_management.Location = New Point(0, Me.btn_leave_management.Location.Y - 50)
+            Me.btn_my_performance.Location = New Point(0, Me.btn_training_management.Location.Y - 50)
+            Me.btn_my_leave.Location = New Point(0, Me.btn_my_performance.Location.Y - 50)
+            Me.btn_my_training.Location = New Point(0, Me.btn_my_leave.Location.Y - 50)
+            Me.btn_personal.Location = New Point(0, Me.btn_my_training.Location.Y - 50)
+            Me.btn_home.Location = New Point(0, Me.btn_personal.Location.Y - 50)
+        Else
+            Me.btn_training_management.Hide()
+            Me.btn_performance_management.Hide()
+            Me.btn_leave_management.Hide()
+            Me.btn_job_applicants.Hide()
+            
+            Me.btn_my_performance.Location = New Point(0, Me.btn_logout.Location.Y - 50)
+            Me.btn_my_leave.Location = New Point(0, Me.btn_my_performance.Location.Y - 50)
+            Me.btn_my_training.Location = New Point(0, Me.btn_my_leave.Location.Y - 50)
+            Me.btn_personal.Location = New Point(0, Me.btn_my_training.Location.Y - 50)
+            Me.btn_home.Location = New Point(0, Me.btn_personal.Location.Y - 50)
+        End If
         ' Position
-        Me.btn_job_applicants.Location = New Point(0, Me.btn_logout.Location.Y - 50)
-        Me.btn_performance_management.Location = New Point(0, Me.btn_job_applicants.Location.Y - 50)
-        Me.btn_payroll_management.Location = New Point(0, Me.btn_performance_management.Location.Y - 50)
-        Me.btn_leave_management.Location = New Point(0, Me.btn_performance_management.Location.Y - 50)
-        Me.btn_training_management.Location = New Point(0, Me.btn_leave_management.Location.Y - 50)
-        Me.btn_my_performance.Location = New Point(0, Me.btn_training_management.Location.Y - 50)
-        Me.btn_my_leave.Location = New Point(0, Me.btn_my_performance.Location.Y - 50)
-        Me.btn_my_training.Location = New Point(0, Me.btn_my_leave.Location.Y - 50)
-        Me.btn_personal.Location = New Point(0, Me.btn_my_training.Location.Y - 50)
-        Me.btn_home.Location = New Point(0, Me.btn_personal.Location.Y - 50)
+       
         'Me.logo.Location = New Point(0, Me.emp_id.Bottom)
         'Me.logo.Height = Me.btn_home.Top - Me.emp_id.Bottom
 
@@ -266,5 +279,9 @@ Public Class landing_page
 
     Private Sub PerformanceManagement1_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles PerformanceManagement1.Load
 
+    End Sub
+
+    Private Sub btn_logout_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_logout.Click
+        Me.Close()
     End Sub
 End Class

@@ -10,10 +10,6 @@ Public Class My_Training_AddNew
     Private Mode As Char = "S"
     Private CurrentID As String = ""
 
-    Private Sub SplitContainer1_Panel2_Paint(ByVal sender As System.Object, ByVal e As System.Windows.Forms.PaintEventArgs)
-
-    End Sub
-
     Private Sub bt_submit101_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles bt_submit101.Click
         Dim txtTrainingType As String = GetTrainingTypeList()
 
@@ -32,11 +28,11 @@ Public Class My_Training_AddNew
         cmd.Parameters.Add(New OleDbParameter("training_description", CType(txt_courseDesc101.Text, String)))
         cmd.Parameters.Add(New OleDbParameter("training_datetime", CType(dtp_trDate101.Value.ToString, String)))
         cmd.Parameters.Add(New OleDbParameter("training_time", CType(txt_trTime101.Text, String)))
-        cmd.Parameters.Add(New OleDbParameter("Expired_at", CType(New DateTime, String)))
+        cmd.Parameters.Add(New OleDbParameter("expired_at", CType(New DateTime, String)))
         cmd.Parameters.Add(New OleDbParameter("Venue", CType(cbx_trVenue101.SelectedValue.ToString, String)))
         cmd.Parameters.Add(New OleDbParameter("created_at", CType(New DateTime, String)))
         cmd.Parameters.Add(New OleDbParameter("created_by", CType("5", String)))
-        cmd.Parameters.Add(New OleDbParameter("required_dept", CType(txtTrainingType, String)))
+        cmd.Parameters.Add(New OleDbParameter("required_dept", CType(txtTrainingType, Integer)))
         
         Try
             cmd.ExecuteNonQuery()
@@ -47,6 +43,12 @@ Public Class My_Training_AddNew
         myConnection.Close()
         My.Forms.landing_page.TrainingManagement1.RefeshDataGrid()
         Me.Close()
+    End Sub
+
+    Private Sub Form_Load(ByVal sender As System.Object, ByVal e As EventArgs) Handles Me.Load
+        Dim connectToAccess = New Connect_To_Access_Training()
+        Dim list = connectToAccess.getLocationList()
+        cbx_trVenue101.DataSource = list
     End Sub
 
     Private Sub bt_cancel101_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles bt_cancel101.Click
@@ -71,13 +73,6 @@ Public Class My_Training_AddNew
         'MsgBox(cbx_trVenue101.SelectedValue.ToString, MsgBoxStyle.OkOnly, "oK")
     End Sub
 
-    Private Sub dtp_trDate101_ValueChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles dtp_trDate101.ValueChanged
-
-    End Sub
-
-    Private Sub LocationsBindingSource_CurrentChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles LocationsBindingSource.CurrentChanged
-
-    End Sub
 
     Public Sub OnEditLoad(ByVal id As String, ByVal mode As Char)
         Me.CurrentID = id
@@ -104,7 +99,7 @@ Public Class My_Training_AddNew
                         txt_courseDesc101.Text = dr2("training_description").ToString
                         dtp_trDate101.Value = dr2("training_datetime").ToString
                         txt_trTime101.Text = dr2("training_time").ToString
-                        cbx_trVenue101.SelectedValue = dr2("venue").ToString
+                        cbx_trVenue101.SelectedItem = dr2("venue").ToString
                         Dim txtTrainingType As String = dr2("required_dept").ToString
                         'Dim patern As String = "\,"
                         'Dim TrainingTypeList() As String = Regex.Split(txtTrainingType, ",")
@@ -231,11 +226,6 @@ Public Class My_Training_AddNew
         Return txtTrainingType
     End Function
 
-    Private Sub My_Training_Panel101_Paint(ByVal sender As System.Object, ByVal e As System.Windows.Forms.PaintEventArgs) Handles My_Training_Panel101.Paint
-        Dim connectToAccess = New Connect_To_Access_Training()
-        Dim list = connectToAccess.getLocationList()
-        cbx_trVenue101.DataSource = list
-    End Sub
 
     Private Sub lb_tr_code101_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles lb_tr_code101.Click
 

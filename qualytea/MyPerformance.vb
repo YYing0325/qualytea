@@ -142,4 +142,7 @@
         selectedAmount = 100
     End Sub
 
+    Private Sub lb_available_point_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles lb_available_point.Click
+
+    End Sub
 End Class

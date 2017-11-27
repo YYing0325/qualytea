@@ -73,7 +73,7 @@ Public Class Connect_To_Access_Leave
                         End Using
 
                         Dim leaves = 0
-                        Dim query3 = "SELECT * FROM [leave] where [employee_id]=" & Convert.ToInt32(dr("employee_id"))
+                        Dim query3 = "SELECT total_amount FROM [leave] where [employee_id]=" & Convert.ToInt32(dr("employee_id"))
                         Using cmd3 As OleDbCommand = New OleDbCommand(query3, myConnection)
 
                             Using dr3 As OleDbDataReader = cmd3.ExecuteReader
@@ -167,20 +167,7 @@ Public Class Connect_To_Access_Leave
             Using accquery As New System.Data.OleDb.OleDbCommand(accStr, myConnection)
                 myConnection.Open()
                 accquery.Parameters.AddWithValue("@employee_id", data.Item("employee_id"))
-                'accquery.Parameters.AddWithValue("@type_of_claims)", data.Item("type_of_claims"))
                 accquery.Parameters.AddWithValue("@total_amount)", data.Item("total_amount"))
-                'accquery.Parameters.AddWithValue("@claims_month", 1)
-                'accquery.Parameters.AddWithValue("@claims_month", 2)
-                'accquery.Parameters.AddWithValue("@claims_month", 3)
-                'accquery.Parameters.AddWithValue("@claims_month", 4)
-                'accquery.Parameters.AddWithValue("@claims_month", 5)
-                'accquery.Parameters.AddWithValue("@claims_month", 6)
-                'accquery.Parameters.AddWithValue("@claims_month", 7)
-                'accquery.Parameters.AddWithValue("@claims_month", 8)
-                'accquery.Parameters.AddWithValue("@claims_month", 9)
-                'accquery.Parameters.AddWithValue("@claims_month", 10)
-                'accquery.Parameters.AddWithValue("@claims_month", 11)
-
                 accquery.ExecuteNonQuery()
                 myConnection.Close()
             End Using
